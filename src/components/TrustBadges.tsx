@@ -1,5 +1,10 @@
 import { trustBadges } from "@/lib/content";
 
+/*
+ * Custom renovation-trade icon set (shared visual language with FeatureStrip):
+ * rating -> 5-star, shield -> license certificate with seal,
+ * award -> hard hat (years on the tools), price -> itemized estimate clipboard
+ */
 const badgeIcons: Record<string, React.ReactNode> = {
   rating: (
     <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
@@ -7,18 +12,28 @@ const badgeIcons: Record<string, React.ReactNode> = {
     </svg>
   ),
   shield: (
-    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M20.5 13V6A1.5 1.5 0 0019 4.5H5A1.5 1.5 0 003.5 6v10A1.5 1.5 0 005 17.5h7.5" />
+      <path d="M7 9h8" />
+      <path d="M7 12.5h5" />
+      <circle cx="16.75" cy="15.5" r="2.25" />
+      <path d="M15.4 17.3l-.8 3.7 2.15-1.3 2.15 1.3-.8-3.7" />
     </svg>
   ),
   award: (
-    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 10.5V6a1 1 0 011-1h2a1 1 0 011 1v4.5" />
+      <path d="M14 6.3a6 6 0 014 5.7v3" />
+      <path d="M6 15v-3a6 6 0 014-5.7" />
+      <rect x="2.5" y="15" width="19" height="4" rx="1" />
     </svg>
   ),
   price: (
-    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 14.25l6-6m4.5-3.493V21.75l-3.75-1.5-3.75 1.5-3.75-1.5-3.75 1.5V4.757c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0c1.1.128 1.907 1.077 1.907 2.185zM9.75 9h.008v.008H9.75V9zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm4.125 4.5h.008v.008h-.008V13.5zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="8" y="2" width="8" height="4" rx="1" />
+      <path d="M8 4H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2" />
+      <path d="M12 9.5v8" />
+      <path d="M14.1 11.3c-.4-.65-1.2-1.05-2.1-1.05-1.16 0-2.1.67-2.1 1.5 0 1.95 4.2 1.05 4.2 3 0 .83-.94 1.5-2.1 1.5-.9 0-1.7-.4-2.1-1.05" />
     </svg>
   ),
 };
