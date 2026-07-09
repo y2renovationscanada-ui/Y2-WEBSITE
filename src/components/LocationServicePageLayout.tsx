@@ -75,7 +75,7 @@ export default function LocationServicePageLayout({ data }: { data: LocationPage
                 </a>
               </div>
               <p className="mt-5 text-sm text-white/80">
-                <span className="font-bold text-accent">★★★★★ 5.0</span> rated by GTA homeowners · Free in-home consultations in {city.name}
+                <span className="font-bold text-accent">★★★★★ 5.0</span> from 100+ Google reviews · Free in-home consultations in {city.name}
               </p>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function LocationServicePageLayout({ data }: { data: LocationPage
         </section>
 
         {/* 6. Social proof */}
-        <ReviewStrip city={city.name} />
+        <ReviewStrip service={serviceKey} city={city.name} />
 
         {/* 7. Neighbourhoods + local process detail */}
         <section className="section-pad bg-surface">

@@ -69,8 +69,14 @@ export const hero = {
   ],
 };
 
+export const googleReviews = {
+  rating: "5.0",
+  count: 100,
+  countLabel: "100+",
+};
+
 export const trustBadges = [
-  { label: "5.0 Google-Rated", detail: "by GTA homeowners", type: "rating" as const },
+  { label: "5.0 Google-Rated", detail: "100+ homeowner reviews", type: "rating" as const },
   { label: "Licensed & Insured", detail: "WSIB-covered trades", type: "shield" as const },
   { label: "14+ Years Experience", detail: "500+ projects completed", type: "award" as const },
   { label: "Fixed-Price Quotes", detail: "free & no obligation", type: "price" as const },
@@ -253,38 +259,74 @@ export const projectDetails = [
   "At handover, you get every permit, certificate, and warranty document together in one package, plus as-built drawings for your records.",
 ];
 
-export const reviews = [
+export type ReviewServiceKey = "kitchen" | "bathroom" | "basement" | "home" | "flooring" | "commercial";
+
+export type Review = {
+  text: string;
+  author: string;
+  location: string;
+  services: ReviewServiceKey[];
+};
+
+export const reviews: Review[] = [
   {
     text: "From the start, my wife and I felt completely at ease working with John and Andy. We couldn't be happier with our new bathrooms — finished exactly on schedule and within budget. The entire experience exceeded our expectations.",
     author: "Marc",
     location: "Markham",
+    services: ["bathroom"],
   },
   {
     text: "It was so wonderful working with Y2. John was my primary contact and he was AMAZING and so professional. We redid our primary bathroom and flooring — everything was so organized and timely.",
     author: "Shararah S.",
     location: "Markham",
+    services: ["bathroom", "flooring"],
   },
   {
     text: "We wanted to update our bathroom with a budget in mind. Y2 listened, started work the next day, and finished in 4 days. We are very pleased and would recommend them.",
     author: "Karthi",
     location: "Pickering",
+    services: ["bathroom"],
   },
   {
     text: "Jeff from Y2 Design was very helpful throughout the process. The work was done efficiently and effectively. Will highly recommend.",
     author: "Smriti",
     location: "Markham",
+    services: ["home"],
   },
   {
     text: "They did our flooring for us. Floors look great, and we're really happy!",
     author: "Lizzie",
     location: "Ajax",
+    services: ["flooring"],
   },
   {
     text: "Our kitchen was completely outdated and Y2 turned it into something we're actually excited to cook in. The team walked us through every material choice and stuck to the timeline they gave us.",
     author: "David T.",
     location: "Oakville",
+    services: ["kitchen"],
   },
 ];
+
+const serviceReviewLabels: Record<ReviewServiceKey, string> = {
+  kitchen: "kitchen renovation",
+  bathroom: "bathroom renovation",
+  basement: "basement renovation",
+  home: "home renovation",
+  flooring: "flooring",
+  commercial: "commercial renovation",
+};
+
+export function getReviewsForService(service: ReviewServiceKey, city?: string) {
+  const matched = reviews.filter((r) => r.services.includes(service));
+  if (!city) return matched;
+  const local = matched.filter((r) => r.location === city);
+  const other = matched.filter((r) => r.location !== city);
+  return [...local, ...other];
+}
+
+export function getServiceReviewLabel(service: ReviewServiceKey) {
+  return serviceReviewLabels[service];
+}
 
 export const faqs = [
   {

@@ -1,4 +1,4 @@
-import { site, serviceAreas, reviews, servicePages } from "./content";
+import { site, serviceAreas, reviews, servicePages, googleReviews } from "./content";
 
 export function jsonLdScript(data: unknown) {
   return {
@@ -69,8 +69,8 @@ export function organizationSchema() {
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: String(reviews.length),
+      ratingValue: googleReviews.rating,
+      reviewCount: String(googleReviews.count),
       bestRating: "5",
     },
     review: reviews.slice(0, 3).map((r) => ({

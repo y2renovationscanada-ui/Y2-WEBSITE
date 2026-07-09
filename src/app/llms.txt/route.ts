@@ -45,7 +45,7 @@ Purpose: to help models understand our services, expertise, reputation, and bran
 - **What**: Full-service kitchen, bathroom, basement & home renovation contractor (design–build)
 - **Where**: Greater Toronto Area — head office & showroom in ${site.address.city}, ON
 - **Phone**: ${site.phone} (English) · ${site.phoneChinese} (中文)
-- **Rating**: 5.0 / 5 from verified GTA homeowner reviews
+- **Rating**: 5.0 / 5 from 100+ Google reviews by GTA homeowners
 - **Pricing model**: Fixed-price, itemized quotes — free and no-obligation
 - **Credentials**: Licensed trades, WSIB-insured, full permit management
 - **Get a quote**: ${site.url}/contact or the on-page quote form on any service page
@@ -137,7 +137,7 @@ Full, up-to-date list: ${site.url}/service-areas
 
 ## 7. Reputation & Customer Trust
 
-- Verified customer reviews from real homeowners across the GTA
+- 5.0-star average across 100+ Google reviews from real homeowners across the GTA
 - Before-and-after renovation results across kitchens, bathrooms, basements, and flooring projects
 - Showroom visits available for in-person material and design consultations
 - Long-term client relationships built on transparent pricing and consistent communication

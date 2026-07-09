@@ -54,7 +54,7 @@ export default function Hero() {
                 </svg>
               ))}
             </span>
-            <span className="font-bold">5.0</span> rated by GTA homeowners · Free in-home consultations
+            <span className="font-bold">5.0</span> from 100+ Google reviews · Free in-home consultations
           </p>
         </div>
       </div>

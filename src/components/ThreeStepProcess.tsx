@@ -21,7 +21,7 @@ export default function ThreeStepProcess({ heading = "Get Started in 3 Simple St
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-center gap-3">
           <QuoteButton className="btn-primary cursor-pointer">Get My Free Quote</QuoteButton>
           <a href={`tel:${site.phone.replace(/\D/g, "")}`} className="text-sm font-bold text-brand-dark hover:text-brand">
             or call {site.phone}

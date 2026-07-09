@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { ServicePageData } from "@/lib/content";
+import type { ServicePageData, ReviewServiceKey } from "@/lib/content";
 import { site } from "@/lib/content";
 import { targetCities } from "@/lib/locations";
 import { locationServiceKeys, serviceMeta, type LocationServiceKey } from "@/lib/locationContent";
@@ -14,6 +14,15 @@ import JsonLd from "./JsonLd";
 import { QuoteButton } from "./QuoteModal";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 
+const slugToReviewService: Record<string, ReviewServiceKey> = {
+  "kitchen-renovation": "kitchen",
+  "bathroom-renovation": "bathroom",
+  "basement-renovation": "basement",
+  "home-renovation": "home",
+  flooring: "flooring",
+  "commercial-renovation": "commercial",
+};
+
 export default function ServicePageLayout({
   data,
   heroImage,
@@ -25,6 +34,7 @@ export default function ServicePageLayout({
 }) {
   const path = `/${data.slug}`;
   const tel = `tel:${site.phone.replace(/\D/g, "")}`;
+  const reviewService = slugToReviewService[data.slug];
   const breadcrumbItems = [
     { name: "Home", href: "/" },
     { name: data.title, href: path },
@@ -64,7 +74,7 @@ export default function ServicePageLayout({
               <a href={tel} className="btn-outline-light text-center">Call {site.phone}</a>
             </div>
             <p className="mt-5 text-sm text-white/80">
-              <span className="font-bold text-accent">★★★★★ 5.0</span> rated by GTA homeowners · Free itemized quotes
+              <span className="font-bold text-accent">★★★★★ 5.0</span> from 100+ Google reviews · Free itemized quotes
             </p>
           </div>
         </div>
@@ -125,7 +135,7 @@ export default function ServicePageLayout({
       </section>
 
       {/* 7. Social proof */}
-      <ReviewStrip />
+      <ReviewStrip service={reviewService} />
 
       {data.sections.map((section, i) => (
         <section key={section.heading} className={`section-pad ${i % 2 === 0 ? "bg-surface" : "bg-white"}`}>

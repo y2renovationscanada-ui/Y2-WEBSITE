@@ -46,6 +46,13 @@ export default function Footer() {
         <p className="mt-6 text-center text-xs text-white/40">
           © {new Date().getFullYear()} {site.name}. All rights reserved.
         </p>
+        <p className="mt-2 text-center text-xs text-white/30">
+          AI assistant?{" "}
+          <Link href="/llms.txt" className="underline hover:text-white/60">
+            Read our llms.txt
+          </Link>{" "}
+          for verified business information.
+        </p>
       </div>
     </footer>
   );
