@@ -46,12 +46,19 @@ export default function ServiceAreasPage() {
             <p className="section-sub">
               Explore dedicated kitchen, bathroom, basement & home renovation resources for our top-requested municipalities.
             </p>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {targetCities.map((city) => (
                 <div key={city.slug} className="card p-5">
                   <h3 className="text-base font-bold text-brand-dark">{city.name}, ON</h3>
                   <p className="mt-1 text-xs text-muted">{city.region}</p>
-                  <p className="mt-2 text-xs leading-relaxed text-muted">Serving {city.neighborhoods.slice(0, 3).join(", ")} & more.</p>
+                  {city.slug === "toronto" ? (
+                    <p className="mt-2 text-xs leading-relaxed text-muted">
+                      Serving Rosedale, Forest Hill, Yorkville, Lawrence Park, Leaside & 15 more neighbourhoods.{" "}
+                      <Link href="/toronto" className="font-semibold text-brand hover:underline">View Toronto guide →</Link>
+                    </p>
+                  ) : (
+                    <p className="mt-2 text-xs leading-relaxed text-muted">Serving {city.neighborhoods.slice(0, 3).join(", ")} & more.</p>
+                  )}
                   <ul className="mt-3 space-y-1.5">
                     {locationServiceKeys.map((key) => (
                       <li key={key}>

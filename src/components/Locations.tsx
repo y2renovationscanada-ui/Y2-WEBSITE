@@ -45,14 +45,19 @@ export default function Locations() {
         <div className="container-page">
           <h2 className="section-heading">Renovation Services By City</h2>
           <p className="section-sub">
-            Dedicated resources for our most-requested renovation municipalities — Markham, Pickering, Oakville, Ajax & Scarborough.
+            Dedicated resources for our most-requested renovation municipalities — Toronto, Markham, Pickering, Oakville, Ajax & Scarborough.
           </p>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {targetCities.map((city) => (
               <div key={city.slug} className="card p-5">
                 <h3 className="text-base font-bold text-brand-dark">{city.name}, ON</h3>
                 <p className="mt-1 text-xs text-muted">{city.region}</p>
+                {city.slug === "toronto" && (
+                  <Link href="/toronto" className="mt-2 inline-block text-sm font-semibold text-brand hover:underline">
+                    Toronto renovation guide →
+                  </Link>
+                )}
                 <ul className="mt-3 space-y-1.5">
                   {locationServiceKeys.map((key) => (
                     <li key={key}>

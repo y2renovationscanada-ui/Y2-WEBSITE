@@ -40,6 +40,7 @@ export default function Footer() {
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-sm text-white/60 hover:text-white">{link.label}</Link>
             ))}
+            <Link href="/blog" className="text-sm text-white/60 hover:text-white">Blog</Link>
             <Link href="/contact" className="text-sm text-white/60 hover:text-white">Contact</Link>
           </nav>
         </div>
@@ -48,9 +49,9 @@ export default function Footer() {
         </p>
         <p className="mt-2 text-center text-xs text-white/30">
           AI assistant?{" "}
-          <Link href="/llms.txt" className="underline hover:text-white/60">
+          <a href="/llms.txt" className="underline hover:text-white/60">
             Read our llms.txt
-          </Link>{" "}
+          </a>{" "}
           for verified business information.
         </p>
       </div>

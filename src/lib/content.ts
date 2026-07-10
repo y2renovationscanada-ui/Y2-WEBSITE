@@ -28,7 +28,9 @@ export const images = {
   kitchen: "/images/kitchen-ai.webp",
   kitchenDesign: "/images/kitchen-design.webp",
   bathroom: "/images/bathroom-renovation-ai-2.webp",
-  bathroomHero: "/images/bathroom-hero.webp",
+  bathroomHero: "/images/bathroom-palmer-1.webp",
+  bathroomPalmer1: "/images/bathroom-palmer-1.webp",
+  bathroomPalmer2: "/images/bathroom-palmer-2.webp",
   bathroom2: "/images/bathroom-2.webp",
   bathroom3: "/images/bathroom-3.webp",
   commercial: "/images/commercial-warehouse.webp",
@@ -39,7 +41,7 @@ export const images = {
   closet: "/images/closet.webp",
   gallery: {
     kitchen: ["/images/kitchen-gall-1.webp", "/images/kitchen-gall-5.webp", "/images/kitchen.webp", "/images/kitchen-design.webp"],
-    bathroom: ["/images/bathroom-hero.webp", "/images/bathroom-gall-1.webp", "/images/bathroom-gall-10.webp", "/images/bathroom-2.webp", "/images/bathroom-3.webp"],
+    bathroom: ["/images/bathroom-palmer-1.webp", "/images/bathroom-palmer-2.webp", "/images/bathroom-gall-1.webp", "/images/bathroom-gall-10.webp", "/images/bathroom-2.webp", "/images/bathroom-3.webp"],
     commercial: ["/images/commercial-warehouse.webp", "/images/hero-2.webp", "/images/residential.webp"],
     basement: ["/images/basement-gall-1.webp", "/images/basement.webp"],
     home: ["/images/residential.webp", "/images/hero-2.webp", "/images/hero-3.webp"],
@@ -353,7 +355,7 @@ export const faqs = [
   },
   {
     question: "How long does a home renovation take?",
-    answer: "Timelines vary by scope. Most kitchen renovations take 3–6 weeks. Bathrooms 2–4 weeks. Full-home renovations 8–14 weeks. We provide a locked schedule at contract signing.",
+    answer: "Timelines vary by scope. Most kitchen renovations take 3–6 weeks. Bathrooms are typically finished in 7–12 days. Full-home renovations 8–14 weeks. We provide a locked schedule at contract signing.",
   },
   {
     question: "Do you provide 3D renders before construction?",
@@ -468,7 +470,7 @@ export const servicePages: Record<string, ServicePageData> = {
     gallery: images.gallery.bathroom,
     faqs: [
       { question: "How much does a bathroom renovation cost?", answer: "Powder rooms range from $2,500–$5,000. Full bathrooms start at $9,800–$18,000. Luxury bathrooms range from $18,000–$35,000." },
-      { question: "How long does a bathroom reno take?", answer: "Most full bathrooms take 2–4 weeks. Powder rooms can be completed in 1–2 weeks." },
+      { question: "How long does a bathroom reno take?", answer: "Most bathrooms are finished in 7–10 days. Four-piece bathrooms take 10–12 days, and luxury bathrooms run around 2–3 weeks." },
       { question: "Can you work in condos?", answer: "Yes — we handle condo board approvals, elevator booking, and building-specific requirements." },
     ],
   },
@@ -594,7 +596,7 @@ export const servicePages: Record<string, ServicePageData> = {
     faqs: [
       { question: "How much does a condo renovation cost in Toronto?", answer: "Full condo renovations range from $50–$250 per sq ft depending on scope, finishes, and building requirements. Kitchen and bathroom-only projects are quoted individually. Every estimate is free and itemized." },
       { question: "Do you handle condo board and property-management approvals?", answer: "Yes — we prepare the renovation application, provide insurance certificates, book elevators, and coordinate directly with your property manager." },
-      { question: "How long does a condo renovation take?", answer: "Condo kitchens and bathrooms typically take 2–4 weeks. Full-suite renovations usually run 4–8 weeks depending on scope and building access rules." },
+      { question: "How long does a condo renovation take?", answer: "Condo bathrooms are typically finished in 7–12 days and kitchens in 3–6 weeks. Full-suite renovations usually run 4–8 weeks depending on scope and building access rules." },
       { question: "Can you renovate while I live in the condo?", answer: "For kitchen or bathroom projects, usually yes — we contain dust and keep water and power interruptions short. For full-suite renovations, most owners choose to stay elsewhere during the noisiest phases." },
     ],
   },

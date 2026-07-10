@@ -207,6 +207,13 @@ export default function LocationServicePageLayout({ data }: { data: LocationPage
                       {service.name} — GTA Overview →
                     </Link>
                   </li>
+                  {city.slug === "toronto" && (
+                    <li>
+                      <Link href="/toronto" className="font-medium text-brand hover:underline">
+                        Toronto Renovation Guide →
+                      </Link>
+                    </li>
+                  )}
                 </ul>
               </div>
               <div>

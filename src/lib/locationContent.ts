@@ -1,6 +1,5 @@
 import { images, site } from "./content";
-import type { CityData } from "./locations";
-import { targetCities } from "./locations";
+import { formatNeighborhoodList, targetCities, type CityData } from "./locations";
 
 export type LocationServiceKey = "kitchen" | "bathroom" | "basement" | "home";
 
@@ -34,10 +33,10 @@ export const serviceMeta: Record<
     name: "Bathroom Renovation",
     slug: "bathroom-renovation",
     keyword: "bathroom renovation",
-    heroImage: images.bathroomHero,
+    heroImage: images.bathroom,
     priceLine:
       "Powder rooms range from $2,500–$5,000. Full bathrooms start at $9,800–$18,000. Luxury bathrooms range from $18,000–$35,000.",
-    durationLine: "Most full bathroom renovations take 2–4 weeks. Powder rooms can be completed in 1–2 weeks.",
+    durationLine: "Most bathrooms are finished in 7–10 days. Four-piece bathrooms take 10–12 days, and luxury bathrooms run around 2–3 weeks.",
     focusBullets: [
       "Walk-in showers & freestanding soaker tubs",
       "Heated floors & modern vanities",
@@ -93,7 +92,7 @@ export function getLocationPageData(serviceKey: LocationServiceKey, citySlug: st
   const city = targetCities.find((c) => c.slug === citySlug);
   if (!service || !city) return undefined;
 
-  const neighborhoods = city.neighborhoods.slice(0, 5).join(", ");
+  const neighborhoods = formatNeighborhoodList(city);
 
   const h1 = `${service.name} in ${city.name}, ON`;
   const metaTitle = `${service.name} in ${city.name}, ON | ${site.name}`;

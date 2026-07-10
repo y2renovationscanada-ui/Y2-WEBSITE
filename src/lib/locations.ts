@@ -59,8 +59,48 @@ export const targetCities: CityData[] = [
     blurb:
       "Scarborough's diverse housing stock — from bungalows near the Scarborough Bluffs to family homes in Agincourt and Malvern — is exactly the kind of varied renovation work Y2 Design & Build tackles across Toronto every week.",
   },
+  {
+    slug: "toronto",
+    name: "Toronto",
+    region: "City of Toronto",
+    province: "ON",
+    neighborhoods: [
+      "The Bridle Path",
+      "York Mills",
+      "Sunnybrook",
+      "St. Andrew-Windfields",
+      "Hoggs Hollow",
+      "Rosedale",
+      "Forest Hill South",
+      "Forest Hill North",
+      "Casa Loma",
+      "Moore Park",
+      "Lawrence Park",
+      "The Annex",
+      "Leaside",
+      "Summerhill",
+      "Bedford Park-Nortown",
+      "Kingsway South",
+      "Yorkville",
+      "Yonge-St. Clair",
+      "Willowdale",
+      "Wychwood",
+    ],
+    landmark: "Yorkville",
+    blurb:
+      "From century homes in Rosedale and Forest Hill to modern condos in Yorkville and Willowdale, Toronto's most distinctive neighbourhoods demand renovation contractors who understand heritage details, Toronto Building permits, and high-end finish standards.",
+  },
 ];
 
 export function getCityBySlug(slug: string): CityData | undefined {
   return targetCities.find((c) => c.slug === slug);
+}
+
+export function formatNeighborhoodList(city: CityData): string {
+  if (city.neighborhoods.length <= 5) {
+    return city.neighborhoods.join(", ");
+  }
+  const shown = city.neighborhoods.slice(0, 6).join(", ");
+  const remaining = city.neighborhoods.length - 6;
+  return `${shown}, and ${remaining} more neighbourhoods across ${city.name}`;
 }

@@ -169,7 +169,7 @@ export default function ServicePageLayout({
             <p className="section-sub">
               Explore dedicated {data.title.toLowerCase()} resources for the municipalities we serve most across the GTA.
             </p>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {targetCities.map((city) => (
                 <Link
                   key={city.slug}
