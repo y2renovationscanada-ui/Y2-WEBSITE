@@ -108,19 +108,19 @@ export const promo = {
 
 export const features = [
   {
-    title: "Fixed and transparent pricing",
+    title: "Fixed and Transparent Pricing",
     description: "Every project is quoted from day one — no hidden fees, no surprises at handover.",
   },
   {
-    title: "Dedicated project manager on every project",
+    title: "Dedicated Project Manager",
     description: "One point of contact coordinating trades so your project stays on budget and on schedule.",
   },
   {
-    title: "Licensed & insured professionals",
+    title: "Licensed & Insured Professionals",
     description: "All trades are licensed, certified, and WSIB-insured for your peace of mind.",
   },
   {
-    title: "Liability insurance and warranty",
+    title: "Liability Insurance and Warranty",
     description: "Every project is backed by comprehensive insurance and workmanship warranty.",
   },
 ];
