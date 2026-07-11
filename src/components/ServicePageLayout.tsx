@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ServicePageData, ReviewServiceKey } from "@/lib/content";
-import { servicePages, site } from "@/lib/content";
+import { advantages, servicePages, site } from "@/lib/content";
 import { targetCities } from "@/lib/locations";
 import { locationServiceKeys, serviceMeta, type LocationServiceKey } from "@/lib/locationContent";
 import TrustBadges from "./TrustBadges";
@@ -98,8 +98,19 @@ export default function ServicePageLayout({
             <div>
               <h2 className="text-3xl font-bold text-brand-dark">{data.trustTitle}</h2>
               <p className="mt-4 leading-relaxed text-muted">{data.trustBody}</p>
-              <div className="mt-6">
+              <ul className="mt-6 space-y-3">
+                {advantages.slice(0, 4).map((advantage) => (
+                  <li key={advantage} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand" aria-hidden="true">✓</span>
+                    {advantage}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <QuoteButton className="btn-primary cursor-pointer">Book My Free Consultation</QuoteButton>
+                <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
+                  or call {site.phone}
+                </a>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -200,7 +211,7 @@ export default function ServicePageLayout({
                   {serviceMeta[k].name}
                 </Link>
               ))}
-            {["condo", "extension"]
+            {["condo", "extension", "adu"]
               .filter((k) => servicePages[k].slug !== data.slug)
               .map((k) => (
                 <Link key={k} href={`/${servicePages[k].slug}`} className="rounded-full bg-surface px-4 py-2 text-sm font-medium text-brand-dark transition-colors duration-200 hover:bg-brand hover:text-white">

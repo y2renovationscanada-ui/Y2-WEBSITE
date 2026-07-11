@@ -79,4 +79,38 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  .review-marquee {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .review-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: review-marquee-scroll 60s linear infinite;
+  }
+
+  .review-marquee:hover .review-marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes review-marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .review-marquee-track {
+      animation: none;
+    }
+
+    .review-marquee {
+      overflow-x: auto;
+    }
+  }
 }

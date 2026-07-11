@@ -175,7 +175,14 @@ export const services = [
     description: "Engineered hardwood, vinyl plank, laminate, ceramic tile, and LVT installation.",
     href: "/flooring",
     image: images.flooring,
-    location: "Brampton, ON",
+    location: "Richmond Hill, ON",
+  },
+  {
+    title: "ADUs & Garden Suites",
+    description: "Self-contained garden suites, laneway homes, and basement apartments for rental income or family.",
+    href: "/adu-construction",
+    image: "/images/basement-gall-1.webp",
+    location: "Toronto, ON",
   },
   {
     title: "Commercial Remodel",
@@ -626,10 +633,36 @@ export const servicePages: Record<string, ServicePageData> = {
       { question: "Can we live in the house during an addition?", answer: "In most cases, yes. Rear and side extensions are sealed off from the main house until the connection is opened late in the project. Second-storey additions usually require moving out for part of the build." },
     ],
   },
+  adu: {
+    slug: "adu-construction",
+    title: "ADU Construction",
+    metaDescription: "ADU builder serving Toronto & the GTA. Garden suites, laneway homes & legal basement apartments — zoning review, permits & construction for rental income or multi-generational living.",
+    heroTitle: "ADU & Garden Suite Construction in the GTA",
+    heroSubtitle: "Add a self-contained living unit to your property — a garden suite, laneway home, or legal basement apartment — designed, permitted, and built by one team.",
+    bullets: ["Garden suites, laneway homes & basement apartments", "Rental income & multi-generational living", "Zoning review, permits & construction under one contract"],
+    promo: { title: "Free ADU Feasibility Assessment", subtitle: "Find out what your property allows" },
+    trustTitle: "GTA ADU & Garden Suite Builders",
+    trustBody: "Y2 Design & Build designs and builds additional dwelling units across Toronto and the GTA — from detached garden suites to legal basement apartments. We handle the zoning review, drawings, permits, and construction, and we build to the fire-separation, sound, and egress standards a legal second unit requires.",
+    whyTitle: "Why Build an ADU",
+    whyBody: "An ADU turns unused space on your property into long-term value — monthly rental income, a private home for aging parents, or independent space for adult kids. Toronto and most GTA municipalities now actively permit garden and laneway suites.",
+    whyBullets: ["Detached garden suites & laneway homes", "Legal basement apartments & in-law suites", "Rental income that offsets your mortgage", "Multi-generational living with privacy"],
+    sections: [
+      { heading: "Feasibility Before You Spend", body: "Not every lot qualifies for a detached suite — setbacks, lot coverage, laneway access, and servicing all matter. We review your property against your municipality's ADU rules first and give you a realistic budget range before any money goes into drawings." },
+      { heading: "Legal, Safe & Fully Permitted", body: "A legal second unit has real code requirements: fire separation, sound attenuation, independent egress, and proper ventilation. We design and build to those standards and manage every permit and inspection, so your unit is registered and rentable." },
+      { heading: "Turnkey From Dirt to Keys", body: "One project manager runs the entire build — excavation, foundation, structure, mechanical, and finishes — on a locked schedule. You get a move-in-ready unit with a full closeout package at handover." },
+    ],
+    gallery: ["/images/basement-gall-1.webp", images.basement, images.residential],
+    faqs: [
+      { question: "How much does an ADU or garden suite cost in the GTA?", answer: "Basement ADU conversions typically run $50–$120 per sq ft. Detached garden suites and laneway homes are quoted after a feasibility review — most GTA projects land in the $250,000–$500,000 range all-in, including design, permits, and construction." },
+      { question: "How long does an ADU take to build?", answer: "Design and permits typically take 3–5 months depending on the municipality. Construction runs roughly 6–10 weeks for basement conversions and 4–8 months for detached garden or laneway suites." },
+      { question: "Is my property eligible for a garden or laneway suite?", answer: "It depends on your lot's zoning, setbacks, servicing, and emergency access. We check all of it as part of a free feasibility assessment before you commit to anything." },
+      { question: "Do you handle the permits and inspections?", answer: "Yes — zoning review, architectural drawings, permit applications, and every inspection through to final sign-off are managed by our team." },
+    ],
+  },
 };
 
 export const quoteForm = {
-  projectTypes: ["Bathroom", "Kitchen", "Basement", "Flooring", "Painting", "Full House", "Condo", "Home Extension", "Commercial", "Other"],
+  projectTypes: ["Bathroom", "Kitchen", "Basement", "Flooring", "Painting", "Full House", "Condo", "Home Extension", "ADU / Garden Suite", "Commercial", "Other"],
   formName: "quote-request",
   reassurance: "Free, no-obligation quote. We reply within one business day — no spam, ever.",
   successTitle: "Request received — thank you!",

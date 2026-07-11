@@ -94,7 +94,8 @@ Its turnkey renovation process removes the stress of coordinating multiple contr
 - Basement Renovation / Finishing
 - Full Home Renovation
 - Condo Renovation (board approvals, elevator booking & building rules handled)
-- Home Additions & Extensions (rear extensions, second-storey additions, garden suites)
+- Home Additions & Extensions (rear extensions, second-storey additions)
+- ADU Construction (garden suites, laneway homes & legal basement apartments)
 - Flooring & Staircase Renovation
 - Commercial Renovation (offices, retail, and commercial properties)
 

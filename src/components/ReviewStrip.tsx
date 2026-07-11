@@ -1,4 +1,4 @@
-import { getReviewsForService, getServiceReviewLabel, googleReviews, reviews, type ReviewServiceKey } from "@/lib/content";
+import { getReviewsForService, googleReviews, reviews, type ReviewServiceKey } from "@/lib/content";
 
 function Stars() {
   return (
@@ -13,29 +13,24 @@ function Stars() {
 }
 
 /**
- * Compact social-proof section for landing pages: rating headline + up to 3 reviews.
- * Filters by service when provided; prefers reviews from the given city on location pages.
+ * Social-proof section for landing pages: rating headline + an auto-scrolling
+ * right-to-left review carousel. Service/city-relevant reviews lead the loop.
+ * The track is duplicated for a seamless CSS marquee; the second copy is
+ * aria-hidden so screen readers hear each review once.
  */
 export default function ReviewStrip({ service, city }: { service?: ReviewServiceKey; city?: string }) {
-  const items = service
-    ? getReviewsForService(service, city).slice(0, 3)
+  const matched = service
+    ? getReviewsForService(service, city)
     : city
-      ? (() => {
-          const local = reviews.filter((r) => r.location === city);
-          const other = reviews.filter((r) => r.location !== city);
-          return [...local, ...other].slice(0, 3);
-        })()
-      : reviews.slice(0, 3);
+      ? [...reviews.filter((r) => r.location === city), ...reviews.filter((r) => r.location !== city)]
+      : reviews;
+  const rest = reviews.filter((r) => !matched.includes(r));
+  const items = [...matched, ...rest];
 
   if (items.length === 0) return null;
 
-  const serviceLabel = service ? getServiceReviewLabel(service) : null;
-  const subheading = serviceLabel
-    ? `Real ${serviceLabel} reviews from homeowners across the Greater Toronto Area.`
-    : "Real reviews from real renovation clients across the Greater Toronto Area.";
-
   return (
-    <section className="section-pad bg-white">
+    <section className="section-pad overflow-hidden bg-white">
       <div className="container-page">
         <div className="flex flex-col items-center gap-2 text-center">
           <h2 className="text-3xl font-bold text-brand-dark">Rated 5 Stars by GTA Homeowners</h2>
@@ -44,19 +39,25 @@ export default function ReviewStrip({ service, city }: { service?: ReviewService
             <span className="text-xl font-bold text-brand-dark">{googleReviews.rating}</span>
             <span className="text-sm text-muted">from {googleReviews.countLabel} Google reviews</span>
           </div>
-          <p className="max-w-xl text-muted">{subheading}</p>
+          <p className="max-w-xl text-muted">Real reviews from real renovation clients across the Greater Toronto Area.</p>
         </div>
+      </div>
 
-        <div className={`mt-10 grid gap-5 ${items.length === 1 ? "max-w-md mx-auto" : items.length === 2 ? "md:grid-cols-2 max-w-3xl mx-auto" : "md:grid-cols-3"}`}>
-          {items.map((review) => (
-            <figure key={review.author} className="card flex h-full flex-col p-6">
-              <Stars />
-              <blockquote className="mt-3 text-sm leading-relaxed text-muted">&ldquo;{review.text}&rdquo;</blockquote>
-              <figcaption className="mt-auto pt-4">
-                <p className="font-semibold text-brand-dark">{review.author}</p>
-                <p className="text-xs text-muted">{review.location}</p>
-              </figcaption>
-            </figure>
+      <div className="review-marquee mt-10" aria-label="Customer review carousel">
+        <div className="review-marquee-track">
+          {[0, 1].map((copy) => (
+            <div key={copy} className="flex shrink-0" aria-hidden={copy === 1}>
+              {items.map((review) => (
+                <figure key={`${copy}-${review.author}`} className="card mx-2.5 flex w-[300px] shrink-0 flex-col p-6 sm:w-[350px]">
+                  <Stars />
+                  <blockquote className="mt-3 text-sm leading-relaxed text-muted">&ldquo;{review.text}&rdquo;</blockquote>
+                  <figcaption className="mt-auto pt-4">
+                    <p className="font-semibold text-brand-dark">{review.author}</p>
+                    <p className="text-xs text-muted">{review.location}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           ))}
         </div>
       </div>

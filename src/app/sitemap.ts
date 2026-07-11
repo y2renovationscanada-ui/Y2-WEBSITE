@@ -15,6 +15,7 @@ const staticRoutes: { path: string; priority: number; changeFrequency: MetadataR
   { path: "/home-renovation", priority: 0.9, changeFrequency: "weekly" },
   { path: "/condo-renovation", priority: 0.85, changeFrequency: "weekly" },
   { path: "/home-extensions", priority: 0.85, changeFrequency: "weekly" },
+  { path: "/adu-construction", priority: 0.85, changeFrequency: "weekly" },
   { path: "/flooring", priority: 0.8, changeFrequency: "weekly" },
   { path: "/commercial-renovation", priority: 0.8, changeFrequency: "weekly" },
   { path: "/service-areas", priority: 0.8, changeFrequency: "monthly" },
