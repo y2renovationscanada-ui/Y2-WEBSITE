@@ -1,11 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServicePageLayout from "@/components/ServicePageLayout";
-import { servicePages, site } from "@/lib/content";
+import { servicePages, images, site } from "@/lib/content";
 
 const data = servicePages.adu;
 const path = `/${data.slug}`;
-const heroImage = "/images/basement-gall-1.webp";
 
 export const metadata = {
   title: `ADU & Garden Suite Builder GTA | Y2 Design & Build`,
@@ -17,7 +16,7 @@ export const metadata = {
     description: data.metaDescription,
     url: `${site.url}${path}`,
     type: "website",
-    images: [{ url: heroImage, alt: "ADU and garden suite construction by Y2 Design & Build in the GTA" }],
+    images: [{ url: images.adu, alt: "ADU and garden suite construction by Y2 Design & Build in the GTA" }],
   },
 };
 
@@ -26,7 +25,7 @@ export default function Page() {
     <>
       <Header />
       <main>
-        <ServicePageLayout data={data} heroImage={heroImage} />
+        <ServicePageLayout data={data} heroImage={images.adu} />
       </main>
       <Footer />
     </>

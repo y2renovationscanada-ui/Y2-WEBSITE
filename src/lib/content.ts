@@ -36,8 +36,11 @@ export const images = {
   commercial: "/images/commercial-warehouse.webp",
   basement: "/images/basement.webp",
   residential: "/images/home-renovation-ai.webp",
-  flooring: "/images/flooring.webp",
-  stairs: "/images/stairs.webp",
+  flooring: "/images/flooring-stairs-ai.webp",
+  stairs: "/images/flooring-stairs-ai.webp",
+  condo: "/images/condo-renovation-ai.webp",
+  adu: "/images/adu-garden-suite-ai.webp",
+  extension: "/images/home-extension-ai.webp",
   closet: "/images/closet.webp",
   gallery: {
     kitchen: ["/images/kitchen-gall-1.webp", "/images/kitchen-gall-5.webp", "/images/kitchen.webp", "/images/kitchen-design.webp"],
@@ -45,7 +48,7 @@ export const images = {
     commercial: ["/images/commercial-warehouse.webp", "/images/hero-2.webp", "/images/residential.webp"],
     basement: ["/images/basement-gall-1.webp", "/images/basement.webp"],
     home: ["/images/residential.webp", "/images/hero-2.webp", "/images/hero-3.webp"],
-    flooring: ["/images/flooring.webp", "/images/stairs.webp"],
+    flooring: ["/images/flooring-stairs-ai.webp", "/images/stairs.webp"],
   },
 };
 
@@ -160,14 +163,14 @@ export const services = [
     title: "Condo Renovation",
     description: "Full condo remodels with board approvals, elevator booking, and building rules handled for you.",
     href: "/condo-renovation",
-    image: images.kitchenDesign,
+    image: images.condo,
     location: "Toronto, ON",
   },
   {
     title: "Home Extensions",
     description: "Rear extensions, second-storey additions, and garden suites — design, permits, and build under one contract.",
     href: "/home-extensions",
-    image: images.hero[3],
+    image: images.extension,
     location: "North York, ON",
   },
   {
@@ -181,7 +184,7 @@ export const services = [
     title: "ADUs & Garden Suites",
     description: "Self-contained garden suites, laneway homes, and basement apartments for rental income or family.",
     href: "/adu-construction",
-    image: "/images/basement-gall-1.webp",
+    image: images.adu,
     location: "Toronto, ON",
   },
   {
@@ -599,7 +602,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { heading: "Designed for Condo Living", body: "Condo square footage is precious. We specialize in layouts, millwork, and storage that make every foot count — from galley-kitchen reconfigurations to built-in closets and murphy-bed offices." },
       { heading: "Clean, Considerate Crews", body: "We protect hallways and elevators, contain dust at the suite door, and remove debris daily. Your neighbours barely know we're there — and your property manager will thank you." },
     ],
-    gallery: [images.kitchenDesign, images.bathroom2, images.closet, images.flooring],
+    gallery: [images.condo, images.bathroom2, images.closet, images.flooring],
     faqs: [
       { question: "How much does a condo renovation cost in Toronto?", answer: "Full condo renovations range from $50–$250 per sq ft depending on scope, finishes, and building requirements. Kitchen and bathroom-only projects are quoted individually. Every estimate is free and itemized." },
       { question: "Do you handle condo board and property-management approvals?", answer: "Yes — we prepare the renovation application, provide insurance certificates, book elevators, and coordinate directly with your property manager." },
@@ -625,7 +628,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { heading: "Design, Engineering & Permits Under One Roof", body: "Our team produces the architectural drawings and structural engineering your permit requires, then manages the application through Toronto Building or your local municipality — including committee of adjustment variances when needed." },
       { heading: "Weather-Tight Fast, Finished Right", body: "We sequence excavation, foundation, framing, and roofing to get the new structure sealed quickly, then finish the interior to blend seamlessly with your existing home — inside and out." },
     ],
-    gallery: images.gallery.home,
+    gallery: [images.extension, images.residential, images.hero[2]],
     faqs: [
       { question: "How much does a home addition cost in the GTA?", answer: "Most additions run $300–$600 per sq ft depending on foundation work, structure, and finishes. Garden suites and second-storey additions are quoted after a feasibility review. Every estimate is free and itemized." },
       { question: "How long does a home extension take?", answer: "Design and permits typically take 2–4 months depending on the municipality. Construction usually runs 3–6 months from breaking ground to final inspection." },
@@ -651,7 +654,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { heading: "Legal, Safe & Fully Permitted", body: "A legal second unit has real code requirements: fire separation, sound attenuation, independent egress, and proper ventilation. We design and build to those standards and manage every permit and inspection, so your unit is registered and rentable." },
       { heading: "Turnkey From Dirt to Keys", body: "One project manager runs the entire build — excavation, foundation, structure, mechanical, and finishes — on a locked schedule. You get a move-in-ready unit with a full closeout package at handover." },
     ],
-    gallery: ["/images/basement-gall-1.webp", images.basement, images.residential],
+    gallery: [images.adu, images.basement, images.residential],
     faqs: [
       { question: "How much does an ADU or garden suite cost in the GTA?", answer: "Basement ADU conversions typically run $50–$120 per sq ft. Detached garden suites and laneway homes are quoted after a feasibility review — most GTA projects land in the $250,000–$500,000 range all-in, including design, permits, and construction." },
       { question: "How long does an ADU take to build?", answer: "Design and permits typically take 3–5 months depending on the municipality. Construction runs roughly 6–10 weeks for basement conversions and 4–8 months for detached garden or laneway suites." },
@@ -664,6 +667,7 @@ export const servicePages: Record<string, ServicePageData> = {
 export const quoteForm = {
   projectTypes: ["Bathroom", "Kitchen", "Basement", "Flooring", "Painting", "Full House", "Condo", "Home Extension", "ADU / Garden Suite", "Commercial", "Other"],
   formName: "quote-request",
+  webhookUrl: "https://hook.us2.make.com/eeo58qeem9ci1i7ggwiry5vspp5lp2sf",
   reassurance: "Free, no-obligation quote. We reply within one business day — no spam, ever.",
   successTitle: "Request received — thank you!",
   successBody: "One of our project consultants will call you within one business day to book your free in-home consultation.",

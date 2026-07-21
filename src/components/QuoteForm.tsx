@@ -15,17 +15,44 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    data.set("page", typeof window !== "undefined" ? window.location.pathname : "");
+
+    // Honeypot — silently succeed without firing the webhook
+    if ((data.get("bot-field") as string)?.trim()) {
+      setStatus("success");
+      form.reset();
+      return;
+    }
+
+    const page = typeof window !== "undefined" ? window.location.pathname : "";
+    const payload = {
+      name: String(data.get("name") || "").trim(),
+      phone: String(data.get("phone") || "").trim(),
+      email: String(data.get("email") || "").trim(),
+      address: String(data.get("address") || "").trim(),
+      projectType: String(data.get("projectType") || "").trim(),
+      details: String(data.get("details") || "").trim(),
+      page,
+      source: "y2designandbuild.com",
+      submittedAt: new Date().toISOString(),
+    };
+
     setStatus("submitting");
     try {
-      // Netlify Forms convention: POST url-encoded data to any path on the site.
-      // The hidden mirror form lives in public/__forms.html so the build gets detected.
-      const res = await fetch("/", {
+      const res = await fetch(quoteForm.webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(`Webhook failed: ${res.status}`);
+
+      // Also submit to Netlify Forms when available (non-blocking)
+      data.set("page", page);
+      fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
-      });
-      if (!res.ok) throw new Error(`Form submit failed: ${res.status}`);
+      }).catch(() => {});
+
       setStatus("success");
       form.reset();
     } catch {

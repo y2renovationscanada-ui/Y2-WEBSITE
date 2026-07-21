@@ -16,7 +16,7 @@ export const metadata = {
     description: data.metaDescription,
     url: `${site.url}${path}`,
     type: "website",
-    images: [{ url: images.kitchenDesign, alt: "Condo renovation by Y2 Design & Build in Toronto" }],
+    images: [{ url: images.condo, alt: "Condo renovation by Y2 Design & Build in Toronto" }],
   },
 };
 
@@ -25,7 +25,7 @@ export default function Page() {
     <>
       <Header />
       <main>
-        <ServicePageLayout data={data} heroImage={images.kitchenDesign} />
+        <ServicePageLayout data={data} heroImage={images.condo} />
       </main>
       <Footer />
     </>

@@ -174,7 +174,7 @@ export default function TorontoPage() {
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-3">
-                {[images.kitchen, images.bathroomHero, images.basement, images.residential].map((img, i) => (
+                {[images.kitchen, images.bathroomHero, images.basement].map((img, i) => (
                   <div key={img} className={`relative overflow-hidden rounded-xl ${i === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"}`}>
                     <Image
                       src={img}
