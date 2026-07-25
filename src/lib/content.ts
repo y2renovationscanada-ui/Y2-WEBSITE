@@ -7,6 +7,10 @@ export const site = {
   phoneHeader: "(647) 503-2374",
   email: "info@y2canada.com",
   url: "https://y2designandbuild.com",
+  /** CRM team booking (round-robin). Override with NEXT_PUBLIC_BOOKING_URL in production. */
+  bookingUrl:
+    process.env.NEXT_PUBLIC_BOOKING_URL ||
+    (process.env.NODE_ENV === "development" ? "http://localhost:5181/book" : "https://crm.y2canada.com/book"),
   address: {
     street: "3400 14th Ave Unit 16",
     city: "Markham",
@@ -667,9 +671,13 @@ export const servicePages: Record<string, ServicePageData> = {
 export const quoteForm = {
   projectTypes: ["Bathroom", "Kitchen", "Basement", "Flooring", "Painting", "Full House", "Condo", "Home Extension", "ADU / Garden Suite", "Commercial", "Other"],
   formName: "quote-request",
-  webhookUrl: "https://hook.us2.make.com/eeo58qeem9ci1i7ggwiry5vspp5lp2sf",
+  /** Default webhook for homepage, contact page, and general quote CTAs */
+  webhookUrl: "https://hook.us2.make.com/wjebmlr7d4v8sjb6pexkg8bbgroic3fq",
+  /** Webhook for auto-popup / contact forms on service & city landing pages */
+  landingWebhookUrl: "https://hook.us2.make.com/h59w5uipp42uz9g2am79643gxqk2kb8e",
   reassurance: "Free, no-obligation quote. We reply within one business day — no spam, ever.",
   successTitle: "Request received — thank you!",
-  successBody: "One of our project consultants will call you within one business day to book your free in-home consultation.",
+  successBody: "One of our project consultants will call you within one business day. You can also book your free in-home consult now.",
+  successBookCta: "Book your in-home consult",
   errorBody: "Something went wrong sending your request. Please call us directly or email",
 };

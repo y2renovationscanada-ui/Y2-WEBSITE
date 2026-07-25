@@ -44,7 +44,7 @@ export default function QuoteModalProvider({ children }: { children: ReactNode }
           // close when the backdrop (the dialog element itself) is clicked
           if (e.target === dialogRef.current) close();
         }}
-        className="fixed inset-0 m-auto max-h-[92dvh] w-[calc(100%-2rem)] max-w-md overflow-y-auto rounded-2xl bg-white p-0 shadow-2xl backdrop:bg-black/60"
+        className="fixed left-1/2 top-1/2 z-50 max-h-[92dvh] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl bg-white p-0 shadow-2xl backdrop:bg-black/60"
       >
         <div className="relative p-6 sm:p-8">
           <button

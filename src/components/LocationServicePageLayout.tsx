@@ -10,8 +10,9 @@ import QuoteForm from "./QuoteForm";
 import Breadcrumbs from "./Breadcrumbs";
 import JsonLd from "./JsonLd";
 import { QuoteButton } from "./QuoteModal";
+import LandingQuotePopup from "./LandingQuotePopup";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
-import { servicePages, site } from "@/lib/content";
+import { quoteForm, servicePages, site } from "@/lib/content";
 import { targetCities } from "@/lib/locations";
 import { locationServiceKeys, serviceMeta, type LocationPageData } from "@/lib/locationContent";
 
@@ -237,7 +238,12 @@ export default function LocationServicePageLayout({ data }: { data: LocationPage
           </div>
         </section>
 
-        <QuoteForm />
+        <QuoteForm
+          formId="landing-inline"
+          webhookUrl={quoteForm.landingWebhookUrl}
+          source="landing-page"
+        />
+        <LandingQuotePopup />
       </main>
       <Footer />
     </>

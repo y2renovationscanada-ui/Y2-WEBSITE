@@ -8,8 +8,46 @@ const inputClass =
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export default function QuoteForm({ compact = false }: { compact?: boolean }) {
+type SubmittedPayload = {
+  name: string;
+  phone: string;
+  email: string;
+  address: string;
+  projectType: string;
+  details: string;
+};
+
+function buildBookingHref(payload: SubmittedPayload | null) {
+  const base = (site.bookingUrl || "http://localhost:5181/book").replace(/\/$/, "");
+  if (!payload) return base;
+  const q = new URLSearchParams();
+  if (payload.name) q.set("name", payload.name);
+  if (payload.email) q.set("email", payload.email);
+  if (payload.phone) q.set("phone", payload.phone);
+  if (payload.address) q.set("address", payload.address);
+  if (payload.projectType) q.set("projectType", payload.projectType);
+  if (payload.details) q.set("details", payload.details);
+  const qs = q.toString();
+  return qs ? `${base}?${qs}` : base;
+}
+
+export default function QuoteForm({
+  compact = false,
+  webhookUrl,
+  source = "y2designandbuild.com",
+  formId = "default",
+}: {
+  compact?: boolean;
+  /** Override Make.com webhook (landing pages use a dedicated URL). */
+  webhookUrl?: string;
+  source?: string;
+  /** Unique id suffix so multiple forms on one page don't clash. */
+  formId?: string;
+}) {
   const [status, setStatus] = useState<Status>("idle");
+  const [submitted, setSubmitted] = useState<SubmittedPayload | null>(null);
+  const endpoint = webhookUrl || quoteForm.webhookUrl;
+  const fieldId = `${formId}-${compact ? "c" : "f"}`;
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,24 +62,26 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
     }
 
     const page = typeof window !== "undefined" ? window.location.pathname : "";
-    const payload = {
+    const payload: SubmittedPayload = {
       name: String(data.get("name") || "").trim(),
       phone: String(data.get("phone") || "").trim(),
       email: String(data.get("email") || "").trim(),
       address: String(data.get("address") || "").trim(),
       projectType: String(data.get("projectType") || "").trim(),
       details: String(data.get("details") || "").trim(),
-      page,
-      source: "y2designandbuild.com",
-      submittedAt: new Date().toISOString(),
     };
 
     setStatus("submitting");
     try {
-      const res = await fetch(quoteForm.webhookUrl, {
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          ...payload,
+          page,
+          source,
+          submittedAt: new Date().toISOString(),
+        }),
       });
       if (!res.ok) throw new Error(`Webhook failed: ${res.status}`);
 
@@ -53,6 +93,7 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
         body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
       }).catch(() => {});
 
+      setSubmitted(payload);
       setStatus("success");
       form.reset();
     } catch {
@@ -61,6 +102,7 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
   }
 
   if (status === "success") {
+    const bookingHref = buildBookingHref(submitted);
     return (
       <div className={`rounded-2xl border border-green-200 bg-green-50 p-6 text-center ${compact ? "" : "mt-8"}`} role="status">
         <svg className="mx-auto h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -68,6 +110,19 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
         </svg>
         <p className="mt-3 text-lg font-bold text-green-900">{quoteForm.successTitle}</p>
         <p className="mt-1 text-sm text-green-800">{quoteForm.successBody}</p>
+        <a
+          href={bookingHref}
+          className="btn-primary mt-5 inline-flex w-full items-center justify-center sm:w-auto"
+        >
+          {quoteForm.successBookCta}
+        </a>
+        <p className="mt-3 text-xs text-green-800/80">
+          Or call{" "}
+          <a href={`tel:${site.phone.replace(/\D/g, "")}`} className="font-semibold underline">
+            {site.phone}
+          </a>{" "}
+          if you&apos;d rather talk first.
+        </p>
       </div>
     );
   }
@@ -90,24 +145,24 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
       </p>
 
       <div>
-        <label htmlFor={`qf-name-${compact}`} className="sr-only">Full name</label>
-        <input id={`qf-name-${compact}`} type="text" name="name" placeholder="Full name" required autoComplete="name" className={inputClass} />
+        <label htmlFor={`qf-name-${fieldId}`} className="sr-only">Full name</label>
+        <input id={`qf-name-${fieldId}`} type="text" name="name" placeholder="Full name" required autoComplete="name" className={inputClass} />
       </div>
       <div>
-        <label htmlFor={`qf-phone-${compact}`} className="sr-only">Phone number</label>
-        <input id={`qf-phone-${compact}`} type="tel" name="phone" placeholder="Phone number" required autoComplete="tel" className={inputClass} />
+        <label htmlFor={`qf-phone-${fieldId}`} className="sr-only">Phone number</label>
+        <input id={`qf-phone-${fieldId}`} type="tel" name="phone" placeholder="Phone number" required autoComplete="tel" className={inputClass} />
       </div>
       <div>
-        <label htmlFor={`qf-email-${compact}`} className="sr-only">Email address</label>
-        <input id={`qf-email-${compact}`} type="email" name="email" placeholder="Email address" required autoComplete="email" className={inputClass} />
+        <label htmlFor={`qf-email-${fieldId}`} className="sr-only">Email address</label>
+        <input id={`qf-email-${fieldId}`} type="email" name="email" placeholder="Email address" required autoComplete="email" className={inputClass} />
       </div>
       <div>
-        <label htmlFor={`qf-address-${compact}`} className="sr-only">Project address or city</label>
-        <input id={`qf-address-${compact}`} type="text" name="address" placeholder="Project address or city" autoComplete="street-address" className={inputClass} />
+        <label htmlFor={`qf-address-${fieldId}`} className="sr-only">Project address</label>
+        <input id={`qf-address-${fieldId}`} type="text" name="address" placeholder="Project address" autoComplete="street-address" className={inputClass} />
       </div>
       <div>
-        <label htmlFor={`qf-type-${compact}`} className="sr-only">Project type</label>
-        <select id={`qf-type-${compact}`} name="projectType" defaultValue="" required className={inputClass}>
+        <label htmlFor={`qf-type-${fieldId}`} className="sr-only">Project type</label>
+        <select id={`qf-type-${fieldId}`} name="projectType" defaultValue="" required className={inputClass}>
           <option value="" disabled>Project type</option>
           {quoteForm.projectTypes.map((t) => (
             <option key={t} value={t}>{t}</option>
@@ -115,9 +170,9 @@ export default function QuoteForm({ compact = false }: { compact?: boolean }) {
         </select>
       </div>
       <div>
-        <label htmlFor={`qf-details-${compact}`} className="sr-only">Project details</label>
+        <label htmlFor={`qf-details-${fieldId}`} className="sr-only">Project details</label>
         <textarea
-          id={`qf-details-${compact}`}
+          id={`qf-details-${fieldId}`}
           name="details"
           placeholder="Tell us about your project..."
           rows={compact ? 3 : 4}
