@@ -10,7 +10,7 @@ export const site = {
   /** CRM team booking (round-robin). Override with NEXT_PUBLIC_BOOKING_URL in production. */
   bookingUrl:
     process.env.NEXT_PUBLIC_BOOKING_URL ||
-    (process.env.NODE_ENV === "development" ? "http://localhost:5181/book" : "https://crm.y2canada.com/book"),
+    (process.env.NODE_ENV === "development" ? "http://localhost:5181/book" : "https://y2canada.com/book"),
   address: {
     street: "3400 14th Ave Unit 16",
     city: "Markham",
