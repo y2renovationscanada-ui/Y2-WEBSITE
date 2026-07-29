@@ -18,7 +18,7 @@ type SubmittedPayload = {
 };
 
 function buildBookingHref(payload: SubmittedPayload | null) {
-  const base = (site.bookingUrl || "http://localhost:5181/book").replace(/\/$/, "");
+  const base = (site.bookingUrl || "/book").replace(/\/$/, "");
   if (!payload) return base;
   const q = new URLSearchParams();
   if (payload.name) q.set("name", payload.name);

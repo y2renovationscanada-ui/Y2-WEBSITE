@@ -7,10 +7,18 @@ export const site = {
   phoneHeader: "(647) 503-2374",
   email: "info@y2canada.com",
   url: "https://y2designandbuild.com",
-  /** CRM team booking (round-robin). Override with NEXT_PUBLIC_BOOKING_URL in production. */
-  bookingUrl:
-    process.env.NEXT_PUBLIC_BOOKING_URL ||
-    (process.env.NODE_ENV === "development" ? "http://localhost:5181/book" : "https://y2canada.com/book"),
+  /**
+   * On-site booking path (same domain — no jump to the CRM URL).
+   * Override with NEXT_PUBLIC_BOOKING_URL if needed.
+   */
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "/book",
+  /**
+   * CRM origin that powers the embedded round-robin booking UI inside /book.
+   * Override with NEXT_PUBLIC_CRM_ORIGIN in production if the CRM host changes.
+   */
+  crmOrigin:
+    process.env.NEXT_PUBLIC_CRM_ORIGIN ||
+    (process.env.NODE_ENV === "development" ? "http://localhost:5181" : "https://y2canada.com"),
   address: {
     street: "3400 14th Ave Unit 16",
     city: "Markham",

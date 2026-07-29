@@ -7,3 +7,5 @@ drive-download-*/
 drive-download-*.zip
 image-originals/
 tsconfig.tsbuildinfo
+Y2 Atelier/
+.cursor/
