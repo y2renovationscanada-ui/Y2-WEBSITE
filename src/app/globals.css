@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #8a6c4c;
+  --color-brand-dark: #2e2620;
+  --color-brand-light: #ab8b64;
+  --color-accent: #9c7b4f;
+  --color-accent-hover: #82633d;
+  --color-surface: #f4efe6;
+  --color-muted: #766b5e;
+  --font-sans: var(--font-open-sans), "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-roboto), "Roboto", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #2a2319;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #78716c;
+    opacity: 1;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .section-heading {
+    @apply text-center text-3xl font-bold text-brand-dark md:text-4xl;
+  }
+
+  .section-sub {
+    @apply mx-auto mt-4 max-w-2xl text-center text-base leading-relaxed text-muted md:text-lg;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-base font-semibold text-white shadow-md transition hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center rounded-full border-2 border-white/50 px-7 py-3.5 text-base font-semibold text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+
+  .card {
+    @apply rounded-2xl border border-black/5 bg-white shadow-sm;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .review-marquee {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .review-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: review-marquee-scroll 60s linear infinite;
+  }
+
+  .review-marquee:hover .review-marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes review-marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .review-marquee-track {
+      animation: none;
+    }
+
+    .review-marquee {
+      overflow-x: auto;
+    }
+  }
+}
