@@ -2,10 +2,15 @@
 node_modules/
 out/
 *.log
+.DS_Store
+Thumbs.db
+.env
 .env*.local
+env.local.txt
 drive-download-*/
 drive-download-*.zip
 image-originals/
 tsconfig.tsbuildinfo
 Y2 Atelier/
 .cursor/
+.vscode/
