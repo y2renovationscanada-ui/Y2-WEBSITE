@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Pretty URLs for the static Next export (folder/index.html)
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
