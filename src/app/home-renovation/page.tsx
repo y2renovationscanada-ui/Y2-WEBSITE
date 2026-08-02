@@ -7,7 +7,7 @@ const data = servicePages.home;
 const path = `/${data.slug}`;
 
 export const metadata = {
-  title: `Home Renovation Contractor in the GTA | Y2 Design & Build`,
+  title: `Home Renovation Contractor in the GTA`,
   description: data.metaDescription,
   alternates: { canonical: `${site.url}${path}` },
   keywords: ["home renovation GTA", "home renovation contractor Toronto", "home renovation Markham", "whole home remodeling GTA"],
@@ -17,6 +17,12 @@ export const metadata = {
     url: `${site.url}${path}`,
     type: "website",
     images: [{ url: images.residential, alt: "Full home renovation by Y2 Design & Build in the GTA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Home Renovation Contractor in the GTA | Y2 Design & Build`,
+    description: data.metaDescription,
+    images: [images.residential],
   },
 };
 

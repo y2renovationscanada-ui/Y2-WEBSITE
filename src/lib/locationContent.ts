@@ -1,7 +1,7 @@
 import { images, site } from "./content";
 import { formatNeighborhoodList, targetCities, type CityData } from "./locations";
 
-export type LocationServiceKey = "kitchen" | "bathroom" | "basement" | "home";
+export type LocationServiceKey = "kitchen" | "bathroom" | "basement" | "home" | "condo" | "extension" | "adu";
 
 export const serviceMeta: Record<
   LocationServiceKey,
@@ -69,6 +69,51 @@ export const serviceMeta: Record<
       "Permit management from start to finish",
     ],
   },
+  condo: {
+    name: "Condo Renovation",
+    slug: "condo-renovation",
+    keyword: "condo renovation",
+    heroImage: images.condo,
+    priceLine:
+      "Full condo renovations typically range from $50–$250 per sq ft depending on scope, finishes, and building requirements. Kitchen- and bathroom-only projects are quoted individually.",
+    durationLine:
+      "Condo bathrooms are typically finished in 7–12 days and kitchens in 3–6 weeks. Full-suite renovations usually run 4–8 weeks depending on building access rules.",
+    focusBullets: [
+      "Kitchens, bathrooms & full-suite remodels",
+      "Board approvals, COI & elevator booking handled",
+      "Quiet-hours scheduling & building-rule compliance",
+    ],
+  },
+  extension: {
+    name: "Home Extensions",
+    slug: "home-extensions",
+    keyword: "home extension",
+    heroImage: images.extension,
+    priceLine:
+      "Home additions and extensions vary widely by size and finish — most GTA projects start in the tens of thousands and are quoted after a free design consultation and zoning review.",
+    durationLine:
+      "Design and permits typically take 2–4 months depending on the municipality. Construction usually runs 3–6 months from breaking ground to final inspection.",
+    focusBullets: [
+      "Rear & side extensions and second-storey additions",
+      "Garden suites, laneway housing & in-law suites",
+      "Architectural drawings, engineering & permits managed",
+    ],
+  },
+  adu: {
+    name: "ADU & Garden Suite",
+    slug: "adu-construction",
+    keyword: "ADU / garden suite",
+    heroImage: images.adu,
+    priceLine:
+      "Garden suites and ADUs are quoted after a free site review — cost depends on size, foundation, servicing, and finish level. We provide fixed, itemized estimates before work begins.",
+    durationLine:
+      "Design, zoning, and permits often take 2–5 months. Construction typically runs 3–6 months once approvals are in place.",
+    focusBullets: [
+      "Garden suites, laneway suites & coach houses",
+      "Zoning review & municipal approvals managed",
+      "Design, build & servicing under one contract",
+    ],
+  },
 };
 
 export const locationServiceKeys = Object.keys(serviceMeta) as LocationServiceKey[];
@@ -95,7 +140,7 @@ export function getLocationPageData(serviceKey: LocationServiceKey, citySlug: st
   const neighborhoods = formatNeighborhoodList(city);
 
   const h1 = `${service.name} in ${city.name}, ON`;
-  const metaTitle = `${service.name} in ${city.name}, ON | ${site.name}`;
+  const metaTitle = `${service.name} in ${city.name}, ON`;
   const metaDescription = `Professional ${service.keyword} services in ${city.name}, ${city.region}. Free quotes, fixed pricing & ${site.yearsExperience}+ years of GTA renovation experience. Call ${site.phone}.`;
 
   const intro = `Looking for a trusted ${service.keyword} contractor in ${city.name}? Y2 Design & Build has completed renovation projects throughout ${city.region}, including ${neighborhoods}. ${city.blurb}`;

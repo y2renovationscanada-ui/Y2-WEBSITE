@@ -1,5 +1,14 @@
 import { getReviewsForService, googleReviews, reviews, type ReviewServiceKey } from "@/lib/content";
 
+const serviceReviewKeySet: Record<ReviewServiceKey, true> = {
+  kitchen: true,
+  bathroom: true,
+  basement: true,
+  home: true,
+  flooring: true,
+  commercial: true,
+};
+
 function Stars() {
   return (
     <span className="flex gap-0.5 text-accent" aria-label="5 out of 5 stars">
@@ -18,9 +27,17 @@ function Stars() {
  * The track is duplicated for a seamless CSS marquee; the second copy is
  * aria-hidden so screen readers hear each review once.
  */
-export default function ReviewStrip({ service, city }: { service?: ReviewServiceKey; city?: string }) {
-  const matched = service
-    ? getReviewsForService(service, city)
+export default function ReviewStrip({
+  service,
+  city,
+}: {
+  service?: ReviewServiceKey | string;
+  city?: string;
+}) {
+  const reviewKey: ReviewServiceKey | undefined =
+    service && service in serviceReviewKeySet ? (service as ReviewServiceKey) : undefined;
+  const matched = reviewKey
+    ? getReviewsForService(reviewKey, city)
     : city
       ? [...reviews.filter((r) => r.location === city), ...reviews.filter((r) => r.location !== city)]
       : reviews;

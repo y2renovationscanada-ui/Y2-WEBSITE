@@ -22,6 +22,10 @@ export function QuoteButton({ className, children }: { className?: string; child
 export default function QuoteModalProvider({ children }: { children: ReactNode }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
+  const unlockBody = useCallback(() => {
+    document.body.style.removeProperty("overflow");
+  }, []);
+
   const open = useCallback(() => {
     dialogRef.current?.showModal();
     document.body.style.overflow = "hidden";
@@ -29,7 +33,8 @@ export default function QuoteModalProvider({ children }: { children: ReactNode }
 
   const close = useCallback(() => {
     dialogRef.current?.close();
-  }, []);
+    unlockBody();
+  }, [unlockBody]);
 
   return (
     <QuoteModalContext.Provider value={{ open }}>
@@ -37,14 +42,12 @@ export default function QuoteModalProvider({ children }: { children: ReactNode }
       <dialog
         ref={dialogRef}
         aria-labelledby="quote-modal-title"
-        onClose={() => {
-          document.body.style.overflow = "";
-        }}
+        onClose={unlockBody}
         onClick={(e) => {
           // close when the backdrop (the dialog element itself) is clicked
           if (e.target === dialogRef.current) close();
         }}
-        className="fixed left-1/2 top-1/2 z-50 max-h-[92dvh] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl bg-white p-0 shadow-2xl backdrop:bg-black/60"
+        className="fixed left-1/2 top-1/2 z-50 max-h-[min(92dvh,720px)] w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-y-auto overscroll-contain rounded-2xl bg-white p-0 shadow-2xl backdrop:bg-black/60"
       >
         <div className="relative p-6 sm:p-8">
           <button

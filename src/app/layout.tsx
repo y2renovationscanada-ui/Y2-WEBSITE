@@ -2,7 +2,7 @@ import "./globals.css";
 import type { ReactNode } from "react";
 import { Roboto, Open_Sans } from "next/font/google";
 import { site, images } from "@/lib/content";
-import { organizationSchema } from "@/lib/schema";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import JsonLd from "@/components/JsonLd";
 import QuoteModalProvider from "@/components/QuoteModal";
 import StickyCallBar from "@/components/StickyCallBar";
@@ -19,14 +19,17 @@ const openSans = Open_Sans({
   variable: "--font-open-sans",
 });
 
+const homeTitle = `${site.name} | Kitchen, Bathroom & Home Renovation Contractor GTA`;
+const homeDescription =
+  "Y2 Design & Build is a top-rated kitchen, bathroom, basement & home renovation contractor serving Markham, Pickering, Oakville, Ajax, Scarborough & the entire GTA. Free quotes, fixed pricing.";
+
 export const metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Kitchen, Bathroom & Home Renovation Contractor GTA`,
-    template: `%s`,
+    default: homeTitle,
+    template: `%s | ${site.name}`,
   },
-  description:
-    "Y2 Design & Build is a top-rated kitchen, bathroom, basement & home renovation contractor serving Markham, Pickering, Oakville, Ajax, Scarborough & the entire GTA. Free quotes, fixed pricing.",
+  description: homeDescription,
   keywords: [
     "renovation contractor GTA",
     "kitchen renovation Toronto",
@@ -51,20 +54,31 @@ export const metadata = {
       "max-video-preview": -1,
     },
   },
-  alternates: { canonical: "/" },
+  alternates: { canonical: site.url },
   formatDetection: { telephone: true },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/images/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/images/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico"],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "en_CA",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} | Kitchen, Bathroom & Home Renovation Contractor GTA`,
+    title: homeTitle,
     description: site.tagline,
     images: [{ url: images.ogImage, width: 1200, height: 630, alt: `${site.name} — GTA renovation contractor showroom` }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} | Kitchen, Bathroom & Home Renovation Contractor GTA`,
+    title: homeTitle,
     description: site.tagline,
     images: [images.ogImage],
   },
@@ -77,9 +91,9 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${roboto.variable} ${openSans.variable}`}>
+    <html lang="en-CA" className={`${roboto.variable} ${openSans.variable}`}>
       <body className="antialiased">
-        <JsonLd data={organizationSchema()} />
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <QuoteModalProvider>
           {children}
           <StickyCallBar />

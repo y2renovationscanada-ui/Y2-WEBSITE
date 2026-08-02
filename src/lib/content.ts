@@ -69,6 +69,7 @@ export const navLinks = [
   { label: "Bathroom", href: "/bathroom-renovation" },
   { label: "Basement", href: "/basement-renovation" },
   { label: "Full Homes", href: "/home-renovation" },
+  { label: "Toronto", href: "/toronto" },
   { label: "Flooring", href: "/flooring" },
   { label: "Service Areas", href: "/service-areas" },
   { label: "About", href: "/about" },

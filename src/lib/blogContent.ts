@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "bathroom-renovation-cost-gta",
     title: "How Much Does a Bathroom Renovation Cost in the GTA? (2026 Guide)",
-    metaTitle: "Bathroom Renovation Cost GTA 2026 | Y2 Design & Build",
+    metaTitle: "Bathroom Renovation Cost GTA 2026",
     description:
       "What GTA homeowners actually pay for a bathroom renovation in 2026 — powder rooms, full bathrooms, and luxury ensuites — plus realistic timelines and what drives the price.",
     date: "2026-07-09",

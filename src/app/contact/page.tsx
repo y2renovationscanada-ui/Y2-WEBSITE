@@ -6,11 +6,21 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { site, images } from "@/lib/content";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "Contact Us | Free Renovation Quote GTA";
+const description = `Contact Y2 Design & Build for a free kitchen, bathroom, basement or home renovation quote in Markham, Pickering, Oakville, Ajax, Scarborough & the GTA. Call ${site.phone}.`;
 
 export const metadata = {
-  title: `Contact Us | Free Renovation Quote GTA | ${site.name}`,
-  description: `Contact Y2 Design & Build for a free kitchen, bathroom, basement or home renovation quote in Markham, Pickering, Oakville, Ajax, Scarborough & the GTA. Call ${site.phone}.`,
+  title,
+  description,
   alternates: { canonical: `${site.url}/contact` },
+  ...socialMetadata({
+    title: `${title} | ${site.name}`,
+    description,
+    path: "/contact",
+    image: images.ogImage,
+  }),
 };
 
 const breadcrumbItems = [

@@ -1,8 +1,14 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { site } from "@/lib/content";
 import { QuoteButton } from "./QuoteModal";
 
-/** Mobile-only sticky bottom bar: click-to-call + quote modal. */
+/** Mobile-only sticky bottom bar: click-to-call + quote modal. Hidden on /book. */
 export default function StickyCallBar() {
+  const pathname = usePathname();
+  if (pathname === "/book" || pathname?.startsWith("/book/")) return null;
+
   return (
     <>
       {/* spacer so page content is never hidden behind the fixed bar */}

@@ -10,10 +10,14 @@ import FAQ from "@/components/FAQ";
 import Locations from "@/components/Locations";
 import QuoteForm from "@/components/QuoteForm";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { faqSchema } from "@/lib/schema";
+import { faqs } from "@/lib/content";
 
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema(faqs)} />
       <Header />
       <main>
         <Hero />

@@ -17,7 +17,7 @@ export function organizationSchema() {
     slogan: site.tagline,
     url: site.url,
     logo: `${site.url}/images/logo.png`,
-    image: `${site.url}/images/og-home.jpg`,
+    image: [`${site.url}/images/og-home.jpg`, `${site.url}/images/icon-512.png`],
     telephone: site.phone,
     email: site.email,
     priceRange: "$$-$$$",
@@ -139,6 +139,25 @@ export function serviceSchema(opts: {
     areaServed: {
       "@type": opts.areaServedName ? "City" : "AdministrativeArea",
       name: opts.areaServedName ?? "Greater Toronto Area",
+    },
+  };
+}
+
+/** Sitewide WebSite schema (helps brand search / sitelinks understanding). */
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.url}/#website`,
+    url: site.url,
+    name: site.name,
+    description: site.tagline,
+    publisher: { "@id": `${site.url}/#organization` },
+    inLanguage: "en-CA",
+    potentialAction: {
+      "@type": "ContactAction",
+      name: "Request a free renovation quote",
+      target: `${site.url}/contact`,
     },
   };
 }

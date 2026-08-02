@@ -11,7 +11,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ city: string }> }) {
   const { city } = await params;
-  const data = getLocationPageData("home", city);
+  const data = getLocationPageData("condo", city);
   if (!data) return {};
   return {
     title: data.metaTitle,
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
 
 export default async function Page({ params }: { params: Promise<{ city: string }> }) {
   const { city } = await params;
-  const data = getLocationPageData("home", city);
+  const data = getLocationPageData("condo", city);
   if (!data) return notFound();
   return <LocationServicePageLayout data={data} />;
 }

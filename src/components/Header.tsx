@@ -8,24 +8,24 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="container-page flex items-center gap-3 py-3">
+      <div className="container-page flex items-center gap-2 py-3 sm:gap-3">
         <Link href="/" className="flex shrink-0 items-center gap-3" aria-label={`${site.name} — home`}>
-          <Image src={images.logo} alt={site.name} width={120} height={40} className="h-10 w-auto object-contain" priority />
+          <Image src={images.logo} alt={site.name} width={120} height={40} className="h-9 w-auto object-contain sm:h-10" priority />
         </Link>
 
-        <nav aria-label="Main navigation" className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex">
+        <nav aria-label="Main navigation" className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 xl:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium text-stone-700 transition-colors duration-200 hover:bg-surface hover:text-brand"
+              className="whitespace-nowrap rounded-lg px-2 py-2 text-[13px] font-medium text-stone-700 transition-colors duration-200 hover:bg-surface hover:text-brand"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3 lg:ml-0">
+        <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-3">
           <a
             href={tel}
             aria-label={`Call ${site.name} at ${site.phone}`}
@@ -36,14 +36,16 @@ export default function Header() {
             </svg>
             <span className="hidden text-sm md:inline">{site.phone}</span>
           </a>
-          <QuoteButton className="btn-primary cursor-pointer whitespace-nowrap px-5 py-2.5 text-sm">
+          <QuoteButton className="btn-primary cursor-pointer whitespace-nowrap px-4 py-2.5 text-sm sm:px-5">
             Get Free Quote
           </QuoteButton>
         </div>
       </div>
 
-      <nav aria-label="Mobile navigation" className="border-t border-stone-200 bg-white lg:hidden">
-        <div className="no-scrollbar container-page flex items-center gap-1 overflow-x-auto py-2">
+      {/* Tablet + mobile: horizontal scroll with edge fade hint */}
+      <nav aria-label="Mobile navigation" className="relative border-t border-stone-200 bg-white xl:hidden">
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-white to-transparent" aria-hidden />
+        <div className="no-scrollbar container-page flex items-center gap-1 overflow-x-auto py-2 pr-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}

@@ -7,7 +7,7 @@ const data = servicePages.extension;
 const path = `/${data.slug}`;
 
 export const metadata = {
-  title: `Home Additions & Extensions GTA | Y2 Design & Build`,
+  title: `Home Additions & Extensions GTA`,
   description: data.metaDescription,
   alternates: { canonical: `${site.url}${path}` },
   keywords: ["home addition GTA", "home extension Toronto", "second storey addition Toronto", "rear extension contractor", "garden suite builder GTA"],
@@ -18,6 +18,12 @@ export const metadata = {
     type: "website",
     images: [{ url: images.extension, alt: "Home addition and extension by Y2 Design & Build in the GTA" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `Home Additions & Extensions GTA | Y2 Design & Build`,
+    description: data.metaDescription,
+    images: [images.extension],
+  },
 };
 
 export default function Page() {
@@ -25,7 +31,7 @@ export default function Page() {
     <>
       <Header />
       <main>
-        <ServicePageLayout data={data} heroImage={images.extension} />
+        <ServicePageLayout data={data} heroImage={images.extension} locationServiceKey="extension" />
       </main>
       <Footer />
     </>

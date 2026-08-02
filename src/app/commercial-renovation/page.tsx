@@ -7,7 +7,7 @@ const data = servicePages.commercial;
 const path = `/${data.slug}`;
 
 export const metadata = {
-  title: `Commercial Renovation Contractor GTA | Y2 Design & Build`,
+  title: `Commercial Renovation Contractor GTA`,
   description: data.metaDescription,
   alternates: { canonical: `${site.url}${path}` },
   keywords: ["commercial renovation GTA", "office renovation Toronto", "retail renovation contractor GTA"],
@@ -17,6 +17,12 @@ export const metadata = {
     url: `${site.url}${path}`,
     type: "website",
     images: [{ url: images.commercial, alt: "Commercial renovation by Y2 Design & Build in the GTA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Commercial Renovation Contractor GTA | Y2 Design & Build`,
+    description: data.metaDescription,
+    images: [images.commercial],
   },
 };
 

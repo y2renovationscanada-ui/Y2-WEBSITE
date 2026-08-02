@@ -5,15 +5,25 @@ import QuoteForm from "@/components/QuoteForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
-import { serviceAreaGroups, serviceAreas, site } from "@/lib/content";
+import { serviceAreaGroups, serviceAreas, site, images } from "@/lib/content";
 import { targetCities } from "@/lib/locations";
 import { locationServiceKeys, serviceMeta } from "@/lib/locationContent";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "Service Areas | Renovation Contractor GTA";
+const description =
+  "Y2 Design & Build serves the entire Greater Toronto Area for kitchen, bathroom, basement, and home renovations — including Markham, Pickering, Oakville, Ajax & Scarborough.";
 
 export const metadata = {
-  title: `Service Areas | Renovation Contractor GTA | ${site.name}`,
-  description:
-    "Y2 Design & Build serves the entire Greater Toronto Area for kitchen, bathroom, basement, and home renovations — including Markham, Pickering, Oakville, Ajax & Scarborough.",
+  title,
+  description,
   alternates: { canonical: `${site.url}/service-areas` },
+  ...socialMetadata({
+    title: `${title} | ${site.name}`,
+    description,
+    path: "/service-areas",
+    image: images.ogImage,
+  }),
 };
 
 const breadcrumbItems = [
@@ -44,7 +54,7 @@ export default function ServiceAreasPage() {
           <div className="container-page">
             <h2 className="section-heading">Featured Renovation Service Areas</h2>
             <p className="section-sub">
-              Explore dedicated kitchen, bathroom, basement & home renovation resources for our top-requested municipalities.
+              Explore dedicated kitchen, bathroom, basement, home, condo, ADU & extension renovation resources for our top-requested municipalities.
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {targetCities.map((city) => (

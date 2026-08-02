@@ -22,7 +22,7 @@ export default function BookEmbed() {
     <iframe
       title="Book your free in-home consult"
       src={iframeSrc}
-      className="h-[calc(100dvh-3.5rem)] w-full border-0 bg-[#f3efe8] sm:h-[calc(100dvh-4rem)]"
+      className="min-h-0 w-full flex-1 border-0 bg-[#f3efe8]"
       allow="geolocation"
       referrerPolicy="strict-origin-when-cross-origin"
     />

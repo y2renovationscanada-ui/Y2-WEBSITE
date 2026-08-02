@@ -7,11 +7,21 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
 import { site, images } from "@/lib/content";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "About Us | GTA Renovation Contractor";
+const description = `Learn about Y2 Design & Build — a licensed, insured renovation contractor with ${site.yearsExperience}+ years of experience serving Markham, Pickering, Oakville, Ajax, Scarborough & the GTA.`;
 
 export const metadata = {
-  title: `About Us | GTA Renovation Contractor | ${site.name}`,
-  description: `Learn about Y2 Design & Build — a licensed, insured renovation contractor with ${site.yearsExperience}+ years of experience serving Markham, Pickering, Oakville, Ajax, Scarborough & the GTA.`,
+  title,
+  description,
   alternates: { canonical: `${site.url}/about` },
+  ...socialMetadata({
+    title: `${title} | ${site.name}`,
+    description,
+    path: "/about",
+    image: images.residential,
+  }),
 };
 
 const breadcrumbItems = [

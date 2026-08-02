@@ -10,10 +10,11 @@ import QuoteForm from "@/components/QuoteForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import { QuoteButton } from "@/components/QuoteModal";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { images, site } from "@/lib/content";
 import { getCityBySlug } from "@/lib/locations";
 import { torontoFaqs, torontoMeta, torontoNeighborhoods, torontoServices } from "@/lib/torontoContent";
+import { socialMetadata } from "@/lib/seo";
 
 const toronto = getCityBySlug("toronto")!;
 const tel = `tel:${site.phone.replace(/\D/g, "")}`;
@@ -32,13 +33,12 @@ export const metadata = {
     "bathroom renovation The Annex",
     "home renovation Willowdale",
   ],
-  openGraph: {
-    title: torontoMeta.title,
+  ...socialMetadata({
+    title: `${torontoMeta.title} | ${site.name}`,
     description: torontoMeta.description,
-    url: torontoMeta.canonical,
-    type: "website",
-    images: [{ url: images.residential, alt: "Home renovation in Toronto by Y2 Design & Build" }],
-  },
+    path: "/toronto",
+    image: { url: images.residential, alt: "Home renovation in Toronto by Y2 Design & Build" },
+  }),
 };
 
 const breadcrumbItems = [
@@ -53,6 +53,12 @@ export default function TorontoPage() {
         data={[
           breadcrumbSchema(breadcrumbItems.map((b) => ({ name: b.name, url: site.url + b.href }))),
           faqSchema(torontoFaqs),
+          serviceSchema({
+            name: "Home Renovation in Toronto",
+            description: torontoMeta.description,
+            url: torontoMeta.canonical,
+            areaServedName: "Toronto",
+          }),
         ]}
       />
       <Header />

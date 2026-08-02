@@ -24,12 +24,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: post.description,
     alternates: { canonical: `${site.url}/blog/${post.slug}` },
     openGraph: {
-      title: post.metaTitle,
+      title: `${post.metaTitle} | ${site.name}`,
       description: post.description,
       url: `${site.url}/blog/${post.slug}`,
       type: "article",
       publishedTime: post.date,
       images: [{ url: post.heroImage, alt: post.heroAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.metaTitle} | ${site.name}`,
+      description: post.description,
+      images: [post.heroImage],
     },
   };
 }

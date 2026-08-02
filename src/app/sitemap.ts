@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/lib/content";
+import { SITE_ORIGIN } from "@/lib/site";
 import { targetCities } from "@/lib/locations";
 import { locationServiceKeys, serviceMeta } from "@/lib/locationContent";
 import { blogPosts } from "@/lib/blogContent";
@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
-    url: site.url + route.path,
+    url: SITE_ORIGIN + route.path,
     lastModified: now,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const locationEntries: MetadataRoute.Sitemap = locationServiceKeys.flatMap((key) =>
     targetCities.map((city) => ({
-      url: `${site.url}/${serviceMeta[key].slug}/${city.slug}`,
+      url: `${SITE_ORIGIN}/${serviceMeta[key].slug}/${city.slug}`,
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: 0.85,
@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${site.url}/blog/${post.slug}`,
+    url: `${SITE_ORIGIN}/blog/${post.slug}`,
     lastModified: new Date(`${post.date}T12:00:00`),
     changeFrequency: "monthly" as const,
     priority: 0.6,

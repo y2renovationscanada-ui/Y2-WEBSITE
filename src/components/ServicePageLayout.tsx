@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ServicePageData, ReviewServiceKey } from "@/lib/content";
-import { advantages, servicePages, site } from "@/lib/content";
+import { advantages, site } from "@/lib/content";
 import { targetCities } from "@/lib/locations";
 import { locationServiceKeys, serviceMeta, type LocationServiceKey } from "@/lib/locationContent";
 import TrustBadges from "./TrustBadges";
@@ -209,13 +209,6 @@ export default function ServicePageLayout({
               .map((k) => (
                 <Link key={k} href={`/${serviceMeta[k].slug}`} className="rounded-full bg-surface px-4 py-2 text-sm font-medium text-brand-dark transition-colors duration-200 hover:bg-brand hover:text-white">
                   {serviceMeta[k].name}
-                </Link>
-              ))}
-            {["condo", "extension", "adu"]
-              .filter((k) => servicePages[k].slug !== data.slug)
-              .map((k) => (
-                <Link key={k} href={`/${servicePages[k].slug}`} className="rounded-full bg-surface px-4 py-2 text-sm font-medium text-brand-dark transition-colors duration-200 hover:bg-brand hover:text-white">
-                  {servicePages[k].title}
                 </Link>
               ))}
             {data.slug !== "flooring" && (

@@ -56,7 +56,17 @@ export const torontoServices = [
   {
     title: "Condo Renovation",
     description: "Full condo remodels in Yorkville, CityPlace, and Harbourfront towers — board approvals, elevator booking, and quiet hours handled.",
-    href: "/condo-renovation",
+    href: "/condo-renovation/toronto",
+  },
+  {
+    title: "Home Extensions",
+    description: "Rear extensions and second-storey additions for Toronto homes that need more space without leaving the neighbourhood.",
+    href: "/home-extensions/toronto",
+  },
+  {
+    title: "ADU & Garden Suite",
+    description: "Laneway and garden suites across Toronto — zoning, design, permits, and build under one contract.",
+    href: "/adu-construction/toronto",
   },
   {
     title: "Flooring & Stairs",
@@ -66,7 +76,7 @@ export const torontoServices = [
 ];
 
 export const torontoMeta = {
-  title: `Kitchen, Bathroom & Home Renovation in Toronto | ${site.name}`,
+  title: `Kitchen, Bathroom & Home Renovation in Toronto`,
   description: `Expert renovation contractor serving Rosedale, Forest Hill, Yorkville, Lawrence Park, Leaside, The Bridle Path & 14+ Toronto neighbourhoods. Free quotes from ${site.name}.`,
   canonical: `${site.url}/toronto`,
   h1: "Kitchen, Bathroom & Home Renovation in Toronto",

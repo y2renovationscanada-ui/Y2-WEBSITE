@@ -6,14 +6,24 @@ import QuoteForm from "@/components/QuoteForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
-import { site } from "@/lib/content";
+import { site, images } from "@/lib/content";
 import { blogPosts } from "@/lib/blogContent";
+import { socialMetadata } from "@/lib/seo";
+
+const title = "Renovation Blog | Costs, Timelines & Advice";
+const description =
+  "Practical renovation advice for GTA homeowners — real costs, realistic timelines, and what to know before you renovate. From the team at Y2 Design & Build.";
 
 export const metadata = {
-  title: `Renovation Blog | Costs, Timelines & Advice | ${site.name}`,
-  description:
-    "Practical renovation advice for GTA homeowners — real costs, realistic timelines, and what to know before you renovate. From the team at Y2 Design & Build.",
+  title,
+  description,
   alternates: { canonical: `${site.url}/blog` },
+  ...socialMetadata({
+    title: `${title} | ${site.name}`,
+    description,
+    path: "/blog",
+    image: images.ogImage,
+  }),
 };
 
 const breadcrumbItems = [

@@ -192,6 +192,7 @@ ${locationLines}
 
 - [Home](${site.url}/)
 - [Toronto Renovation Hub](${site.url}/toronto): Kitchen, bathroom, basement & home renovation contractor serving Rosedale, Forest Hill, Yorkville, Lawrence Park, Leaside & 15+ Toronto neighbourhoods.
+- [Book a Free Consult](${site.url}/book): Online round-robin booking for an in-home consultation with a Y2 project consultant.
 - [About Us](${site.url}/about)
 - [Contact / Free Quote](${site.url}/contact)
 - [Service Areas](${site.url}/service-areas)

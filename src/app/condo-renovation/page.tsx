@@ -7,7 +7,7 @@ const data = servicePages.condo;
 const path = `/${data.slug}`;
 
 export const metadata = {
-  title: `Condo Renovation Toronto & GTA | Y2 Design & Build`,
+  title: `Condo Renovation Toronto & GTA`,
   description: data.metaDescription,
   alternates: { canonical: `${site.url}${path}` },
   keywords: ["condo renovation Toronto", "condo remodeling GTA", "condo kitchen renovation Toronto", "condo bathroom renovation", "condo renovation contractor"],
@@ -18,6 +18,12 @@ export const metadata = {
     type: "website",
     images: [{ url: images.condo, alt: "Condo renovation by Y2 Design & Build in Toronto" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `Condo Renovation Toronto & GTA | Y2 Design & Build`,
+    description: data.metaDescription,
+    images: [images.condo],
+  },
 };
 
 export default function Page() {
@@ -25,7 +31,7 @@ export default function Page() {
     <>
       <Header />
       <main>
-        <ServicePageLayout data={data} heroImage={images.condo} />
+        <ServicePageLayout data={data} heroImage={images.condo} locationServiceKey="condo" />
       </main>
       <Footer />
     </>

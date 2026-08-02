@@ -1,3 +1,4 @@
 import { site } from "./content";
 
-export const SITE_ORIGIN = (process.env.NEXT_PUBLIC_SITE_ORIGIN || site.url).replace(/\/$/, "");
+/** Canonical production origin — always https://y2designandbuild.com */
+export const SITE_ORIGIN = site.url.replace(/\/$/, "");

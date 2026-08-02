@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This is a generated ditto.site clone app for https://easyrenovation.ca/. It is a static Next.js App Router project produced from captured DOM, CSS, assets, metadata, and interaction recipes.
+This is the Y2 Design & Build marketing website for https://y2designandbuild.com. It is a static Next.js App Router project.
 
 ## Run
 
