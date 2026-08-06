@@ -40,9 +40,6 @@ export const metadata = {
   authors: [{ name: site.name }],
   creator: site.name,
   publisher: site.name,
-  verification: {
-    google: "dXHv-Q4mbGnjuFPqmypJOfaGFJoy74GknqpYdWQMMQI",
-  },
   robots: {
     index: true,
     follow: true,
@@ -81,6 +78,9 @@ export const viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${roboto.variable} ${openSans.variable}`}>
+      <head>
+        <meta name="google-site-verification" content="dXHv-Q4mbGnjuFPqmypJOfaGFJoy74GknqpYdWQMMQI" />
+      </head>
       <body className="antialiased">
         <JsonLd data={organizationSchema()} />
         <QuoteModalProvider>
