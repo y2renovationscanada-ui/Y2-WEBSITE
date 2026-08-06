@@ -40,6 +40,9 @@ export const metadata = {
   authors: [{ name: site.name }],
   creator: site.name,
   publisher: site.name,
+  verification: {
+    google: "dXHv-Q4mbGnjuFPqmypJOfaGFJoy74GknqpYdWQMMQI",
+  },
   robots: {
     index: true,
     follow: true,
