@@ -5,7 +5,7 @@ export const metadata = {
   title: "Kitchen Renovation Experts in the GTA | Y2 Design & Build",
   robots: {
     index: false,
-    follow: true,
+    follow: false,
   },
 };
 
