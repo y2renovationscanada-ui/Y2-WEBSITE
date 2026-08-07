@@ -5,6 +5,25 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Direct 1-hop 301 redirects to canonical apex domain
+[[redirects]]
+  from = "http://www.y2designandbuild.com/*"
+  to = "https://y2designandbuild.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.y2designandbuild.com/*"
+  to = "https://y2designandbuild.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://y2designandbuild.com/*"
+  to = "https://y2designandbuild.com/:splat"
+  status = 301
+  force = true  
+
 # Pretty URLs for the static Next export (folder/index.html)
 [[redirects]]
   from = "/*"
