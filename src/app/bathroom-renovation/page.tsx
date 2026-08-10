@@ -7,8 +7,8 @@ const data = servicePages.bathroom;
 const path = `/${data.slug}`;
 
 export const metadata = {
-  title: `Bathroom Renovation in the GTA | Y2 Design & Build`,
-  description: data.metaDescription,
+  title: `Bathroom Renovation Contractors | Quick Bathroom Renovations in GTA`,
+  description: `Full bathroom renovations across the GTA, from powder rooms to primary ensuites. Tile, plumbing, vanities and lighting handled by one licensed team.`,
   alternates: { canonical: `${site.url}${path}` },
   keywords: ["bathroom renovation GTA", "bathroom remodeling Toronto", "bathroom renovation Markham", "bathroom contractor GTA"],
   openGraph: {

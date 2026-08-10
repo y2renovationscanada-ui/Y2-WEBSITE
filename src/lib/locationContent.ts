@@ -87,6 +87,95 @@ export type LocationPageData = {
   faqs: { question: string; answer: string }[];
 };
 
+// Map of all 16 unique Service x City metadata combinations
+type MetaOverrides = Record<
+  LocationServiceKey,
+  Record<string, { title: string; description: string }>
+>;
+
+const locationMetaOverrides: MetaOverrides = {
+  kitchen: {
+    markham: {
+      title: `Kitchen Renovation Markham | Expert Contractors Across GTA`,
+      description: `Markham kitchen renovations with custom cabinetry, quartz counters and smart layouts. Licensed trades and clear timelines. Book a free design consult.`,
+    },
+    oakville: {
+      title: `Kitchen Renovation Oakville | Expert Contractors Across GTA`,
+      description: `Custom kitchen renovations for Oakville homes: cabinetry, islands, counters and lighting, handled end to end. Request your free on-site consultation.`,
+    },
+  },
+  bathroom: {
+    toronto: {
+      title: `Bathroom Renovation Toronto | Expert Contractors in GTA`,
+      description: `Bathroom remodeling for Toronto homes and condos. Walk-in showers, custom tile and modern vanities, installed by a licensed team. Free on-site quote.`,
+    },
+    markham: {
+      title: `Bathroom Renovation & Remodel Markham | Bathroom Contractors in GTA`,
+      description: `Markham bathroom renovations covering layout changes, tiling, plumbing and custom vanities. Licensed team, clear timelines. Request your free estimate.`,
+    },
+    pickering: {
+      title: `Bathroom Renovations Pickering | Bathroom renovation services in Ontario`,
+      description: `Pickering bathroom renovations covering layout changes, tiling, plumbing and vanities. One licensed team, clear timelines. Get a free consultation.`,
+    },
+    oakville: {
+      title: `Bathroom Renovation & Remodel Oakville | Get Free Consultation Today`,
+      description: `Custom bathroom renovations for Oakville homes. Curbless showers, heated floors and bespoke vanities, expertly installed. Book a free design consult.`,
+    },
+    ajax: {
+      title: `Bathroom Renovation & Remodel Ajax | Bathroom Contractors in GTA`,
+      description: `Update your Ajax bathroom with new tile, vanities and walk-in showers. Licensed, insured contractors and clear fixed pricing. Book a free consultation.`,
+    },
+    scarborough: {
+      title: `Bathroom Renovation & Remodel Scarborough | Book Free Consultation`,
+      description: `Scarborough bathroom remodeling with new tile, tubs, showers and vanities. Licensed trades and honest fixed pricing. Book your free on-site estimate.`,
+    },
+  },
+  basement: {
+    markham: {
+      title: `Basement Renovation Markham | Free Quotation Available`,
+      description: `Markham basement renovations done right, from waterproofing and framing to legal secondary suites. Permits handled start to finish. Free consultation.`,
+    },
+    pickering: {
+      title: `Basement Renovation Pickering | Get Free Consultation Today`,
+      description: `Turn your Pickering basement into livable space. Full design-build service covering permits, framing, electrical and finishes. Request a free estimate.`,
+    },
+    oakville: {
+      title: `Basement Renovation Oakville |  Get Free Consultation Today`,
+      description: `Custom basement finishing for Oakville homes, including wet bars, home gyms and guest suites. Licensed, insured and permit-ready. Book your free quote.`,
+    },
+    ajax: {
+      title: `Basement Renovation Ajax | Expert Finishing & Legal Basement`,
+      description: `Finished basements, in-law suites and rec rooms for Ajax homeowners. Licensed contractors managing permits, framing and finishes. Free on-site quote.`,
+    },
+    scarborough: {
+      title: `Basement Renovation Scarborough | Free Quotation Available`,
+      description: `Basement finishing and legal apartment conversions for Scarborough homeowners. Permits, framing and finishes managed in-house. Free on-site estimate.`,
+    },
+  },
+  home: {
+    markham: {
+      title: `Home Renovation Services Markham | Best Remodelling Across GTA`,
+      description: `Whole-home renovations in Markham, from open-concept main floors to full gut remodels. Design, permits and construction under one roof. Free consult.`,
+    },
+    oakville: {
+      title: `Home Renovations Oakville| Home Renovation Contractors Oakville`,
+      description: `Full home renovations for Oakville properties, including additions, main floor redesigns and interiors. One licensed design-build team. Free consult.`,
+    },
+  },
+};
+
+function generateMetaTitle(serviceKey: LocationServiceKey, city: CityData): string {
+  const override = locationMetaOverrides[serviceKey]?.[city.slug];
+  if (override?.title) return override.title;
+  return `${serviceMeta[serviceKey].name} in ${city.name}, ON | ${site.name}`;
+}
+
+function generateMetaDescription(serviceKey: LocationServiceKey, city: CityData): string {
+  const override = locationMetaOverrides[serviceKey]?.[city.slug];
+  if (override?.description) return override.description;
+  return `Professional ${serviceMeta[serviceKey].keyword} services in ${city.name}, ${city.region}. Free quotes & fixed pricing. Call ${site.phone}.`;
+}
+
 export function getLocationPageData(serviceKey: LocationServiceKey, citySlug: string): LocationPageData | undefined {
   const service = serviceMeta[serviceKey];
   const city = targetCities.find((c) => c.slug === citySlug);
@@ -95,8 +184,8 @@ export function getLocationPageData(serviceKey: LocationServiceKey, citySlug: st
   const neighborhoods = formatNeighborhoodList(city);
 
   const h1 = `${service.name} in ${city.name}, ON`;
-  const metaTitle = `${service.name} in ${city.name}, ON | ${site.name}`;
-  const metaDescription = `Professional ${service.keyword} services in ${city.name}, ${city.region}. Free quotes, fixed pricing & ${site.yearsExperience}+ years of GTA renovation experience. Call ${site.phone}.`;
+  const metaTitle = generateMetaTitle(serviceKey, city);
+  const metaDescription = generateMetaDescription(serviceKey, city);
 
   const intro = `Looking for a trusted ${service.keyword} contractor in ${city.name}? Y2 Design & Build has completed renovation projects throughout ${city.region}, including ${neighborhoods}. ${city.blurb}`;
 

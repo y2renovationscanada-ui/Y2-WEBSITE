@@ -7,8 +7,8 @@ const data = servicePages.basement;
 const path = `/${data.slug}`;
 
 export const metadata = {
-  title: `Basement Renovation in the GTA | Y2 Design & Build`,
-  description: data.metaDescription,
+  title: `Basement Renovation in GTA | Free Basement Assessment`,
+  description: `Transform unused square footage into a finished basement. We handle design, permits and construction across the GTA. Book a free on-site consultation.`,
   alternates: { canonical: `${site.url}${path}` },
   keywords: ["basement renovation GTA", "basement finishing Toronto", "basement renovation Markham", "legal basement suite GTA"],
   openGraph: {

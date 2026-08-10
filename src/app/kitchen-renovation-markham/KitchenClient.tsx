@@ -7,7 +7,8 @@ import { QuoteButton } from "../../components/QuoteModal";
 import TrustBadges from "../../components/TrustBadges";
 import ThreeStepProcess from "../../components/ThreeStepProcess";
 import ReviewStrip from "../../components/ReviewStrip";
-import QuoteForm from "../../components/QuoteForm";
+import LpHeader from "../../components/LpHeader";
+import LpFooter from "../../components/LpFooter";
 
 export default function KitchenClient({
   items = faqs,
@@ -19,50 +20,7 @@ export default function KitchenClient({
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white shadow-md">
-        <div className="container-page flex items-center gap-3 py-3">
-          <Image
-            src={images.logo}
-            alt={site.name}
-            width={120}
-            height={40}
-            className="h-10 w-auto object-contain"
-            priority
-          />
-
-          <nav
-            aria-label="Main navigation"
-            className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex"
-          ></nav>
-
-          <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3 lg:ml-0">
-            <a
-              href={tel}
-              aria-label={`Call ${site.name} at ${site.phone}`}
-              className="flex items-center gap-2 rounded-full p-2 font-bold text-brand-dark transition-colors duration-200 hover:text-brand md:px-3"
-            >
-              <svg
-                className="h-5 w-5 text-brand"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={1.8}
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                />
-              </svg>
-              <span className="hidden text-sm md:inline">{site.phone}</span>
-            </a>
-            <QuoteButton className="btn-primary cursor-pointer whitespace-nowrap px-5 py-2.5 text-sm">
-              Get Free Quote
-            </QuoteButton>
-          </div>
-        </div>
-      </header>
+      <LpHeader />
 
       {/* 1. Value-driven hero */}
       <section className="relative min-h-[480px] overflow-hidden bg-brand-dark text-white">
@@ -556,77 +514,7 @@ A lot of Markham kitchens were laid out for a different era of cooking, closed o
         </div>
       </section>
 
-      <QuoteForm />
-
-      <footer className="bg-brand-dark text-white">
-        <section className="border-b border-white/10 py-14">
-          <div className="container-page text-center">
-            <p className="text-2xl font-bold md:text-3xl">
-              One Team, One Roof, One Renovation
-            </p>
-            <p className="mt-2 text-white/70">
-              Design, materials, and construction — all coordinated by the
-              people you hire.
-            </p>
-
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-10">
-              <div>
-                <p className="text-xs uppercase tracking-wider text-white/50">
-                  Email
-                </p>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="font-semibold hover:text-accent"
-                >
-                  {site.email}
-                </a>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-wider text-white/50">
-                  English
-                </p>
-                <a
-                  href={`tel:${site.phone.replace(/\D/g, "")}`}
-                  className="font-semibold hover:text-accent"
-                >
-                  {site.phone}
-                </a>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-wider text-white/50">
-                  中文
-                </p>
-                <a
-                  href={`tel:${site.phoneChinese.replace(/\D/g, "")}`}
-                  className="font-semibold hover:text-accent"
-                >
-                  {site.phoneChinese}
-                </a>
-              </div>
-            </div>
-
-            <p className="mt-6 text-sm text-white/60">
-              Visit our showroom: {site.address.street}, {site.address.city},{" "}
-              {site.address.province} {site.address.postal}
-            </p>
-
-            <QuoteButton className="btn-primary mt-8 cursor-pointer">
-              Get My Free Quote
-            </QuoteButton>
-          </div>
-        </section>
-
-        <div className="container-page py-8">
-          <div className="flex flex-col items-center">
-            <span className="text-lg font-bold">
-              Y2 <span className="text-accent">Design & Build</span>
-            </span>
-          </div>
-          <p className="mt-6 text-center text-xs text-white/40">
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <LpFooter />
     </>
   );
 }

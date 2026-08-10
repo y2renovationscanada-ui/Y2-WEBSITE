@@ -10,6 +10,7 @@ import ReviewStrip from "../../components/ReviewStrip";
 import LpHeader from "../../components/LpHeader";
 import LpFooter from "../../components/LpFooter";
 
+
 export default function KitchenClient({
   items = faqs,
 }: {
@@ -20,7 +21,7 @@ export default function KitchenClient({
 
   return (
     <>
-      <LpHeader />
+    <LpHeader />
 
       {/* 1. Value-driven hero */}
       <section className="relative min-h-[480px] overflow-hidden bg-brand-dark text-white">
@@ -39,24 +40,19 @@ export default function KitchenClient({
           <div className="container-page relative flex min-h-[480px] items-center py-16">
             <div className="max-w-2xl">
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-accent">
-                Licensed & Insured · Serving the GTA
+                Searching for Kitchen Renovation Scarborough?
               </p>
               <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-                The Kitchen You Dreamt Of, In The House You Already Own
+                The Kitchen You Wanted, In The House You Already Own
               </h1>
               <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
-                A kitchen is where the day starts and where everyone ends up
-                anyway. It should work as hard as you do.
+                A kitchen is where the day starts and where everyone ends up anyway. It should work as hard as you do.
               </p>
               <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
-                At Y2 Design & Build, the people who design your kitchen are the
-                people who build it. Concept, design, construction and the final
-                walkthrough are all handled in-house, so nothing gets lost in the
-                gap between the drawing and the finished room.
+                At Y2 Design & Build, the people who design your kitchen are the people who build it. Concept, design, construction and the final walkthrough are all handled in-house, so nothing gets lost in the gap between the drawing and the finished room.
               </p>
               <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
-                From the first conversation to the last walkthrough, the aim is
-                simple: make the process as good as the kitchen.
+                From the first conversation to the last walkthrough, the aim is simple: make the process as good as the kitchen.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <QuoteButton className="btn-primary cursor-pointer text-center">
@@ -81,12 +77,10 @@ export default function KitchenClient({
         aria-label="Current offer"
       >
         <p className="text-lg font-bold">
-          Save $2,500 On Your Kitchen Renovation.
+          Save $2,500 On Your Kitchen Renovation Scarborough.
         </p>
         <p className="text-sm opacity-90">
-          Get Free Consultation with No cost, no obligation, and no expectation
-          that you go ahead. If the numbers don't work for you, that's a
-          perfectly good outcome.
+          Get Free Consultation with No cost, no obligation, and no expectation that you go ahead. If the numbers don't work for you, that's a perfectly good outcome.
         </p>
       </section>
 
@@ -102,10 +96,7 @@ export default function KitchenClient({
                 Where Craftsmanship Meets Everyday Life
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Every kitchen we build starts with how you actually use one.
-                Where you put the groceries down. Whether two people cook at
-                once. What annoys you every single morning. The layout follows
-                from that, not from a catalogue.
+                Every kitchen we build starts with how you actually use one. Where you put the groceries down. Whether two people cook at once. What annoys you every single morning. The layout follows from that, not from a catalogue.
               </p>
               <ul className="mt-6 space-y-3">
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
@@ -115,8 +106,8 @@ export default function KitchenClient({
                   >
                     ✓
                   </span>
-                  Layouts planned around how you cook, not how the room
-                  photographs
+                 Layouts planned around how you cook, not how the room photographs
+
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -125,7 +116,8 @@ export default function KitchenClient({
                   >
                     ✓
                   </span>
-                  Quality materials and tools, with meticulous attention to detail
+                 Quality materials and tools, with meticulous attention to detail
+
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -135,6 +127,7 @@ export default function KitchenClient({
                     ✓
                   </span>
                   Storage that makes sense on a Tuesday morning
+
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -186,15 +179,13 @@ export default function KitchenClient({
             <div>
               <h2 className="text-3xl font-bold text-brand-dark">
                 A Premium Experience: From Start to Finish
+
               </h2>
               <h3 className="mt-4 text-xl font-bold text-brand-dark">
                 One Team, Start to Finish
               </h3>
               <p className="mt-2 leading-relaxed text-muted">
-                Concept, design, construction and final walkthrough are all
-                handled in-house. There is no designer blaming a builder, no
-                builder reinterpreting a drawing, and no moment where you become
-                the person translating between them.
+                Concept, design, construction and final walkthrough are all handled in-house. There is no designer blaming a builder, no builder reinterpreting a drawing, and no moment where you become the person translating between them.
               </p>
 
               <h3 className="mt-4 text-xl font-bold text-brand-dark">
@@ -238,47 +229,6 @@ export default function KitchenClient({
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Service Areas */}
-      <section className="section-pad bg-white">
-        <div className="container-page">
-          <h2 className="text-3xl font-bold text-brand-dark">
-            Kitchen Renovations Across the GTA
-          </h2>
-          <p className="mt-4 max-w-3xl text-muted">
-            Every part of the GTA has its own housing stock and its own kitchen
-            problem. Post-war Scarborough bungalows have kitchens closed off
-            behind a wall. Nineties subdivisions in Durham have the footprint
-            but builder-grade everything. Older Markham and Richmond Hill homes
-            usually have both issues at once. We have worked on all of it.
-          </p>
-          <p className="mt-4 max-w-3xl text-muted">
-            We work across the Greater Toronto Area from our base in Markham:
-          </p>
-
-          <div className="mt-8 grid gap-3 sm:grid-cols-5">
-            {[
-              "Scarborough",
-              "Ajax",
-              "Pickering",
-              "Richmond Hill",
-              "Vaughan",
-              "Thornhill",
-              "North York",
-              "Aurora",
-              "Newmarket",
-              "Toronto",
-            ].map((city) => (
-              <div key={city} className="card flex items-start gap-3 p-4">
-                <span className="text-brand" aria-hidden="true">
-                  ✓
-                </span>
-                <span className="text-sm text-muted">{city}</span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -522,7 +472,8 @@ export default function KitchenClient({
         </div>
       </section>
 
-      <LpFooter />
+    <LpFooter />
+
     </>
   );
 }
