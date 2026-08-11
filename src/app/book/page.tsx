@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: `Book a Free In-Home Consult | ${site.name}`,
   description: `Schedule your free in-home renovation consultation with Y2 Design & Build. Round-robin booking with our GTA project consultants.`,
   alternates: { canonical: `${site.url}/book` },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: false },
 };
 
 export default function BookPage() {

@@ -10,7 +10,7 @@ import ReviewStrip from "../../components/ReviewStrip";
 import LpHeader from "../../components/LpHeader";
 import LpFooter from "../../components/LpFooter";
 
-export default function KitchenClient({
+export default function BathroomClient({
   items = faqs,
 }: {
   items?: typeof faqs;
@@ -20,14 +20,13 @@ export default function KitchenClient({
 
   return (
     <>
-     
-    <LpHeader />
+      <LpHeader />
 
       {/* 1. Value-driven hero */}
       <section className="relative min-h-[480px] overflow-hidden bg-brand-dark text-white">
         <Image
-          src={images.kitchen}
-          alt={`Kitchen Renovation project by Y2 Design & Build in the GTA`}
+          src={images.bathroom}
+          alt={`Bathroom Renovation project by Y2 Design & Build in the GTA`}
           fill
           priority
           fetchPriority="high"
@@ -40,20 +39,17 @@ export default function KitchenClient({
           <div className="container-page relative flex min-h-[480px] items-center py-16">
             <div className="max-w-2xl">
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-accent">
-                Searching for Kitchen Renovation Pickering?
+                Searching for bathroom renovation Ajax?
               </p>
               <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-                The Kitchen You Wanted, In The House You Already Own
+                The Bathroom You Actually Want To Walk Into
               </h1>
               <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
-                A kitchen is where the day starts and where everyone ends up anyway. It should work as hard as you do.
-              </p>
+                A bathroom is the smallest room you will renovate and the one most likely to go wrong behind the wall. </p>
               <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
-                At Y2 Design & Build, the people who design your kitchen are the people who build it. Concept, design, construction and the final walkthrough are all handled in-house, so nothing gets lost in the gap between the drawing and the finished room.
-              </p>
+                At Y2 Design & Build, bathrooms are our bread and butter. The same in-house team handles concept, design, construction and the final walkthrough , which matters more here than almost anywhere else in the house, because the parts you cannot see are the parts that fail. </p>
               <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
-                From the first conversation to the last walkthrough, the aim is simple: make the process as good as the kitchen.
-              </p>
+                From the first conversation to the last walkthrough, the aim is simple: make the process as good as the finished room.   </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <QuoteButton className="btn-primary cursor-pointer text-center">
                   BOOK YOUR FREE CONSULTATION
@@ -77,11 +73,10 @@ export default function KitchenClient({
         aria-label="Current offer"
       >
         <p className="text-lg font-bold">
-          Save $2,500 On Your Kitchen Renovation Pickering.
+            Save $2,500 On Your Bathroom Renovation Ajax.
         </p>
         <p className="text-sm opacity-90">
-          Get Free Consultation with No cost, no obligation, and no expectation that you go ahead. If the numbers don't work for you, that's a perfectly good outcome.
-        </p>
+          Get Free Consultation with No cost, no obligation, and no expectation that you go ahead. If the numbers don't work for you, that's a perfectly good outcome.        </p>
       </section>
 
       {/* 3. Trust badges */}
@@ -93,10 +88,10 @@ export default function KitchenClient({
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
               <h2 className="text-3xl font-bold text-brand-dark">
-                Where Craftsmanship Meets Everyday Life
+               Where Craftsmanship Actually Matters
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Every kitchen we build starts with how you actually use one. Where you put the groceries down. Whether two people cook at once. What annoys you every single morning. The layout follows from that, not from a catalogue.
+                Anyone can put tile on a wall. The difference shows up three years later, at the grout line, at the shower base, at the point where the wall meets the floor. We build the parts nobody sees as carefully as the parts everybody does.Expect:
               </p>
               <ul className="mt-6 space-y-3">
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
@@ -106,8 +101,7 @@ export default function KitchenClient({
                   >
                     ✓
                   </span>
-                 Layouts planned around how you cook, not how the room photographs
-
+                  Waterproofing done properly, because it is the part you cannot redo later
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -116,8 +110,7 @@ export default function KitchenClient({
                   >
                     ✓
                   </span>
-                 Quality materials and tools, with meticulous attention to detail
-
+                  Quality materials and tools, with meticulous attention to detail
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -126,8 +119,7 @@ export default function KitchenClient({
                   >
                     ✓
                   </span>
-                  Storage that makes sense on a Tuesday morning
-
+                  Layouts that make a small room feel considerably less small
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -136,13 +128,12 @@ export default function KitchenClient({
                   >
                     ✓
                   </span>
-                  Finishes chosen to still look right in ten years
+                  Finishes that still look clean after years of daily use
                 </li>
               </ul>
 
               <p className="mt-4 leading-relaxed text-muted">
-                Because a kitchen should feel easy long after the last tradesperson
-                has gone home.
+                  Because the best compliment a bathroom can get is that nothing has gone wrong with it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <QuoteButton className="btn-primary cursor-pointer">
@@ -158,7 +149,7 @@ export default function KitchenClient({
             </div>
 
             <div>
-              <img src={images.kitchenDesign} alt="Kitchen Design" />
+              <img src={images.bathroom2} alt="Bathroom Design" />
             </div>
           </div>
         </div>
@@ -172,49 +163,40 @@ export default function KitchenClient({
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
               <img
-                src="https://y2designandbuild.com/images/kitchen-gall-5.webp"
-                alt="Kitchen project"
+                src="https://y2designandbuild.com/images/bathroom-palmer-1.webp"
+                alt="Bathroom project"
               />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-brand-dark">
                 A Premium Experience: From Start to Finish
-
               </h2>
               <h3 className="mt-4 text-xl font-bold text-brand-dark">
                 One Team, Start to Finish
               </h3>
               <p className="mt-2 leading-relaxed text-muted">
-                Concept, design, construction and final walkthrough are all handled in-house. There is no designer blaming a builder, no builder reinterpreting a drawing, and no moment where you become the person translating between them.
-              </p>
-
-              <h3 className="mt-4 text-xl font-bold text-brand-dark">
-                Communication You Do Not Have To Chase
-              </h3>
-              <p className="mt-2 leading-relaxed text-muted">
-                Clear communication from the first consultation through to the
-                final walkthrough. Our reviews name individual team members,
-                John, Andy, George, Jeff, because clients remember who actually
-                picked up the phone.
+                Concept, design, construction and final walkthrough are handled in-house. Plumbing, tiling, electrical and carpentry are coordinated by the same people who drew the room, so nothing falls between trades.
               </p>
 
               <h3 className="mt-4 text-xl font-bold text-brand-dark">
                 A Free Consultation, With No Strings
               </h3>
               <p className="mt-2 leading-relaxed text-muted">
-                The consultation and the quote are free and carry no obligation.
-                If the numbers do not work for you, or we are not the right fit,
-                that is a perfectly good outcome and nobody will chase you about
-                it.
+               The consultation and quote are free and carry no obligation. We would rather tell you honestly what a job involves and lose it than win it on a number that was never realistic.
+              </p>
+
+              <h3 className="mt-4 text-xl font-bold text-brand-dark">
+                Communication You Do Not Have To Chase
+              </h3>
+              <p className="mt-2 leading-relaxed text-muted">
+                Clear communication from first consultation through to final walkthrough. Clients name individual team members in their reviews, which tends to happen when people actually answer the phone.
               </p>
 
               <h3 className="mt-4 text-xl font-bold text-brand-dark">
                 Craftsmanship That Holds Up
               </h3>
               <p className="mt-2 leading-relaxed text-muted">
-                The thing clients mention most across our Google, HomeStars, Houzz
-                and Yelp reviews is craftsmanship and attention to detail. That is
-                the part you live with for the next fifteen years.
+                Across our Google, HomeStars, Houzz and Yelp reviews, craftsmanship and attention to detail come up more than anything else. In a bathroom, that is not a nice-to-have.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -229,6 +211,41 @@ export default function KitchenClient({
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Service Areas */}
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <h2 className="text-3xl font-bold text-brand-dark">
+            Bathroom Renovations in Ajax
+          </h2>
+          <p className="mt-4 max-w-3xl text-muted">
+Older Ajax Village and Milliken homes tend to have small, closed-off main baths with original tubs and dated tile. Newer Cornell and Wismer builds usually have the space, but were finished with builder-grade fixtures.
+          </p>
+          <p className="mt-4 max-w-3xl text-muted">
+Our office and design studio are at 3400 14th Ave, Unit 16 , so in Ajax we are not travelling to a job, we are working in our own neighbourhood. We cover:          </p>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-5">
+            {[
+              "Unionville",
+              "Cornell",
+              "Berczy Village",
+              "Wismer",
+              "Greensborough",
+              "Cathedraltown",
+              "Angus Glen",
+              "Ajax Village",
+              "Milliken Mills",
+            ].map((city) => (
+              <div key={city} className="card flex items-start gap-3 p-4">
+                <span className="text-brand" aria-hidden="true">
+                  ✓
+                </span>
+                <span className="text-sm text-muted">{city}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -249,8 +266,7 @@ export default function KitchenClient({
               >
                 ✓
               </span>
-              <b>Homeowners:</b> The kitchen you actually wanted, in the house
-              you already own.
+              <b>Homeowners:</b> Main baths, ensuites and powder rooms.
             </li>
             <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
               <span
@@ -259,8 +275,8 @@ export default function KitchenClient({
               >
                 ✓
               </span>
-              <b>Multigenerational households:</b> Layouts that work when three
-              generations cook differently.
+              <b>Growing and multigenerational households:</b>   Second bathrooms and accessible layouts.
+
             </li>
             <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
               <span
@@ -269,8 +285,7 @@ export default function KitchenClient({
               >
                 ✓
               </span>
-              <b>Landlords and property investors:</b> Durable, well-built
-              kitchens that survive tenants.
+              <b>Landlords and property investors:</b> Durable bathrooms built to last between tenancies.
             </li>
             <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
               <span
@@ -279,8 +294,8 @@ export default function KitchenClient({
               >
                 ✓
               </span>
-              <b>Commercial and retail spaces:</b> We handle commercial fit-outs
-              alongside residential work.
+              <b>Commercial and retail spaces:</b> Washroom fit-outs alongside our residential work.
+
             </li>
           </ul>
         </div>
@@ -295,7 +310,7 @@ export default function KitchenClient({
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
-                src="https://y2designandbuild.com/images/kitchen-gall-1.webp"
+                src="https://y2designandbuild.com/images/bathroom-gall-1.webp"
                 alt="gallery photo — Y2 Design & Build GTA"
                 fill
                 loading="lazy"
@@ -305,7 +320,7 @@ export default function KitchenClient({
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
-                src="https://y2designandbuild.com/images/kitchen-gall-5.webp"
+                src="https://y2designandbuild.com/images/bathroom-gall-10.webp"
                 alt="gallery photo — Y2 Design & Build GTA"
                 fill
                 loading="lazy"
@@ -315,7 +330,37 @@ export default function KitchenClient({
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
-                src="https://y2designandbuild.com/images/kitchen-design.webp"
+                src="https://y2designandbuild.com/images/bathroom-palmer-1.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="https://y2designandbuild.com/images/bathroom-3.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="https://y2designandbuild.com/images/bathroom.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="https://y2designandbuild.com/images/bathroom-palmer-2.webp"
                 alt="gallery photo — Y2 Design & Build GTA"
                 fill
                 loading="lazy"
@@ -326,7 +371,7 @@ export default function KitchenClient({
           </div>
           <div className="mt-10 text-center">
             <QuoteButton className="btn-primary cursor-pointer">
-              Start My Kitchen Renovation Quote
+              Start My Bathroom Renovation Quote
             </QuoteButton>
           </div>
         </div>
@@ -341,9 +386,7 @@ export default function KitchenClient({
                 Our Commitment
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                It is not really about price. It is about whether the people in your
-                house know what they are doing and tell you the truth. You can
-                expect:
+                It is not really about price. It is about whether the people in your house know what they are doing and tell you the truth. You can expect::
               </p>
               <ul className="mt-6 space-y-3">
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
@@ -353,7 +396,7 @@ export default function KitchenClient({
                   >
                     ✓
                   </span>
-                  Kitchens built to a standard you can see up close
+                  Waterproofing and rough-in done properly, not covered up
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -362,7 +405,7 @@ export default function KitchenClient({
                   >
                     ✓
                   </span>
-                  Designs built around your household, not a template
+                  Layouts designed around the room you actually have
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -371,7 +414,7 @@ export default function KitchenClient({
                   >
                     ✓
                   </span>
-                  Quality materials and meticulous attention to detail
+                    Quality materials and meticulous attention to detail
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -395,8 +438,7 @@ export default function KitchenClient({
               </ul>
 
               <p className="mt-4 leading-relaxed text-muted">
-                Your kitchen should be somewhere you want to spend time. That is
-                the whole point of doing it properly.
+                A bathroom done right is one you stop thinking about. That is the goal.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <QuoteButton className="btn-primary cursor-pointer">
@@ -413,15 +455,14 @@ export default function KitchenClient({
 
             <div>
               <img
-                src="https://y2designandbuild.com/images/kitchen.webp"
-                alt="Kitchen"
+                src="https://y2designandbuild.com/images/bathroom-3.webp"
               />
             </div>
           </div>
         </div>
       </section>
 
-<LpFooter />
+      <LpFooter />
     </>
   );
 }
