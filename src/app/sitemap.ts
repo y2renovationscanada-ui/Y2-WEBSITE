@@ -21,7 +21,6 @@ const staticRoutes: { path: string; priority: number; changeFrequency: MetadataR
   { path: "/service-areas", priority: 0.8, changeFrequency: "monthly" },
   { path: "/about", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/book", priority: 0.75, changeFrequency: "monthly" },
   { path: "/blog", priority: 0.6, changeFrequency: "weekly" },
 ];
 
