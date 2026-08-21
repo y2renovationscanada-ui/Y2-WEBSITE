@@ -2,7 +2,7 @@ import Link from "next/link";
 import { site, navLinks } from "@/lib/content";
 import { QuoteButton } from "./QuoteModal";
 import QuoteForm from "./QuoteForm";
-
+import Script from "next/script";
 
 export default function Footer() {
   return (
@@ -79,6 +79,8 @@ export default function Footer() {
           </p>
         </div>
       </footer>
+
+      <script type="text/javascript" src="//cdn.callrail.com/companies/595994171/ef65959fe2f3d4e51a47/12/swap.js"></script>
     
     </>
   );
