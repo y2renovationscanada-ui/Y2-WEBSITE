@@ -82,8 +82,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </section>
 
           <section className="bg-white">
-            <div className="container-page max-w-3xl">
-              <div className="relative -mt-0 aspect-[16/9] overflow-hidden sm:rounded-b-2xl">
+            <div className="container-page max-w-3xl mt-16">
+              <div className="relative -mt-0 aspect-[16/9] overflow-hidden sm:rounded-2xl">
                 <Image src={post.heroImage} alt={post.heroAlt} fill priority className="object-cover" sizes="(max-width: 768px) 100vw, 768px" />
               </div>
 
@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <div key={i} className={i === 0 ? "" : "mt-10"}>
                     {section.heading && <h2 className="text-2xl font-bold text-brand-dark">{section.heading}</h2>}
                     {section.paragraphs.map((p) => (
-                      <p key={p.slice(0, 40)} className="mt-4 leading-relaxed text-muted">{p}</p>
+                      <p key={p.slice(0, 40)} className="mt-4 leading-relaxed text-muted" dangerouslySetInnerHTML={{ __html: p }}></p>
                     ))}
                     {section.bullets && (
                       <ul className="mt-4 space-y-3">
