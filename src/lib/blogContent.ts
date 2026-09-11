@@ -510,9 +510,7 @@ export const blogPosts: BlogPost[] = [
     },
   ],
   relatedLinks: [
-    { label: "Bathroom Renovation Services", href: "/bathroom-renovation" },
-    { label: "Bathroom Renovation Cost GTA", href: "/bathroom-renovation-cost-gta" },
-    { label: "Bathroom Renovation Timeline", href: "/how-long-does-bathroom-renovation-take-timeline" },
+    { label: "Bathroom Renovation Services", href: "/bathroom-renovation" }
   ],
 },
 {

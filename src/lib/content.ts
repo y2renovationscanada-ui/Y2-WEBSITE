@@ -72,6 +72,7 @@ export const navLinks = [
   { label: "Flooring", href: "/flooring" },
   { label: "Service Areas", href: "/service-areas" },
   { label: "About", href: "/about" },
+    { label: "Blog", href: "/blog" },
 ];
 
 export const hero = {
