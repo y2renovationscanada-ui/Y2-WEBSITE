@@ -2,44 +2,30 @@
 
 ## Overview
 
-This app is a generated ditto.site clone. The generator captured the source page, normalized the rendered DOM into an IR, inferred assets/tokens/sections/recipes, and emitted a static Next.js App Router project.
+Marketing website for Y2 Design & Build — a hand-maintained Next.js App Router project deployed as a static export (`output: "export"`) to Netlify.
 
 ## Structure
 
-- `src/app/layout.tsx`: root App Router layout, language, metadata, viewport, JSON-LD, and shared shell.
-- `src/app/page.tsx` and nested route `page.tsx` files: generated route bodies.
-- `src/app/globals.css`: reset, font faces, design tokens, and global page base.
-- `src/app/ditto.css`: route or page fidelity CSS.
-- `src/app/content.ts`: editable data layer when repeated regions were promoted.
-- `src/app/components/`, `src/app/sections/`, `src/app/svgs/`: generated JSX modules.
-- `src/app/ditto/`: runtime helpers for interaction and motion recipes.
-- `public/assets/cloned/`: materialized source assets.
+- `src/app/layout.tsx`: root layout, fonts, metadata, viewport, JSON-LD, shared shell
+- `src/app/page.tsx` and nested `page.tsx` routes: marketing pages
+- `src/app/globals.css`: global styles and design tokens
+- `src/lib/content.ts`: primary editable content / CTA / webhook config
+- `src/lib/blogContent.ts`, `locationContent.ts`, `locations.ts`: content modules
+- `src/components/`: reusable sections and UI
+- `public/`: static assets and images
 
-## Styling
+## Deploy
 
-The generator uses Tailwind classes for declarations that can be represented as stable utilities. Some styles remain in `ditto.css` because they are route-scoped, pseudo-element based, keyframe based, interaction-state based, or too specific to translate safely without changing the rendered result.
+- Build: `npm run build` → `out/`
+- Netlify publishes `out/` (see `netlify.toml`)
 
-## Anchors
+## Integrations
 
-`data-ditto-id` exists in delivered apps where runtime utilities or generated CSS still need a stable DOM anchor. Validation-only capture ids are stripped from production output and should not be reintroduced.
+- Quote forms → Make.com webhooks (client-side `fetch`)
+- Optional Netlify Forms backup on quote submit
+- `/book` → CRM booking iframe
 
-## Recipes And Runtime
+## Do Not Add
 
-Recipes identify higher-level patterns such as repeated cards, logo clouds, navigation, disclosures, accordions, tabs, carousels, and motion. Sections and components provide editable structure, SVG modules preserve source artwork, and `src/app/ditto` applies the small runtime behaviors that were captured safely. Runtime utilities emitted for this clone: none emitted for this capture.
-
-## Clone Metadata
-
-- routes: 1
-- extracted components: 0
-- section modules: 0
-- SVG modules: 4
-- content module: no
-- component extraction requested: yes
-
-## Routes
-
-- / - 403 - Forbidden
-
-## Tradeoffs
-
-The clone prioritizes deterministic static fidelity, accessible markup, local asset materialization, and source metadata preservation. It may keep measured CSS where inferred layout intent is uncertain. It intentionally defers arbitrary JavaScript replay, video-like animation replay, and full third-party application behavior. External services, live personalization, analytics, payments, auth, and complex client app state are not reconstructed unless a specific safe recipe exists.
+- Site-clone / Ditto API keys or runtime calls
+- CRM or internal tooling in this package

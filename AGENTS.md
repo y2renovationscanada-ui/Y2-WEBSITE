@@ -1,44 +1,25 @@
 # AGENTS.md
 
-This is the Y2 Design & Build marketing website for https://y2designandbuild.com. It is a static Next.js App Router project.
+This is the Y2 Design & Build marketing website for https://y2designandbuild.com. It is a static Next.js App Router project (static export).
 
 ## Run
 
 - `npm install`
-- `npm run dev`
+- `npm run dev:next`
 - `npm run build`
-- `npm run start`
+- `npm run preview`
 
 ## Safe Edit Areas
 
-- `src/app/content.ts` or `src/app/content.tsx`: editable structured content extracted from repeated components and sections when present.
-- `src/app/components/`: generated component modules. Edit copy, links, and simple JSX structure with care.
-- `src/app/sections/`: generated section modules for single-page section splits when present.
-- `src/app/svgs/`: hoisted inline SVG modules. Edit only when intentionally changing artwork.
-- `src/app/ditto.css`: fidelity CSS for captured layout, pseudos, keyframes, and interaction states. Small visual tweaks are reasonable; broad rewrites can break clone fidelity.
-- Root SEO/docs files such as `AGENTS.md`, `ARCHITECTURE.md`, and `src/app/robots.ts`, `src/app/sitemap.ts`, and `src/app/llms.txt/route.ts`.
+- `src/lib/content.ts`: services, FAQs, CTAs, quote form copy, Make.com webhook URLs
+- `src/lib/blogContent.ts`, `src/lib/locationContent.ts`, `src/lib/locations.ts`: blog and city/service landing content
+- `src/components/`: page sections and UI modules
+- `src/app/`: routes (`page.tsx`, `layout.tsx`, `sitemap.ts`, `robots.ts`)
+- `public/images/`: marketing assets
+- Root docs: `AGENTS.md`, `ARCHITECTURE.md`, `README.md`
 
-## Generated Runtime
+## Notes
 
-`src/app/ditto` contains generated runtime utilities for captured interactions and motion. Current runtime utilities: none emitted for this capture. Do not casually rewrite these files; they are plumbing that maps captured recipes to stable `data-ditto-id` anchors in delivered apps.
-
-## File Meanings
-
-- `src/app/page.tsx` and nested route `page.tsx` files: generated route bodies.
-- `src/app/content.ts`: structured data extracted from repeated clone regions.
-- `src/app/components/`: reusable JSX components promoted from repeated captured subtrees.
-- `src/app/sections/`: page sections split from the captured body.
-- `src/app/svgs/`: inline SVGs hoisted out of page/section files.
-- `src/app/ditto.css`: generated CSS that preserves source layout and visual details not represented by Tailwind utilities.
-- `src/app/ditto-meta.ts`: delivered-app metadata for anchors that still need runtime or stylesheet targeting after validation-only ids are stripped.
-
-## Routes
-
-- / - 403 - Forbidden
-
-## Do Not Edit Casually
-
-- `src/app/ditto/` runtime utilities.
-- Generated anchor metadata such as `ditto-meta.ts`.
-- Validation-only files in working captures, including `_cids.ts` and `_styles.ts` before export stripping.
-- Framework shell plumbing unless you are intentionally changing global metadata or page mounting behavior.
+- Booking at `/book` embeds the CRM booking UI — coordinate before changing.
+- Quote forms post to Make.com webhooks in `src/lib/content.ts`.
+- No third-party site-clone APIs (e.g. Ditto) should be configured or committed in this repo.
