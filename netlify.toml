@@ -36,6 +36,108 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/patio-builder/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/home/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/patio-construction/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/remodeling-contractor/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bathroom-renovations/"
+  to = "/bathroom-renovation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/kitchen-cabinet-repainting-vs-replacement-what-homeowners-should-choose/"
+  to = "/kitchen-renovation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas-of-service/toronto-hardwood-floor-refinishing/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/kitchen-renovations/"
+  to = "kitchen-renovation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas-of-service/markham-kitchen-remodeling/"
+  to = "/kitchen-renovation/markham"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/areas-of-service/markham-general-contractor/"
+  to = "/kitchen-renovation/markham"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/adu-builders/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about-us/"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/general-contractor/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hardwood-floor-refinishing/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/planning-renovations-for-the-next-10-years-not-the-next-trend/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/home-improvement/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about-us/reviews/"
+  to = "/about"
+  status = 301
+  force = true
+
 # Pretty URLs for the static Next export (folder/index.html)
 [[redirects]]
   from = "/*"
