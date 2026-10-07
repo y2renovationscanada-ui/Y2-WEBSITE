@@ -29,3 +29,9 @@
   from = "/*"
   to = "/404.html"
   status = 404
+
+[[redirects]]
+  from = "https://y2designandbuild.com/walk-in-showers-vs-bathtubs-what-homeowners-prefer-in-2026/*"
+  to = "https://y2designandbuild.com/"
+  status = 301
+  force = true
