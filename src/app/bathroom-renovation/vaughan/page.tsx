@@ -2,9 +2,8 @@ import React from "react";
 import BathroomClient from "./vaughanBathroom";
 
 export const metadata = {
-  title: "Bathroom Renovation & Remodel Vaughan | Best Contractor Across GTA",
-  description: "Vaughan bathroom renovations handled end to end, from demo and plumbing to tile and glass. Licensed, insured and on schedule. Get a free consultation.",
-};
+  title: "Bathroom Remodel in Vaughan, ON | Y2 Design & Build",
+  description: "Y2 Design & Build handles every bathroom remodel in Vaughan from design to handover, with fixed pricing, Friday progress updates, and a free in-home visit."};
 
 export default function KitchenRenovationGtaPage() {
   return <BathroomClient />;
