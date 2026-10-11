@@ -75,7 +75,8 @@ export default function Footer() {
             </span>
           </div>
           <p className="mt-6 text-center text-xs text-white/40">
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
+            © {new Date().getFullYear()} {site.name}. All rights reserved. ·{" "}
+            <Link href="/privacy" className="hover:text-white">Privacy</Link>
           </p>
         </div>
       </footer>

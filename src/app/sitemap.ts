@@ -22,6 +22,7 @@ const staticRoutes: { path: string; priority: number; changeFrequency: MetadataR
   { path: "/about", priority: 0.7, changeFrequency: "daily" },
   { path: "/contact", priority: 0.7, changeFrequency: "daily" },
   { path: "/blog", priority: 0.6, changeFrequency: "weekly" },
+  { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

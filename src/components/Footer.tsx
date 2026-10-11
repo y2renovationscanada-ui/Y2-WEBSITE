@@ -42,6 +42,7 @@ export default function Footer() {
             ))}
             <Link href="/blog" className="text-sm text-white/60 hover:text-white">Blog</Link>
             <Link href="/contact" className="text-sm text-white/60 hover:text-white">Contact</Link>
+            <Link href="/privacy" className="text-sm text-white/60 hover:text-white">Privacy</Link>
           </nav>
         </div>
         <p className="mt-6 text-center text-xs text-white/40">
