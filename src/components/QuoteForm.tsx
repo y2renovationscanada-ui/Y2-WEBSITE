@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { quoteForm, site } from "@/lib/content";
+import { attributionFields } from "@/lib/attribution";
 
 const inputClass =
   "w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm text-stone-900 placeholder:text-stone-500 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand";
@@ -73,17 +74,20 @@ export default function QuoteForm({
 
     setStatus("submitting");
     try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...payload,
-          page,
-          source,
-          submittedAt: new Date().toISOString(),
-        }),
+      const body = JSON.stringify({
+        ...payload,
+        page,
+        source,
+        submittedAt: new Date().toISOString(),
+        ...attributionFields(),
       });
-      if (!res.ok) throw new Error(`Webhook failed: ${res.status}`);
+      const post = (url: string) =>
+        fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body, keepalive: true }).then((res) => {
+          if (!res.ok) throw new Error(`${url} failed: ${res.status}`);
+        });
+      // Either destination holding the lead is enough to confirm to the visitor.
+      const results = await Promise.allSettled([post(endpoint), post(quoteForm.crmIntakeUrl)]);
+      if (results.every((r) => r.status === "rejected")) throw new Error("Lead not delivered");
 
       // Also submit to Netlify Forms when available (non-blocking)
       data.set("page", page);

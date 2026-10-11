@@ -6,6 +6,7 @@ import { organizationSchema } from "@/lib/schema";
 import JsonLd from "@/components/JsonLd";
 import QuoteModalProvider from "@/components/QuoteModal";
 import StickyCallBar from "@/components/StickyCallBar";
+import AttributionCapture from "@/components/AttributionCapture";
 import Script from "next/script";
 
 const GA_MEASUREMENT_ID = "G-3Q43K0BYFK";
@@ -105,6 +106,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           />
         </noscript>
         <JsonLd data={organizationSchema()} />
+        <AttributionCapture />
         <QuoteModalProvider>
           {children}
           <StickyCallBar />

@@ -684,6 +684,8 @@ export const quoteForm = {
   webhookUrl: "https://hook.us2.make.com/wjebmlr7d4v8sjb6pexkg8bbgroic3fq",
   /** Webhook for auto-popup / contact forms on service & city landing pages */
   landingWebhookUrl: "https://hook.us2.make.com/h59w5uipp42uz9g2am79643gxqk2kb8e",
+  /** Y2 CRM lead intake (Supabase); receives every submission alongside Make. */
+  crmIntakeUrl: "https://vfnnosnqhawifcirycen.supabase.co/functions/v1/lead-intake?provider=website",
   reassurance: "Free, no-obligation quote. We reply within one business day — no spam, ever.",
   successTitle: "Request received — thank you!",
   successBody: "One of our project consultants will call you within one business day. You can also book your free in-home consult now.",
