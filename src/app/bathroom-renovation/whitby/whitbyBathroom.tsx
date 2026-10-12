@@ -5,13 +5,11 @@ import Image from "next/image";
 import { site, images } from "@/lib/content";
 import { QuoteButton } from "@/components/QuoteModal";
 import TrustBadges from "@/components/TrustBadges";
-import ThreeStepProcess from "@/components/ThreeStepProcess";
 import ReviewStrip from "@/components/ReviewStrip";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import Link from "next/link";
-
 
 export const projectDetails = [
   "Before demolition starts, we protect your floors and stairs, seal off dust with proper containment, and post permits on site.",
@@ -22,49 +20,148 @@ export const projectDetails = [
   "At handover, you get every permit, certificate, and warranty document together in one package, plus as-built drawings for your records.",
 ];
 
-export const faqs = [
-  {
-    question: "How much does a bathroom renovation cost in Whitby?",
-    answer: "Powder rooms range from $2,500–$5,000. Full bathrooms start at $9,800–$18,000. Luxury bathrooms range from $18,000–$35,000.",
-  },
-  {
-    question: "Can you renovate a bathroom without changing the existing layout?",
-    answer: "Yes. Keeping the existing plumbing and fixture locations can be a practical option when the current layout works well. We can update the finishes, fixtures, lighting, vanity, shower, tub, flooring, and other elements without necessarily redesigning the entire room.",
-  },
-  {
-    question: "Do you renovate primary bathrooms and ensuite bathrooms in Whitby?",
-    answer: "Yes. We work on a range of residential bathroom projects, including primary bathrooms, ensuites, family bathrooms, guest bathrooms, and powder rooms. The scope can be tailored to the size and requirements of the space." },
-  {
-    question: "Can you install a walk-in shower during a bathroom remodel Whitby?",
-    answer: "Yes. Walk-in showers can be incorporated into many bathroom designs, subject to the available space and existing construction. We can coordinate the shower base, waterproofing, tilework, fixtures, glass, and associated plumbing."},
-  {
-    question: "Can you improve bathroom storage during the renovation?",
-    answer: "Yes. A renovation is an opportunity to reconsider how the bathroom stores everyday items. Depending on the available space, options may include larger vanities, additional cabinetry, recessed storage, shelving, or other purpose-built solutions."
-    },
-    {
-    question: "Can you help select bathroom fixtures and materials?",
-    answer: "Yes. Our team can assist with selections for fixtures, tile, flooring, vanities, and other finishing components. The objective is to make sure the selected products work with the design, available space, and requirements of the renovation."
-    },
-    {
-    question: "How long does a bathroom renovation take in Whitby?",
-    answer: "Most bathrooms are finished in 7–10 days. Four-piece bathrooms take 10–12 days, and luxury bathrooms run around 2–3 weeks."},
+const heroBullets = [
+  "A reply to your quote request within one business day",
+  "An itemized fixed price, so the number you approve is the number you pay",
+  "A locked schedule, with progress photos as work advances and a written report each Friday",
+  "Design guidance on tile, fixtures, and layout from people who build what they draw",
+  "Separate English and Mandarin phone lines for easy communication",
 ];
 
-export default function BathroomClient() {
+const services = [
+  "Full renovations that strip the room to the studs and rebuild it with a waterproof membrane, new tile, and new fixtures",
+  "Shower and tub work, including tub-to-shower conversions, walk-in and curbless showers, soaker tubs and glass enclosures",
+  "Vanities, counters and storage, from double vanities in ensuites to tall cabinets and recessed niches",
+  "Layout updates, such as relocating a toilet, widening a shower or adding a second sink",
+  "Flooring, lighting and ventilation, including heated floors, layered lighting and properly vented exhaust fans",
+  "Plumbing and electrical upgrades completed by WSIB licensed trades, with permits arranged when required",
+  "Basement and in-law bathrooms for relatives or tenants living downstairs",
+];
+
+const showerRows = [
+  {
+    option: "Tub and shower combination",
+    best: "Family bathrooms, homes with young children, resale appeal",
+    consider:
+      "Takes the least floor space for both functions; a tiled surround with a niche makes it feel more finished than an acrylic insert",
+  },
+  {
+    option: "Walk-in shower with a low curb",
+    best: "Ensuites and adult bathrooms",
+    consider: "Easy to clean and versatile; a fixed glass panel or a hinged door keeps water contained",
+  },
+  {
+    option: "Curbless walk-in shower",
+    best: "Aging in place, accessibility, a modern open look",
+    consider:
+      "Requires the subfloor to be recessed and the floor sloped to a linear drain, so it’s best planned as part of a full remodel",
+  },
+];
+
+const homeTypes = [
+  {
+    title: "Downtown Whitby and Port Whitby",
+    text: "Older homes near the downtown area and the harbor may have original plumbing, smaller bathrooms, and limited ventilation. Townhomes and condos near the waterfront often have tighter layouts where every inch counts.",
+  },
+  {
+    title: "Blue Grass Meadows, Pringle Creek, Lynde Creek and Williamsburg",
+    text: "Many of these homes were built from the 1970s through the 1990s. Typical remodels replace tired tub surrounds, dated vanities and undersized fans, and often convert a large ensuite tub into a generous shower.",
+  },
+  {
+    title: "Brooklin, Taunton North and Rolling Acres",
+    text: "Newer homes here usually have sound plumbing but basic builder finishes. Upgrades focus on tile, glass, lighting, better storage and heated floors.",
+  },
+];
+
+const familyTips = [
+  "A wider vanity or double sinks so more than one person can get ready at the same time",
+  "Separate storage for each child, using drawers or tall cabinets rather than one shared cupboard",
+  "A handheld sprayer mounted on an adjustable bar, which makes bathing small children and rinsing the tub much easier",
+  "Durable surfaces, such as porcelain tile and quartz counters, that stand up to splashes and daily cleaning",
+  "Good lighting at the mirror, which helps older kids and adults alike",
+];
+
+const costRows = [
+  {
+    scope: "Half bath (powder room)",
+    investment: "$2,500 – $5,000",
+    time: "Usually within a week",
+    popular: "New vanity, feature wall, better lighting",
+  },
+  {
+    scope: "Main or family bathroom",
+    investment: "$9,800 – $18,000",
+    time: "Around 7–10 (10–12 for four-piece)",
+    popular: "Tiled tub surround, double vanity, handheld shower",
+  },
+  {
+    scope: "Primary ensuite or luxury remodel",
+    investment: "$18,000 – $35,000",
+    time: "Roughly two to three weeks",
+    popular: "Walk-in or curbless shower, heated floors, freestanding tub",
+  },
+];
+
+const neighborhoods = [
+  "Brooklin",
+  "Brooklin Heights",
+  "Blue Grass Meadows",
+  "Pringle Creek",
+  "Port Whitby",
+  "Lynde Creek",
+  "Williamsburg",
+  "Rolling Acres",
+  "Taunton North",
+  "Downtown Whitby",
+];
+
+export const faqs = [
+  {
+    question: "Can a bathroom remodel in Whitby keep the existing layout?",
+    answer: "Yes, and it’s often the most cost-effective approach. Keeping the toilet, tub or shower and vanity in their current positions avoids moving drains and supply lines, so more of your budget goes into finishes. We’ll still check the subfloor, ventilation, and plumbing so the new room lasts.",
+  },
+  {
+    question: "How quickly will I hear back after requesting a quote?",
+    answer: "We respond within one business day to arrange your free in-home consultation.",
+  },
+  {
+    question: "Which shower option works best in a family bathroom?",
+    answer: "For most families, a tub-and-shower combination with a tiled surround and a handheld shower is the most practical choice. If the house already has a tub elsewhere, a walk-in shower may suit you better.",
+  },
+  {
+    question: "Will you help me choose tile, fixtures and finishes?",
+    answer: "Yes. Our team recommends materials based on your budget, how the room is used, and how easy it will be to maintain, and you can review options at our Markham showroom.",
+  },
+  {
+    question: "Will I need a permit from the Town of Whitby?",
+    answer: 
+    <>
+    Not usually for like-for-like updates. Relocating plumbing, removing walls, or adding new circuits typically requires a
+    {" "}
+    <a href="https://www.whitby.ca/services-and-payments/building-and-renovating/building-permits/" rel="nofollow" className="underline">building permit,</a>
+    {" "}
+    and electrical work is subject to ESA requirements. We’ll explain exactly what your project needs before scheduling begins.
+    </>
+  },
+  {
+    question: "Can I discuss my project in Mandarin?",
+    answer: "Of course. Call (647) 294-2888, and a Mandarin-speaking team member will help you from planning to completion.",
+  },
+];
+
+export default function BathroomWhitbyClient() {
   const tel = `tel:${site.phone.replace(/\D/g, "")}`;
   const [open, setOpen] = useState<number | null>(0);
 
-
   return (
     <>
-
       <Header />
 
       {/* 1. Value-driven hero */}
       <section className="relative min-h-[480px] overflow-hidden bg-brand-dark text-white">
         <Image
           src={images.bathroom}
-          alt={`Bathroom Renovation project by Y2 Design & Build in the GTA`}
+          alt="Bathroom Renovation project by Y2 Design & Build in the GTA"
           fill
           priority
           fetchPriority="high"
@@ -77,32 +174,25 @@ export default function BathroomClient() {
           <div className="container-page relative flex min-h-[480px] items-center py-16">
             <div className="max-w-2xl">
               <div className="mb-4">
-
-<nav aria-label="Breadcrumb">
+                <nav aria-label="Breadcrumb">
                   <ol className="flex flex-wrap items-center gap-1.5 text-xs sm:text-sm">
                     <li>
                       <Link href="/" className="transition-colors hover:text-white hover:underline">
                         Home
                       </Link>
                     </li>
-                    <li aria-hidden="true" className="select-none text-white/40">
-                      /
-                    </li>
+                    <li aria-hidden="true" className="select-none text-white/40">/</li>
                     <li>
                       <Link href="/bathroom-renovation" className="transition-colors hover:text-white hover:underline">
                         Bathroom Renovation
                       </Link>
                     </li>
-                    <li aria-hidden="true" className="select-none text-white/40">
-                      /
-                    </li>
+                    <li aria-hidden="true" className="select-none text-white/40">/</li>
                     <li className="font-semibold text-white" aria-current="page">
                       Whitby
                     </li>
                   </ol>
                 </nav>
-
-
               </div>
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-accent">
                 Licensed & Insured · Serving the GTA
@@ -111,39 +201,20 @@ export default function BathroomClient() {
                 Bathroom Remodel in Whitby, ON
               </h1>
               <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
-                Create a bathroom that fits your home, routine, and design preferences with a professionally managed bathroom remodel in Whitby from Y2 Design & Build.
+                At <a href="https://y2designandbuild.com/" className="underline">Y2 Design & Build</a>, we plan, price, and build bathrooms for families across Whitby and Durham Region. We lead every bathroom remodel in Whitby with our own design team and a dedicated project manager, and we start with a quote you can hold us to.
               </p>
               <ul className="mt-6 space-y-3">
-                <li className="flex items-start gap-2 text-sm text-white/90 sm:text-base">
-                  <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white" aria-hidden="true"
-                  >
-                    ✓
-                  </span>
-                  Complete bathroom renovations and targeted upgrades                </li>
-                <li className="flex items-start gap-2 text-sm text-white/90 sm:text-base">
-                  <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white" aria-hidden="true">
-                    ✓
-                  </span>
-                  Custom showers, tubs, vanities, tile, and flooring
-                </li>
-                <li className="flex items-start gap-2 text-sm text-white/90 sm:text-base">
-                  <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white" aria-hidden="true"
-                  >
-                    ✓
-                  </span>
-                  Fixed-price, itemized renovation proposals
-                </li>
-                <li className="flex items-start gap-2 text-sm text-white/90 sm:text-base">
-                  <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white" aria-hidden="true"
-                  >
-                    ✓
-                  </span>
-                  Professional project management from planning to completion
-                </li>
+                {heroBullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2 text-sm text-white/90 sm:text-base">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    {b}
+                  </li>
+                ))}
               </ul>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <QuoteButton className="btn-primary cursor-pointer text-center">
@@ -163,290 +234,350 @@ export default function BathroomClient() {
       </section>
 
       {/* 2. Offer strip */}
-      <section
-        className="bg-accent py-4 text-center text-white"
-        aria-label="Current offer"
-      >
-        <p className="text-lg font-bold">
-          Save $2,500 On Your Bathroom Renovation.
-        </p>
+      <section className="bg-accent py-4 text-center text-white" aria-label="Current offer">
+        <p className="text-lg font-bold">Save $2,500 On Your Bathroom Renovation.</p>
         <p className="text-sm opacity-90">
           Get Free Consultation with No cost, no obligation, and no expectation that you go ahead. If the numbers don't work for you, that's a perfectly good outcome.
         </p>
       </section>
 
-      {/* 3. Trust badges */}
+      {/* 3. Trust badges
+          NOTE: update the text inside components/TrustBadges to:
+          "Serving Durham Region homeowners for 14+ years · 500+ renovations completed ·
+           Five-star reviews from homeowners on Google, Yelp, HomeStars and Houzz ·
+           Licensed, insured and WSIB-covered · Free, no-pressure consultation" */}
       <TrustBadges />
 
-      {/* 4. Local trust intro */}
+      {/* 4. Why Whitby homeowners choose Y2 */}
       <section className="section-pad bg-white">
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
               <h2 className="text-3xl font-bold text-brand-dark">
-                Bathroom Renovation Contractor Serving Whitby, Durham Region
+                Why Whitby Homeowners Choose Y2 Design & Build
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                A <a className="underline" href="https://y2designandbuild.com/bathroom-renovation" >bathroom renovation</a> should be planned around the way your household uses the space. Y2 Design & Build works with Whitby homeowners to replace dated bathrooms, improve inefficient layouts, introduce modern fixtures, and create more polished spaces. We coordinate design, materials, trades, construction, and finishing so you don't have to manage multiple contractors.
+               <a href="https://www.durham.ca/" rel="nofollow" className="underline">Durham Region</a>  is an area we know especially well. We complete bathrooms regularly in neighboring Pickering and Ajax, and referrals from past clients often bring us new work across the region. That familiarity means we already understand the housing types here, from older homes near downtown and Port Whitby to the newer streets of Brooklin.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
-                For homeowners considering a bathroom remodel in Whitby, the process starts with an assessment of the existing space. Y2 Design & Build serves homeowners throughout Whitby and surrounding Durham Region communities, bringing more than 14 years of renovation experience to residential projects.
+                We know Whitby homeowners are busy. So we take the coordination off your plate. Your project manager arranges every trade, from plumbing and electrical to tile and glass, keeps the schedule locked, and sends you a written summary every Friday. We price and approve any change you request before it happens. One recent Durham client told us their budget bathroom update started the day after approval and was finished in four days. Not every project moves that quickly, but it shows how organized scheduling keeps a <b>bathroom remodel in Whitby</b> moving.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <QuoteButton className="btn-primary cursor-pointer">
-                  Book My Free Consultation
-                </QuoteButton>
-                <a
-                  href={tel}
-                  className="text-sm font-bold text-brand-dark hover:text-brand"
-                >
+                <QuoteButton className="btn-primary cursor-pointer">Book My Free Consultation</QuoteButton>
+                <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
                   or call {site.phone}
                 </a>
               </div>
             </div>
 
             <div>
-              <img src={images.bathroom2} alt="Bathroom renovation" />
+              <img src={images.bathroom2} alt="Bathroom renovation in Whitby" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Process */}
-      <ThreeStepProcess />
-
-      {/* Cost */}
-      <section className="section-pad bg-white">
-        <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-            
-            <div>
-              <img
-                src={images.bathroom3}
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-brand-dark">
-                Bathroom Remodel Whitby Cost & Timeline
-              </h2>
-
-              <h3 className="text-2xl font-bold text-brand-dark mt-4">
-                Average Cost
-              </h3>
-
-              <ul className="mt-6 space-y-3">
-                <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                  <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                    aria-hidden="true"
-                  >
-                    ✓
-                  </span>
-                  <b>Powder rooms:</b> $2,500–$5,000
-                </li>
-                <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                  <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                    aria-hidden="true"
-                  >
-                    ✓
-                  </span>
-                  <b>Full bathrooms:</b> $9,800–$18,000
-                </li>
-                <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                  <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                    aria-hidden="true"
-                  >
-                    ✓
-                  </span>
-                  <b>Luxury bathrooms:</b>  $18,000–$35,000
-
-                </li>
-
-              </ul>
-              <h3 className="text-2xl font-bold text-brand-dark mt-6">
-                Typical Timeline
-              </h3>
-
-              <p className="mt-4 leading-relaxed text-muted">
-Smaller bathrooms are typically finished in as little as 7–10 days. Four-piece bathrooms take 10–12 days, and larger, luxury bathroom renovations can take between 2–3 weeks.
-              </p>
-              <p className="mt-4 leading-relaxed text-muted">
-                Every renovation is different. Request a free estimate for an accurate cost and project timeline.
-              </p>
-
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
+      {/* 5. Services */}
       <section className="section-pad bg-surface">
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-2">
-       
+            <div>
+              <img src={images.bathroom3} alt="Completed bathroom remodel in Whitby" />
+            </div>
             <div>
               <h2 className="text-3xl font-bold text-brand-dark">
-                How We Manage Your Bathroom Remodel in Whitby
+                Our Bathroom Remodeling Services in Whitby
               </h2>
-              <p className="mt-2 leading-relaxed text-muted">
-                Good bathroom remodeling starts before demolition. Our team takes time to understand the existing conditions and establish what needs to happen at each stage of the renovation.
+              <p className="mt-4 leading-relaxed text-muted">
+                Whether you’re refreshing a powder room or rebuilding a primary ensuite, our team can handle:
               </p>
-              <p className="mt-2 leading-relaxed text-muted">
-                During your initial consultation, we discuss your preferred style, functional requirements, budget considerations, and any changes you are considering. We then define the project scope and coordinate the work needed to bring the design to life.
-              </p>
-              <p className="mt-2 leading-relaxed text-muted">
-                Depending on the renovation, your project may include:
-              </p>
-
-              <ul className="mt-6 space-y-2">
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Bathroom measurements and site assessment
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Layout planning and design support
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Selection of fixtures and finishing materials
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Demolition and removal of existing components
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Plumbing modifications
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Electrical work and lighting
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Waterproofing and shower preparation
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Wall and floor tile installation
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Vanity, sink, toilet, and fixture installation
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Bathtub or walk-in shower installation
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Flooring installation
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Painting and finishing work
-                </li>
-                <li className="flex items-start gap-2 text-sm sm:text-base">
-                  <span className="mt-0.5 text-accent" aria-hidden="true">✓</span> Required permit coordination
-                </li>
+              <ul className="mt-6 space-y-3">
+                
+                  <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    <span>
+                      <p>Full <a href="https://y2designandbuild.com/bathroom-renovation" className="underline">renovations</a> that strip the room to the studs and rebuild it with a waterproof membrane, new tile, and new fixtures</p>
+                    </span>
+                  </li>
+                  
+                  <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    <span>
+                      <p>Shower and tub work, including tub-to-shower conversions, walk-in and curbless showers, soaker tubs and glass enclosures</p>
+                      </span>
+                  </li>
+                    <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    <span>
+                      <p>Vanities, counters and storage, from double <a href="https://www.housebeautiful.com/room-decorating/bathrooms/a60777296/ensuite-bathroom-guide-examples/" className="underline" rel="nofollow">vanities</a>  in ensuites to tall cabinets and recessed niches
+</p>
+                      </span>
+                  </li>
+                    <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    <span>
+                      <p>Layout updates, such as relocating a toilet, widening a shower or adding a second sink</p>
+                      </span>
+                  </li>
+                    <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    <span>
+                      <p>Flooring, lighting and ventilation, including heated floors, layered lighting and properly vented exhaust fans</p>
+                      </span>
+                  </li>
+                    <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    <span>
+                      <p>Plumbing and electrical upgrades completed by <a href="https://www.wsib.ca/en" rel="nofollow" className="underline"> WSIB</a> licensed trades, with permits arranged when required</p>
+                      </span>
+                  </li>
+                   <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    <span>
+                     <p>Basement and in-law bathrooms for relatives or tenants living downstairs</p>        
+                    </span>
+                  </li>
               </ul>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <QuoteButton className="btn-primary cursor-pointer">
-                  Book My Free Consultation
-                </QuoteButton>
-                <a
-                  href={tel}
-                  className="text-sm font-bold text-brand-dark hover:text-brand"
-                >
-                  or call {site.phone}
-                </a>
-              </div>
-            </div>
-
-                 <div>
-              <img
-                src="https://y2designandbuild.com/images/bathroom-palmer-1.webp"
-                alt="Bathroom project"
-              />
             </div>
           </div>
         </div>
       </section>
 
-
-      {/* 7. Social proof */}
-      <ReviewStrip />
-
-      {/* 6. Service Areas */}
+      {/* 6. Shower options */}
       <section className="section-pad bg-white">
         <div className="container-page">
-          <h2 className="text-3xl font-bold text-brand-dark">
-            Whitby Communities We Serve
+          <h2 className="text-center text-3xl font-bold text-brand-dark">
+            Choosing the Right Shower for Your Whitby Bathroom
           </h2>
+          <p className="mx-auto mt-4 max-w-5xl text-center leading-relaxed text-muted">
+            The shower is usually the biggest decision in a bathroom remodel. Here’s how the three most common options compare:
+          </p>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            {[
-              "Brooklin",
-              "Blue Grass Meadows",
-              "Brooklin Heights",
-              "Pringle Creek",
-              "Port Whitby",
-              "Lynde Creek",
-            ].map((city) => (
-              <div key={city} className="card flex items-start gap-3 p-4">
-                <span className="text-brand" aria-hidden="true">
-                  ✓
-                </span>
-                <span className="text-sm text-muted">{city}</span>
+          <div className="mt-8 overflow-x-auto">
+            <table className="w-full min-w-[640px] border-collapse text-center text-sm">
+              <thead>
+                <tr className="bg-brand-dark text-white">
+                  <th className="px-4 py-3 font-semibold">Option</th>
+                  <th className="px-4 py-3 font-semibold">Best suited to</th>
+                  <th className="px-4 py-3 font-semibold">Things to consider</th>
+                </tr>
+              </thead>
+              <tbody>
+                {showerRows.map((row, i) => (
+                  <tr key={row.option} className={i % 2 === 0 ? "bg-surface" : "bg-white"}>
+                    <td className="px-4 py-3 font-semibold text-brand-dark">{row.option}</td>
+                    <td className="px-4 py-3 text-muted">{row.best}</td>
+                    <td className="px-4 py-3 text-muted">{row.consider}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mx-auto mt-6 max-w-5xl text-center leading-relaxed text-muted">
+            Many Whitby families keep a tub in the main bathroom and choose a <a href="https://www.architecturaldigest.com/gallery/walk-in-shower-ideas" rel="nofollow" className="underline">walk-in shower</a> for the ensuite, which balances everyday convenience with long-term resale value.
+          </p>
+        </div>
+      </section>
+
+      {/* 7. Whitby homes */}
+      <section className="section-pad bg-surface">
+        <div className="container-page">
+          <h2 className="text-center text-3xl font-bold text-brand-dark">Whitby Homes and What They Need</h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {homeTypes.map((item) => (
+              <div key={item.title} className="card bg-white p-6">
+                <h3 className="text-lg font-bold text-brand-dark">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-surface section-pad">
-        <div className="container-page max-w-3xl">
-          <h2 className="text-2xl font-bold text-brand-dark">
-            Who We Work With
-          </h2>
-          <ul className="mt-6 space-y-3">
-            <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-              <span
-                className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                aria-hidden="true"
-              >
-                ✓
-              </span>
-              <b>Homeowners:</b> Living space, offices, gyms and media rooms.
-            </li>
-            <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-              <span
-                className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                aria-hidden="true"
-              >
-                ✓
-              </span>
-              <b>Multigenerational households:</b> In-law and nanny suites with proper separation.
-
-            </li>
-            <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-              <span
-                className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                aria-hidden="true"
-              >
-                ✓
-              </span>
-              <b>Landlords and property investors:</b> Second units, where the property and the rules allow.
-
-            </li>
-            <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-              <span
-                className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                aria-hidden="true"
-              >
-                ✓
-              </span>
-              <b>Growing families:</b> somewhere for everyone to be, without moving house.
-
-            </li>
-          </ul>
+      {/* 8. Family bathroom */}
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <div>
+              <h2 className="text-3xl font-bold text-brand-dark">
+                Designing a Family Bathroom for Busy Mornings
+              </h2>
+              <p className="mt-4 leading-relaxed text-muted">
+                <a href="https://www.whitby.ca/" rel="nofollow" className="underline">Whitby</a> has many growing families, and the main bathroom often has to serve two or three children at once. A few design choices make a real difference:
+              </p>
+              <ul className="mt-6 space-y-3">
+                {familyTips.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <img
+                src="https://y2designandbuild.com/images/bathroom-palmer-1.webp"
+                alt="Family bathroom project by Y2 Design & Build"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
+      {/* 9. Cost and timeline */}
+      <section className="section-pad bg-surface">
+        <div className="container-page">
+          <h2 className="text-center text-3xl font-bold text-brand-dark">
+            Whitby Bathroom Remodel Cost and Timeline
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-center leading-relaxed text-muted">
+            We price each bathroom remodel in Whitby only after seeing the room, but recent Y2 projects give a dependable guide. Older homes may need extra plumbing or subfloor work, while newer homes tend to stay closer to the lower end for their category. For a full breakdown, read our{" "}
+            <Link className="underline" href="https://y2designandbuild.com/blog/bathroom-renovation-cost-gta">
+              bathroom renovation price guide for 2026
+            </Link>
+            , and see{" "}
+            <Link className="underline" href="https://y2designandbuild.com/blog/what-to-expect-during-home-renovation-markham">
+              what living through a renovation is really like
+            </Link>
+            .
+          </p>
+
+          <div className="mt-8 overflow-x-auto">
+            <table className="w-full min-w-[640px] border-collapse text-center text-sm">
+              <thead>
+                <tr className="bg-brand-dark text-white">
+                  <th className="px-4 py-3 font-semibold">Bathroom</th>
+                  <th className="px-4 py-3 font-semibold">Typical budget</th>
+                  <th className="px-4 py-3 font-semibold">Working days on site</th>
+                  <th className="px-4 py-3 font-semibold">Common Whitby upgrade</th>
+                </tr>
+              </thead>
+              <tbody>
+                {costRows.map((row, i) => (
+                  <tr key={row.scope} className={i % 2 === 0 ? "bg-white" : "bg-surface"}>
+                    <td className="px-4 py-3 font-semibold text-brand-dark">{row.scope}</td>
+                    <td className="px-4 py-3 text-muted">{row.investment}</td>
+                    <td className="px-4 py-3 text-muted">{row.time}</td>
+                    <td className="px-4 py-3 text-muted">{row.popular}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <QuoteButton className="btn-primary cursor-pointer">Get My Free Quote</QuoteButton>
+            <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
+              or call {site.phone}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Social proof */}
+      <ReviewStrip />
+
+      {/* 11. Communities */}
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <h2 className="text-center text-3xl font-bold text-brand-dark">Whitby Communities We Serve</h2>
+          <p className="mx-auto mt-4 max-w-5xl text-center leading-relaxed text-muted">
+            We complete bathroom remodels throughout Whitby, including Brooklin, Brooklin Heights, Blue Grass Meadows, Pringle Creek, Port Whitby, Lynde Creek, Williamsburg, Rolling Acres, Taunton North and Downtown Whitby.
+          </p>
+
+          {/* <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            {neighborhoods.map((city) => (
+              <div key={city} className="card flex items-center justify-center gap-3 p-4">
+                <span className="text-brand" aria-hidden="true">✓</span>
+                <span className="text-sm text-muted">{city}</span>
+              </div>
+            ))}
+          </div> */}
+
+          <p className="mx-auto mt-8 max-w-3xl text-center leading-relaxed text-muted">
+            Elsewhere in Durham Region and the GTA, visit our bathroom pages for{" "}
+            <Link className="underline" href="/bathroom-renovation/ajax">Ajax</Link>,{" "}
+            <Link className="underline" href="/bathroom-renovation/pickering">Pickering</Link>,{" "}
+            <Link className="underline" href="/bathroom-renovation/scarborough">Scarborough</Link>,{" "}
+            <Link className="underline" href="/bathroom-renovation/markham">Markham</Link> and{" "}
+            <Link className="underline" href="/bathroom-renovation/toronto">Toronto</Link>, or{" "}
+            <Link className="underline" href="/service-areas">view all the areas we serve</Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* 12. More services */}
+      <section className="section-pad bg-surface">
+        <div className="container-page max-w-3xl text-center">
+          <h2 className="text-3xl font-bold text-brand-dark">More Renovation Services for Whitby Homes</h2>
+          <p className="mt-4 leading-relaxed text-muted">
+            Many clients plan a bathroom alongside other work. Y2 also provides{" "}
+            <a className="underline" href="https://y2designandbuild.com/kitchen-renovation">kitchen renovations</a>,{" "}
+            <a className="underline" href="https://y2designandbuild.com/basement-renovation">basement finishing and suites</a>,{" "}
+            <a className="underline" href="https://y2designandbuild.com/home-extensions">home additions</a>,{" "}
+            <a className="underline" href="https://y2designandbuild.com/home-renovation">whole-home renovations</a> and{" "}
+            <a className="underline" href="https://y2designandbuild.com/flooring">new floors</a> throughout the house. Before you begin, check{" "}
+            <Link className="underline" href="https://y2designandbuild.com/blog/does-your-home-insurance-cover-a-renovation">
+              how your home insurance treats renovation work
+            </Link>
+            , and see whether some accessibility upgrades qualify for{" "}
+            <a
+              className="underline"
+              href="https://y2designandbuild.com/blog/ontario-home-renovation-tax-credits-rebates-incentives"
+            >
+              Ontario renovation incentives and tax credits
+            </a>
+            . Explore{" "}
+            <a className="underline" href="https://y2designandbuild.com/bathroom-renovation">Y2’s bathroom renovation work across the GTA</a>{" "}
+            or{" "}
+            <a className="underline" href="https://y2designandbuild.com/about">meet the people behind Y2</a>.
+          </p>
+        </div>
+      </section>
+
+      {/* 13. What you can expect */}
       <section className="section-pad bg-white">
         <div className="container-page">
           <h2 className="section-heading">What You Can Expect from Y2 Design & Build</h2>
@@ -454,7 +585,9 @@ Smaller bathrooms are typically finished in as little as 7–10 days. Four-piece
           <div className="mx-auto mt-12 grid max-w-4xl gap-3">
             {projectDetails.map((detail) => (
               <div key={detail} className="flex items-start gap-3 rounded-xl bg-surface px-5 py-4">
-                <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand text-[10px] font-bold text-white">✓</span>
+                <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand text-[10px] font-bold text-white">
+                  ✓
+                </span>
                 <p className="text-sm leading-relaxed text-muted">{detail}</p>
               </div>
             ))}
@@ -462,87 +595,44 @@ Smaller bathrooms are typically finished in as little as 7–10 days. Four-piece
         </div>
       </section>
 
-      {/* Gallery */}
-       <section className="section-pad bg-brand-dark text-white">
-         <div className="container-page">
-           <h2 className="text-center text-3xl font-bold">
-             Gallery Of Recent Projects
-           </h2>
-           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-               <Image
-                 src="https://y2designandbuild.com/images/bathroom-gall-1.webp"
-                 alt="gallery photo — Y2 Design & Build GTA"
-                 fill
-                 loading="lazy"
-                 className="object-cover"
-                 sizes="(max-width: 768px) 100vw, 33vw"
-               />
-             </div>
-             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-               <Image
-                 src="https://y2designandbuild.com/images/bathroom-gall-10.webp"
-                 alt="gallery photo — Y2 Design & Build GTA"
-                 fill
-                 loading="lazy"
-                 className="object-cover"
-                 sizes="(max-width: 768px) 100vw, 33vw"
-               />
-             </div>
-             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-               <Image
-                 src="https://y2designandbuild.com/images/bathroom-palmer-1.webp"
-                 alt="gallery photo — Y2 Design & Build GTA"
-                 fill
-                 loading="lazy"
-                 className="object-cover"
-                 sizes="(max-width: 768px) 100vw, 33vw"
-               />
-             </div>
-             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-               <Image
-                 src="https://y2designandbuild.com/images/bathroom-3.webp"
-                 alt="gallery photo — Y2 Design & Build GTA"
-                 fill
-                 loading="lazy"
-                 className="object-cover"
-                 sizes="(max-width: 768px) 100vw, 33vw"
-               />
-             </div>
-             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-               <Image
-                 src="https://y2designandbuild.com/images/bathroom.webp"
-                 alt="gallery photo — Y2 Design & Build GTA"
-                 fill
-                 loading="lazy"
-                 className="object-cover"
-                 sizes="(max-width: 768px) 100vw, 33vw"
-               />
-             </div>
-             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-               <Image
-                 src="https://y2designandbuild.com/images/bathroom-palmer-2.webp"
-                 alt="gallery photo — Y2 Design & Build GTA"
-                 fill
-                 loading="lazy"
-                 className="object-cover"
-                 sizes="(max-width: 768px) 100vw, 33vw"
-               />
-             </div>
-           </div>
-           <div className="mt-10 text-center">
-             <QuoteButton className="btn-primary cursor-pointer">
-               Start My Bathroom Renovation Quote
-             </QuoteButton>
-           </div>
-         </div>
-       </section>
+      {/* 14. Gallery */}
+      <section className="section-pad bg-brand-dark text-white">
+        <div className="container-page">
+          <h2 className="text-center text-3xl font-bold">Gallery Of Recent Projects</h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              "bathroom-gall-1",
+              "bathroom-gall-10",
+              "bathroom-palmer-1",
+              "bathroom-3",
+              "bathroom",
+              "bathroom-palmer-2",
+            ].map((name) => (
+              <div key={name} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image
+                  src={`https://y2designandbuild.com/images/${name}.webp`}
+                  alt="gallery photo — Y2 Design & Build GTA"
+                  fill
+                  loading="lazy"
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <QuoteButton className="btn-primary cursor-pointer">Start My Bathroom Renovation Quote</QuoteButton>
+          </div>
+        </div>
+      </section>
 
-
-<section className="section-pad bg-surface">
+      {/* 15. FAQ */}
+      <section className="section-pad bg-surface">
         <div className="container-page max-w-3xl">
           <h2 className="section-heading text-3xl font-bold text-brand-dark">Frequently Asked Questions</h2>
-          <p className="section-sub mt-2 text-muted">Common questions from Whitby homeowners planning a bathroom renovation.</p>
+          <p className="section-sub mt-2 text-muted">
+            Common questions from Whitby homeowners planning a bathroom renovation.
+          </p>
 
           <div className="mt-10 space-y-3">
             {faqs.map((faq, i) => (
@@ -571,6 +661,23 @@ Smaller bathrooms are typically finished in as little as 7–10 days. Four-piece
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 16. Book consultation */}
+      <section className="section-pad bg-white">
+        <div className="container-page max-w-3xl text-center">
+          <h2 className="text-3xl font-bold text-brand-dark">Book Your Free Whitby Bathroom Consultation</h2>
+          <p className="mt-4 leading-relaxed text-muted">
+            Ready to start planning your bathroom remodel in Whitby? We’ll visit your home, measure the space and prepare a line-by-line fixed-price quote, with no obligation to proceed. English speakers can call{" "}
+            <a className="underline" href="tel:6475073639">(647) 507-3639</a>, and Mandarin speakers can call{" "}
+            <a className="underline" href="tel:6472942888">(647) 294-2888</a>. Prefer email? Write to{" "}
+            <a className="underline" href="mailto:info@y2canada.com">info@y2canada.com</a>, or{" "}
+            <a className="underline" href="https://y2designandbuild.com/contact">request a visit online</a>.
+          </p>
+          <div className="mt-8">
+            <QuoteButton className="btn-primary cursor-pointer">Book My Free Consultation</QuoteButton>
           </div>
         </div>
       </section>
