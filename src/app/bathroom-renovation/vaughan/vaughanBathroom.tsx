@@ -27,7 +27,6 @@ const includes = [
   "Custom vanities and storage, including double sinks, tall linen cabinets and quartz or stone tops",
   "Comfort features such as heated floors, layered lighting and quiet, properly ducted exhaust fans",
   "Plumbing and electrical work, handled by licensed trades and inspected where required",
-  "Powder rooms, basement bathrooms and second-unit bathrooms for extended family or rental space",
 ];
 
 const costRows = [
@@ -105,7 +104,15 @@ export const faqs = [
     answer: "Yes. Calling (647) 294-2888 puts you in touch with a Mandarin-speaking member of our team, from your first visit through to handover."},
   {
     question: "Is a City of Vaughan building permit required?",
-    answer: "Replacing fixtures, tile, or a vanity in the same location usually doesn’t require one. Adding a bathroom, relocating drains, altering walls, or running new circuits typically requires one, with ESA covering the electrical side. We’ll outline the permits for your project at the quote stage."},
+    answer: 
+    <>
+    Replacing fixtures, tile, or a vanity in the same location usually doesn’t require one. Adding a bathroom, relocating drains, altering walls, or running new circuits typically requires one, with
+    {" "}
+    <a href="https://esasafe.com/" rel="nofollow" className="underline">ESA</a>
+    {" "}
+    covering the electrical side. We’ll outline the permits for your project at the quote stage.
+    </>,
+  },
   {
     question: "What will I receive when the project is finished?",
     answer: "A document package that includes permits and inspection records where applicable, product warranty information, and as-built drawings of the work."},
@@ -249,7 +256,7 @@ export default function BathroomClient() {
                   rel="nofollow noopener noreferrer"
                 >
                   permits
-                </a>
+                </a>{" "}
                 , certificates, warranty information, and as-built drawings. Whether you live in Woodbridge, Maple, Kleinburg, or Vellore Village, this level of organization keeps your bathroom remodel in Vaughan straightforward, even when several rooms are underway.
               </p>
 
@@ -292,6 +299,15 @@ export default function BathroomClient() {
                     {item}
                   </li>
                 ))}
+                <li className="flex items-start gap-3 text-md leading-relaxed text-muted">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    <span><a href="https://www.thespruce.com/what-is-a-powder-room-5324207" rel="nofollow" className="underline">Powder rooms</a>, basement bathrooms and second-unit bathrooms for extended family or rental space</span>
+                  </li>
               </ul>
             </div>
           </div>
@@ -307,7 +323,7 @@ export default function BathroomClient() {
                 Remodeling More Than One Bathroom at Once
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Many of our Vaughan clients choose to update several bathrooms in a single project. Doing them together keeps tile, fixtures, and finishes consistent throughout the house, avoids a second round of disruption a year later, and lets you order materials in one batch for your bathroom remodel in Vaughan.
+                Many of our <a href="https://www.vaughan.ca/about-city-vaughan" rel="nofollow" className="underline">Vaughan</a> clients choose to update several bathrooms in a single project. Doing them together keeps tile, fixtures, and finishes consistent throughout the house, avoids a second round of disruption a year later, and lets you order materials in one batch for your bathroom remodel in Vaughan.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
                 The key is phasing. We plan the work so at least one shower stays usable while the others are under construction, and we sequence the trades so the plumber and tiler move from one room to the next without long gaps. If every bathroom will be out of service at the same time, our{" "}
@@ -340,7 +356,7 @@ export default function BathroomClient() {
                 Large parts of Vellore Village, Patterson, Kleinburg and Maple were built in the last two decades, and some homes are still within their Tarion new-home warranty period. If yours is, review your coverage before remodeling. Work carried out by another contractor is generally not covered by the builder’s warranty, and changes to a bathroom can affect claims on related components. We’re happy to talk this through during the consultation so you can make an informed decision about timing.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
-                Builder-grade bathrooms in these homes are typically solid but plain: acrylic shower stalls, basic vanities, standard tile and single ceiling lights. Upgrades here usually focus on a tiled walk-in shower with glass, a better vanity, heated floors, and improved lighting rather than major plumbing changes.
+                Builder-grade bathrooms in these homes are typically solid but plain: acrylic shower stalls, basic <a href="https://en.wikipedia.org/wiki/Bathroom_cabinet" className="underline" rel="nofollow">vanities</a>, standard tile and single ceiling lights. Upgrades here usually focus on a tiled walk-in shower with glass, a better vanity, <a href="https://en.wikipedia.org/wiki/Underfloor_heating" className="underline" rel="nofollow">heated floors</a>, and improved lighting rather than major plumbing changes.
               </p>
             </div>
             <div>
@@ -348,10 +364,10 @@ export default function BathroomClient() {
                 Updating Established Homes in Woodbridge and Kleinburg
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Homes built in Woodbridge in the 1980s and 1990s often have spacious ensuites with features that were fashionable at the time: polished marble, large whirlpool tubs set into platforms, gold-tone fixtures, and separate shower stalls with framed doors. The room size is usually generous, so a remodel can create a far more functional layout without moving walls.
+                Homes built in Woodbridge in the 1980s and 1990s often have spacious ensuites with features that were fashionable at the time: polished marble, large whirlpool tubs set into platforms, gold-tone fixtures, and separate shower stalls with framed doors. The room size is usually generous, so a <a href="https://en.wikipedia.org/wiki/Renovation" rel="nofollow" className="underline">remodel</a> can create a far more functional layout without moving walls.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
-                In Kleinburg, many properties are estate homes with large primary suites. The historic village core also falls within a heritage conservation district, where exterior changes such as new vents or windows may need approval. Interior bathroom work is generally unaffected, but we confirm the details for heritage properties before work begins.
+                In Kleinburg, many properties are estate homes with large primary suites. The historic village core also falls within a heritage conservation district, where exterior changes such as new vents or windows may need approval. Interior bathroom work is generally unaffected, but we confirm the details for <a href="https://www.vaughan.ca/sites/default/files/2023-01/PART%20IV%20Designation%20-2022%20WEBSITE%20-%20By%20Address%20-2022%20NOV.pdf" rel="nofollow" className="underline">heritage properties</a> before work begins.
               </p>
             </div>
           </div>

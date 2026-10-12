@@ -33,10 +33,6 @@ const multigen = [
     text: "Climbing stairs to shower becomes difficult with age. Converting a main-floor powder room into a three-piece bathroom with a low-threshold shower is one of the most valuable changes you can make. It usually means borrowing a little space from a closet or laundry area, adding a new drain, and improving ventilation.",
   },
   {
-    label: "Safety built in from the start:",
-    text: "Slip-resistant porcelain floor tile, a fold-down or built-in shower bench, a handheld shower on a slide bar, lever handles, and blocking inside the walls for grab bars all make a bathroom safer without making it look clinical.",
-  },
-  {
     label: "A shared bathroom for children:",
     text: "A double sink, a tub with a shower, and a separate toilet compartment with its own door can let two or three children get ready at once without arguments.",
   },
@@ -76,17 +72,10 @@ const budgetTips = [
     text: "Choose and confirm tile, fixtures, and the vanity before the old room comes out, so nothing has to be rushed or substituted.",
   },
   {
-    label: "Order long-lead items early:",
-    text: "Custom vanities, specialty tile, and frameless glass can take weeks to arrive.",
-  },
-  {
     label: "Keep a contingency:",
     text: "Older homes in particular can reveal surprises behind the walls. Setting aside a modest reserve means an unexpected repair won’t derail the project.",
   },
-  {
-    label: "Put every change in writing:",
-    text: "With Y2 Design & Build, any change to scope is priced and approved by you before the work happens, so the final invoice matches what you agreed to.",
-  },
+
 ];
 
 const neighborhoods = [
@@ -241,7 +230,7 @@ export default function BathroomRichmondHillClient() {
                 Bathroom Remodel Contractor Serving Richmond Hill and York Region
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Many homes in Richmond Hill share space between parents, children and grandparents. Some of the city’s most impressive houses still have ensuites that were the height of luxury in 1992 and now feel heavy and hard to clean. Newer subdivisions have the opposite problem: plenty of space, but plain builder finishes that never quite felt personal.
+                Many homes in <a href="https://www.richmondhill.ca/Modules/search/index.aspx" rel="nofollow" className="underline">Richmond Hill</a> share space between parents, children and grandparents. Some of the city’s most impressive houses still have ensuites that were the height of luxury in 1992 and now feel heavy and hard to clean. Newer subdivisions have the opposite problem: plenty of space, but plain builder finishes that never quite felt personal.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
                 Y2 Design & Build has handled all of these situations for more than 14 years, renovating homes across the GTA. When you book a bathroom remodel in Richmond Hill with us, the same team designs the room, prices every item, and then builds it. You'll have one project manager throughout, and you approve every selection and change in writing before work begins.
@@ -286,6 +275,21 @@ export default function BathroomRichmondHillClient() {
                 </span>
               </li>
             ))}
+             <li className="card flex items-start gap-3 bg-white p-5 text-sm leading-relaxed text-muted">
+              <span
+                className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                aria-hidden="true"
+              >
+                ✓
+              </span>
+              <span>
+                <b className="text-brand-dark">Safety built in from the start:</b> Slip-resistant{" "}
+                <Link className="underline" href="https://simple.wikipedia.org/wiki/Porcelain">
+                  porcelain
+                </Link>{" "}
+                floor tile, a fold-down or built-in shower bench, a handheld shower on a slide bar, lever handles, and blocking inside the walls for grab bars all make a bathroom safer without making it look clinical.
+              </span>
+            </li>
             <li className="card flex items-start gap-3 bg-white p-5 text-sm leading-relaxed text-muted">
               <span
                 className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
@@ -334,7 +338,7 @@ export default function BathroomRichmondHillClient() {
                 ))}
               </ul>
               <p className="mt-6 leading-relaxed text-muted">
-                The good news is that these rooms usually have excellent bones: plenty of square footage, large windows, and solid construction. A typical remodel removes the platform tub and replaces it with a freestanding tub or a large walk-in shower, sizes the exhaust fan to the room's actual volume, and either reseals the skylight properly or closes it in. The space stays generous, but it becomes far easier to live with and maintain.
+                The good news is that these rooms usually have excellent bones: plenty of square footage, large windows, and solid construction. A typical remodel removes the platform tub and replaces it with a freestanding tub or a large <a href="https://www.housebeautiful.com/room-decorating/bathrooms/a24166956/walk-in-showers/" rel="nofollow" className="underline">walk-in shower</a>, sizes the exhaust fan to the room's actual volume, and either reseals the skylight properly or closes it in. The space stays generous, but it becomes far easier to live with and maintain.
               </p>
             </div>
             <div>
@@ -352,7 +356,7 @@ export default function BathroomRichmondHillClient() {
             Homes built over the last twenty years in Jefferson, Westbrook, Rouge Woods and Oak Ridges generally have sound plumbing and reasonable layouts. Here, remodels tend to focus on replacing builder-grade fixtures, swapping a small acrylic shower for a tiled one with frameless glass, adding heated floors and upgrading the vanity and lighting.
           </p>
           <p className="mt-4 leading-relaxed text-muted">
-            Condominiums around Richmond Hill Centre and the Yonge and Highway 7 corridor bring their own requirements, including management approval, restricted work hours, and fixed drain locations. Our{" "}
+            Condominiums around Richmond Hill Centre and the <a href="https://www.mapquest.com/ca/ontario/richmond-hill/l4s/yonge-st-43.9033,-79.44463" className="underline" rel="nofollow">Yonge</a> and Highway 7 corridor bring their own requirements, including management approval, restricted work hours, and fixed drain locations. Our{" "}
             <Link className="underline" href="/condo-renovation">
               condo renovation services
             </Link>{" "}
@@ -420,8 +424,7 @@ export default function BathroomRichmondHillClient() {
             Most cost overruns in a bathroom remodel in Richmond Hill come from late decisions. A few habits help prevent them:
           </p>
           <ul className="mt-10 grid gap-4 md:grid-cols-2">
-            {budgetTips.map((item) => (
-              <li key={item.label} className="card flex items-start gap-3 bg-white p-5 text-sm leading-relaxed text-muted">
+            <li className="card flex items-start gap-3 bg-white p-5 text-sm leading-relaxed text-muted">
                 <span
                   className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
                   aria-hidden="true"
@@ -429,10 +432,43 @@ export default function BathroomRichmondHillClient() {
                   ✓
                 </span>
                 <span>
-                  <b className="text-brand-dark">{item.label}</b> {item.text}
+                  <b className="text-brand-dark">Finalize selections before demolition:</b> Choose and confirm tile, fixtures, and the vanity before the old room comes out, so nothing has to be rushed or substituted.
                 </span>
               </li>
-            ))}
+            <li className="card flex items-start gap-3 bg-white p-5 text-sm leading-relaxed text-muted">
+                <span
+                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+                <span>
+                  <b className="text-brand-dark">Order long-lead items early:</b> Custom <a href="https://en.wikipedia.org/wiki/Bathroom_cabinet" rel="nofollow" className="underline">vanities</a>, specialty tile, and frameless glass can take weeks to arrive.
+
+                </span>
+              </li>
+              <li className="card flex items-start gap-3 bg-white p-5 text-sm leading-relaxed text-muted">
+                <span
+                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+                <span>
+                  <b className="text-brand-dark">Keep a contingency:</b> Older homes in particular can reveal surprises behind the walls. Setting aside a modest reserve means an unexpected repair won’t derail the project.
+                </span>
+              </li>
+              <li className="card flex items-start gap-3 bg-white p-5 text-sm leading-relaxed text-muted">
+                <span
+                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+                <span>
+                  <b className="text-brand-dark">Put every change in writing:</b> With <a href="https://y2designandbuild.com/" className="underline"></a>, any change to scope is priced and approved by you before the work happens, so the final invoice matches what you agreed to.
+                </span>
+              </li>
           </ul>
         </div>
       </section>

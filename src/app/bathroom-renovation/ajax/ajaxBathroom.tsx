@@ -215,7 +215,7 @@ export default function BathroomAjaxClient() {
                 Walk into most Ajax bathrooms built in the 1990s or early 2000s, and you&apos;ll see the same things: a fiberglass tub surround, an oak or white thermofoil vanity, a cultured marble top with a built-in sink, and a fan that hums but barely moves the air. They did their job for twenty-odd years. Now the caulking is yellowing, the grout is cracking around the tub, and the ensuite feels smaller than it should.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
-                Y2 Design &amp; Build has been remodeling bathrooms across Durham Region and the GTA for more than 14 years. When you choose us for a bathroom remodel in Ajax, one team handles the design, the itemized quote, and the construction. Your project manager coordinates the plumber, electrician, and tile setter, all WSIB-covered, so you never have to chase trades.
+                <a href="https://y2designandbuild.com/" className="underline">Y2 Design &amp; Build</a> has been remodeling bathrooms across Durham Region and the GTA for more than 14 years. When you choose us for a bathroom remodel in Ajax, one team handles the design, the itemized quote, and the construction. Your project manager coordinates the plumber, electrician, and tile setter, all WSIB-covered, so you never have to chase trades.
               </p>
             </div>
             <div>
@@ -269,7 +269,7 @@ export default function BathroomAjaxClient() {
             Refresh, Full Remodel or Layout Change?
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-center leading-relaxed text-muted">
-            Not every Ajax bathroom needs to be gutted. Choosing the right scope is the easiest way to protect your budget.
+            Not every <a href="https://ajax.ca/" className="underline" rel="noreferrer noopener nofollow">Ajax</a> bathroom needs to be gutted. Choosing the right scope is the easiest way to protect your budget.
           </p>
           <ul className="mx-auto mt-10 grid max-w-4xl gap-4">
             {scopes.map((item) => (
@@ -322,7 +322,7 @@ export default function BathroomAjaxClient() {
           </div>
 
           <p className="mx-auto mt-6 max-w-3xl text-center leading-relaxed text-muted">
-            What tends to push an Ajax bathroom toward the higher end? Relocating plumbing, especially a toilet. Swapping a corner tub for a curbless shower with a linear drain. Heated floors, custom niches, frameless glass, and small-format or patterned tile that takes more labor to install. In older homes, subfloor and wiring repairs can add to the total as well.
+            What tends to push an Ajax bathroom toward the higher end? Relocating plumbing, especially a toilet. Swapping a corner tub for a curbless shower with a linear drain. <a href="https://en.wikipedia.org/wiki/Underfloor_heating" rel="nofollow noreferrer noopener" className="undeline">Heated floors</a>, custom niches, frameless glass, and small-format or patterned tile that takes more labor to install. In older homes, subfloor and wiring repairs can add to the total as well.
           </p>
           <p className="mx-auto mt-4 max-w-3xl text-center leading-relaxed text-muted">
             Frameless glass is measured once the tile is set, so its fabrication time is built into your schedule from day one.
@@ -374,7 +374,7 @@ export default function BathroomAjaxClient() {
           <h2 className="text-center text-3xl font-bold text-brand-dark">
             How Your Bathroom Remodel in Ajax Comes Together
           </h2>
-          <ol className="mx-auto mt-10 grid max-w-4xl gap-4">
+          {/* <ol className="mx-auto mt-10 grid max-w-4xl gap-4">
             {processSteps.map((step, i) => (
               <li key={step.title} className="flex items-start gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
@@ -386,6 +386,45 @@ export default function BathroomAjaxClient() {
                 </div>
               </li>
             ))}
+          </ol> */}
+          <ol className="mx-auto mt-10 grid max-w-4xl gap-4">
+            <li className="flex items-start gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
+                1
+              </span>
+              <div>
+                <h3 className="text-lg font-bold text-brand-dark">{processSteps[0].title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted">{processSteps[0].text}</p>
+              </div>
+            </li>
+            <li className="flex items-start gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
+                2
+              </span>
+              <div>
+                <h3 className="text-lg font-bold text-brand-dark">{processSteps[1].title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted">{processSteps[1].text}</p>
+              </div>
+            </li>
+            <li className="flex items-start gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
+                3
+              </span>
+              <div>
+                <h3 className="text-lg font-bold text-brand-dark">{processSteps[2].title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted">
+                  <a 
+                    href="https://ajax.ca/build-invest/for-developers-builders/planning-development-applications/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="underline hover:text-brand"
+                  >
+                    Permits
+                  </a>{" "}
+                  are pulled where needed, floors and stairs are protected, and the work follows a clear sequence: demolition, plumbing and electrical rough-in, inspections, waterproofing, tile, fixtures, and glass. We finish with a walkthrough, and anything that isn't right gets fixed.
+                </p>
+              </div>
+            </li>
           </ol>
           <p className="mx-auto mt-6 max-w-4xl text-sm leading-relaxed text-muted">
             If this is your only full bathroom, it&apos;s worth planning ahead for showers during the remodel. Our article on{" "}

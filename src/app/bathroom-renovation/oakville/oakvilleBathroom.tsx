@@ -58,7 +58,12 @@ const homeTypes = [
 const ensuiteTopics = [
   {
     title: "Steam showers",
-    text: "A steam shower needs a fully enclosed, vapor-sealed space, a ceiling sloped so condensation runs to the walls instead of dripping, a dedicated steam generator with access for servicing, and a door that seals properly. Planned correctly, it is one of the most rewarding upgrades you can make. Planned poorly, it can lead to moisture problems in the walls and ceiling.",
+    text: "A steam shower needs a fully enclosed, vapor-sealed space, a ceiling sloped so",
+    extra: {
+      linkText: "condensation",
+      href: "https://education.nationalgeographic.org/resource/condensation/",
+      after: " runs to the walls instead of dripping, a dedicated steam generator with access for servicing, and a door that seals properly. Planned correctly, it is one of the most rewarding upgrades you can make. Planned poorly, it can lead to moisture problems in the walls and ceiling.",
+    },
   },
   {
     title: "Freestanding tubs",
@@ -74,7 +79,12 @@ const ensuiteTopics = [
   },
   {
     title: "Smart fixtures",
-    text: "Bidet toilets need a GFCI-protected outlet behind the toilet, heated towel rails need their own wiring, and digital shower controls need access panels. Each of these is far simpler to include before the walls are closed.",
+    text: "Bidet toilets need a ",
+    extra: {
+      linkText: "GFCI",
+      href: "https://safeelectricity.org/ground-fault-circuit-interrupters-gfcis/",
+      after: "-protected outlet behind the toilet, heated towel rails need their own wiring, and digital shower controls need access panels. Each of these is far simpler to include before the walls are closed.",
+    },
   },
 ];
 
@@ -360,7 +370,7 @@ export default function BathroomOakvilleClient() {
                 Heritage Homes: What Oakville Owners Should Know
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Oakville has several heritage conservation districts, including areas of Old Oakville and the Trafalgar Road corridor. Interior bathroom work is generally not affected by heritage designation. Changes to the outside of the house can be, however. Adding a new exhaust vent on a street-facing wall, replacing a bathroom window or enlarging an opening may require heritage approval from the Town before work begins.
+                Oakville has several <a href="https://www.oakville.ca/business-development/planning-development/heritage-planning/heritage-districts-properties/" rel="nofollow" className="underline">heritage conservation districts</a>, including areas of Old Oakville and the Trafalgar Road corridor. Interior bathroom work is generally not affected by heritage designation. Changes to the outside of the house can be, however. Adding a new exhaust vent on a street-facing wall, replacing a bathroom window or enlarging an opening may require heritage approval from the Town before work begins.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
                 We plan ventilation routes with this in mind, venting through the roof or a rear wall where appropriate so the project isn’t delayed. If your home is designated or sits within a district, we’ll review what applies during the design stage.
@@ -388,8 +398,19 @@ export default function BathroomOakvilleClient() {
           <div className="mx-auto mt-10 grid max-w-5xl gap-4 md:grid-cols-2">
             {ensuiteTopics.map((t) => (
               <div key={t.title} className="card bg-white p-5">
-                <h3 className="text-lg font-bold text-brand-dark">{t.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{t.text}</p>
+                <h3 className="text-lg font-bold text-brand-dark mb-2">{t.title}</h3>
+{t.text}
+                {t.extra && (
+            <>
+              {" "}
+              <a href={t.extra.href} target="_blank" rel="nofollow noreferrer noopener" className="underline hover:text-brand">
+                {t.extra.linkText}
+              </a>
+              
+              {t.extra.after}
+            </>
+          
+          )}
               </div>
             ))}
           </div>

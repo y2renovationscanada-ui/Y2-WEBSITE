@@ -33,10 +33,6 @@ const homeAges = [
     text: "often have mortar-set wall tile, which is thick and heavy, steel or cast-iron tubs, cast-iron drains and older galvanized supply lines. Wiring may not be grounded. Demolition takes longer, and plumbing updates are usually worth doing while the walls are open.",
   },
   {
-    label: "1960s and 1970s backsplits and semis in Agincourt, L’Amoreaux and Tam O’Shanter",
-    text: "commonly have one full bathroom upstairs and a small powder room or nothing at all on the lower levels, which makes a second bathroom a frequent request.",
-  },
-  {
     label: "1980s to 2000s homes in Malvern, Steeles, Morningside Heights and Rouge",
     text: "typically have sound plumbing but dated builder-grade finishes, such as acrylic tub surrounds and laminate vanities.",
   },
@@ -150,7 +146,22 @@ export const faqs = [
   },
   {
     question: "Do I need a permit from the City of Toronto?",
-    answer: "Not for cosmetic work that leaves fixtures where they are. Moving plumbing, removing walls, adding a bathroom, or adding electrical circuits generally does require a permit, and electrical work must also meet ESA requirements. We’ll confirm what’s needed before work is scheduled.",
+    answer:
+    <>Not for cosmetic work that leaves fixtures where they are. Moving plumbing, removing walls, adding a bathroom, or adding electrical circuits generally does require a
+        {" "}
+        <a className="underline" href="https://www.toronto.ca/services-payments/building-construction/building-permit/" rel="nofollow">
+          permit 
+        </a>
+        {" "}
+         and electrical work must also meet
+       {" "}
+        <a className="underline" href="https://esasafe.com/" rel="nofollow">
+          ESA
+        </a>
+        {" "}
+        requirements. We’ll confirm what’s needed before work is scheduled.
+
+      </>
   },
   {
     question: "Who will I deal with during the remodel?",
@@ -269,7 +280,7 @@ export default function BathroomScarboroughClient() {
                 Why Scarborough Homeowners Choose Y2 Design & Build
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Scarborough is one of the areas where we complete the most projects, and many of our largest bathroom remodels have been here. Our Markham showroom is a short drive away, so site visits, material selections, and walkthroughs are easy to arrange. Our project managers already know the City of Toronto permit process and the quirks of Scarborough’s older bungalows and backsplits, and that saves you time before work even starts.
+                Scarborough is one of the areas where we complete the most projects, and many of our largest bathroom remodels have been here. Our Markham showroom is a short drive away, so site visits, material selections, and walkthroughs are easy to arrange. Our project managers already know the <a href="https://www.toronto.ca/services-payments/building-construction/building-permit/" rel="nofollow" className="underline">City of Toronto</a> permit process and the quirks of Scarborough’s older bungalows and backsplits, and that saves you time before work even starts.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
                 Clients tell us they value how we run the job most. Every bathroom remodel in Scarborough we take on comes with a written, itemized price that holds unless you approve a change. A single project manager answers your calls and keeps the trades on schedule. A crew treats your home with care, protecting floors, containing dust, and cleaning up at the end of each day. Reviewers regularly mention our fair pricing compared with other quotes and how quickly our team responds. Many come back to us for their next project or refer friends and family.
@@ -313,7 +324,19 @@ export default function BathroomScarboroughClient() {
                 </span>
               </li>
             ))}
-          </ul>
+         
+              <li className="card flex items-start gap-3 bg-white p-5 text-sm leading-relaxed text-muted">
+                <span
+                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+                <span>
+                  <b className="text-brand-dark">1960s and 1970s <a href="https://en.wiktionary.org/wiki/backsplit" rel="nofollow" className="underline">backsplits</a> and semis in Agincourt, L’Amoreaux and Tam O’Shanter</b>  commonly have one full bathroom upstairs and a small powder room or nothing at all on the lower levels, which makes a second bathroom a frequent request.
+                </span>
+              </li>
+ </ul>
           <p className="mx-auto mt-8 max-w-3xl text-center leading-relaxed text-muted">
             Knowing this before demolition lets us price the likely repairs up front instead of surprising you halfway through.
           </p>
@@ -332,7 +355,7 @@ export default function BathroomScarboroughClient() {
                 A large share of Scarborough homes have finished basements, and many include a secondary suite. A basement bathroom has a few requirements that an upstairs one doesn’t.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
-                Drains below the level of the main sewer line may need a sewage ejector pump, or the concrete floor may need to be cut so a new drain can connect at the right slope. A backwater valve is strongly recommended to protect the space if the municipal sewer backs up, and the City of Toronto offers a subsidy program for eligible flood-protection devices. Ventilation also matters more below grade, since there’s often no window to help clear moisture.
+                Drains below the level of the main sewer line may need a sewage ejector pump, or the concrete floor may need to be cut so a new drain can connect at the right slope. A backwater valve is strongly recommended to protect the space if the municipal sewer backs up, and the <a href="https://www.toronto.ca/services-payments/water-environment/managing-rain-melted-snow/basement-flooding/basement-flooding-protection-subsidy-program/" rel="nofollow" className="underline">City of Toronto</a> offers a subsidy program for eligible flood-protection devices. Ventilation also matters more below grade, since there’s often no window to help clear moisture.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
                 If the bathroom will serve a rental unit, the suite as a whole must meet Ontario Building Code and fire safety requirements. Our summary of{" "}
@@ -363,7 +386,7 @@ export default function BathroomScarboroughClient() {
             Timeline and Cost of a Bathroom Remodel in Scarborough
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-center leading-relaxed text-muted">
-            Every quote is specific to your room, but the ranges below from recent Y2 projects are a reliable guide. In Scarborough’s older homes, costs most often rise because of removing mortar-set tile, replacing galvanized or cast-iron plumbing, or upgrading ungrounded wiring.
+            Every quote is specific to your room, but the ranges below from recent Y2 projects are a reliable guide. In Scarborough’s older homes, costs most often rise because of removing mortar-set tile, replacing <a href="https://en.wikipedia.org/wiki/Galvanization" rel="nofollow" className="underline">galvanized</a> or cast-iron plumbing, or upgrading ungrounded wiring.
           </p>
 
           <div className="mt-8 overflow-x-auto">
@@ -422,7 +445,7 @@ export default function BathroomScarboroughClient() {
                 What We Handle in a Scarborough Bathroom Remodel
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Our team covers every stage of the work, so you don’t need to hire separate trades or chase multiple contractors. A typical bathroom remodel by Y2 Design & Build can include:
+                Our team covers every stage of the work, so you don’t need to hire separate trades or chase multiple contractors. A typical bathroom remodel by <a href="https://y2designandbuild.com/" className="underline">Y2 Design & Build</a> can include:
               </p>
               <ul className="mt-6 space-y-3">
                 {handles.map((item) => (

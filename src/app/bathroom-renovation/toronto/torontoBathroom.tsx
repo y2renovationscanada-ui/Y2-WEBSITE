@@ -110,7 +110,18 @@ const processSteps = [
   },
   {
     title: "Permits",
-    text: "Before demolition, we sort out Toronto Building, ESA, and TSSA permits if the layout is changing, protect floors and the route through your home, and confirm the schedule.",
+    text: "Before demolition, we sort out",
+    extra: {
+      linkText: "Toronto Building",
+      href: "https://www.toronto.ca/services-payments/building-construction/building-permit/",
+      middleText: ", ",
+      secondLinkText: "ESA",
+      secondHref: "https://esasafe.com/",
+      thirdLinkText: "TSSA",
+      thirdHref: "http://www.tssa.org/",
+      after: " permits if the layout is changing, protect floors and the route through your home, and confirm the schedule.",
+    },
+    
   },
   {
     title: "Build",
@@ -150,7 +161,14 @@ export const faqs: { question: string; answer: React.ReactNode }[] = [
   {
     question: "How much does a bathroom renovation in Toronto cost?",
     answer:
-      "Powder rooms range from $2,500–$5,000, full bathrooms from $9,800–$18,000, and luxury bathrooms from $18,000–$35,000. Where you land depends on layout changes, what turns up behind the walls, your finishes, and any condo requirements. You'll have a written, itemized quote before work begins.",
+    <>
+        {" "}
+        <a className="underline" href="https://www.thespruce.com/what-is-a-powder-room-5324207" rel="nofollow">
+          Powder rooms
+        </a>
+        {" "}
+        range from $2,500–$5,000, full bathrooms from $9,800–$18,000, and luxury bathrooms from $18,000–$35,000. Where you land depends on layout changes, what turns up behind the walls, your finishes, and any condo requirements. You'll have a written, itemized quote before work begins.
+      </>
   },
   {
     question: "What happens if you find damage behind the walls?",
@@ -160,7 +178,14 @@ export const faqs: { question: string; answer: React.ReactNode }[] = [
   {
     question: "Are you licensed and insured?",
     answer:
-      "Yes. Y2 Design & Build is a licensed and insured contractor, and our trades are WSIB-covered. Condo buildings can request our insurance certificate directly.",
+    <>    
+        Yes. Y2 Design & Build is a licensed and insured contractor, and our trades are 
+        {" "}
+        <a className="underline" href="https://www.wsib.ca/en/operational-policy-manual/coverage-status" rel="nofollow">
+          WSIB
+        </a>
+          -covered. Condo buildings can request our insurance certificate directly.
+      </>    
   },
   {
     question: "Can I talk to someone in Mandarin?",
@@ -277,7 +302,7 @@ export default function BathroomTorontoClient() {
                 Many of the Toronto bathrooms we renovate are older than the homeowners who commission the work. Remove the wall tile in a 1920s semi-detached home in the Annex, and you may find a cast-iron drain stack, galvanized supply pipes, and plaster that has absorbed shower moisture for decades. A condominium near Yonge and Eglinton presents a different set of challenges.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
-                Y2 Design &amp; Build has dealt with both for more than 15 years. Homeowners who choose us for a bathroom renovation in Toronto work with one team that draws the plan, prices it line by line, and builds it with licensed, WSIB-covered trades. You get a single project manager you can call, text, or reach in English or Mandarin, plus an itemized fixed-price quote you can actually plan around.
+                <a href="https://y2designandbuild.com/" className="underline">Y2 Design &amp; Build</a> has dealt with both for more than 15 years. Homeowners who choose us for a bathroom renovation in Toronto work with one team that draws the plan, prices it line by line, and builds it with licensed, <a href="https://www.wsib.ca/en/operational-policy-manual/coverage-status" rel="nofollow" className="underline">WSIB</a>-covered trades. You get a single project manager you can call, text, or reach in English or Mandarin, plus an itemized fixed-price quote you can actually plan around.
               </p>
             </div>
             <div>
@@ -300,7 +325,7 @@ export default function BathroomTorontoClient() {
                 Demolition often reveals conditions that strain project budgets, which is why Y2 Design &amp; Build conducts a thorough assessment during the initial site visit. As bathroom contractors in Toronto, we inspect behind vanity cabinets, evaluate the toilet drain&apos;s position relative to the floor joists, assess the exhaust ventilation system, and ask about the age of the existing plumbing.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
-                Many pre-war Toronto homes were originally designed with window-only bathroom ventilation, which commonly leads to ceiling paint failure during winter months.
+                Many pre-war <a href="https://www.toronto.ca/" rel="nofollow noreferrer noopener" className="underline">Toronto</a> homes were originally designed with window-only bathroom ventilation, which commonly leads to ceiling paint failure during winter months.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
                 If unforeseen conditions are discovered after demolition, work pauses immediately. You will receive photographic documentation, a written explanation of the issue, and a clear cost outline before any additional work proceeds. Nothing moves forward without your written approval.
@@ -434,7 +459,7 @@ export default function BathroomTorontoClient() {
             Condo bathrooms sit on a concrete slab, which changes what&apos;s realistic. Drain locations are mostly fixed. A fully curbless shower may not be possible where the slab can&apos;t be recessed. Exhaust ducts tie into the building&apos;s system, so the fan must match it.
           </p>
           <p className="mt-4 leading-relaxed text-muted">
-            Paperwork often frustrates people more than construction does. Most Toronto buildings require an alteration request approved before work starts, proof of contractor insurance, a booked and padded elevator, and a water shut-off arranged with the superintendent. As bathroom contractors in Toronto, we handle that back-and-forth. See our{" "}
+            Paperwork often frustrates people more than construction does. Most Toronto buildings require an <a href="https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/renovation-and-new-house-guides/interior-alterations/" rel="nofollow" className="underline">alteration request</a> approved before work starts, proof of contractor insurance, a booked and padded elevator, and a water shut-off arranged with the superintendent. As bathroom contractors in Toronto, we handle that back-and-forth. See our{" "}
             <a className="underline" href="https://y2designandbuild.com/condo-renovation">
               condo renovation services
             </a>{" "}
@@ -447,30 +472,38 @@ export default function BathroomTorontoClient() {
       <section className="section-pad bg-surface">
         <div className="container-page">
           <h2 className="text-center text-3xl font-bold text-brand-dark">Our Process for Bathroom Renovation in Toronto</h2>
-          <ol className="mx-auto mt-10 grid max-w-4xl gap-4">
-            {processSteps.map((step, i) => (
-              <li key={step.title} className="flex items-start gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
-                  {i + 1}
-                </span>
-                <div>
-                  <h3 className="text-lg font-bold text-brand-dark">{step.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-muted">
-                    {step.text}
-                    {step.extra && (
-                      <>
-                        {" "}
-                        <Link className="underline" href={step.extra.href}>
-                          {step.extra.linkText}
-                        </Link>
-                        {step.extra.after}
-                      </>
-                    )}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
+         <ol className="mx-auto mt-10 grid max-w-4xl gap-4">
+  {processSteps.map((step, i) => (
+    <li key={step.title} className="flex items-start gap-4 rounded-xl bg-white px-5 py-4 shadow-sm">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
+        {i + 1}
+      </span>
+      <div>
+        <h3 className="text-lg font-bold text-brand-dark">{step.title}</h3>
+        <p className="mt-1 text-sm leading-relaxed text-muted">
+          {step.text}
+          {step.extra && (
+            <>
+              {" "}
+              <a href={step.extra.href} target="_blank" rel="nofollow noreferrer noopener" className="underline hover:text-brand">
+                {step.extra.linkText}
+              </a>
+              {step.extra.middleText}
+              <a href={step.extra.secondHref} target="_blank" rel="nofollow noreferrer noopener" className="underline hover:text-brand">
+                {step.extra.secondLinkText}
+              </a>
+              {" and "}
+              <a href={step.extra.thirdHref} target="_blank" rel="nofollow noreferrer noopener" className="underline hover:text-brand">
+                {step.extra.thirdLinkText}
+              </a>
+              {step.extra.after}
+            </>
+          )}
+        </p>
+      </div>
+    </li>
+  ))}
+</ol>
           <p className="mx-auto mt-6 max-w-4xl text-sm leading-relaxed text-muted">
             If this is the only bathroom in your house, it helps to plan where everyone will shower for that stretch. Our blog on{" "}
             <Link className="underline" href="/blog/where-do-you-live-during-a-full-home-renovation">

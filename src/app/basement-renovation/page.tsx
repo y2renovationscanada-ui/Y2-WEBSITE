@@ -170,7 +170,7 @@ export default function BasementRenovationPage() {
           Basement Renovation Contractor for GTA Homes
         </h2>
         <p className="mt-4 leading-relaxed text-muted">
-          Most GTA basements start out as the room nobody plans for. In a 1980s backsplit in Scarborough, it's usually a low ceiling, a furnace in the middle of the floor, and paneling that hides a damp patch. In a newer Markham or Vaughan subdivision, the basement might be a clean concrete box with good height and a rough-in for a bathroom that was never finished. Both can become the most used part of the house, but they need very different plans.
+          Most GTA basements start out as the room nobody plans for. In a 1980s backsplit in Scarborough, it's usually a low ceiling, a furnace in the middle of the floor, and paneling that hides a damp patch. In a newer <a href="https://www.markham.ca/" className="underline" rel="nofollow noreferrer noopener">Markham</a> or <a href="https://www.vaughan.ca/" className="underline" rel="nofollow noreferrer noopener">Vaughan</a> subdivision, the basement might be a clean concrete box with good height and a rough-in for a bathroom that was never finished. Both can become the most used part of the house, but they need very different plans.
         </p>
         <p className="mt-4 leading-relaxed text-muted">
           Y2 Design & Build has been finishing basements across the GTA for more than 14 years. Our basement renovation projects are designed, priced, and built by the same team, so the layout you approve is the layout that gets built. We write and itemize every quote, and our trades are licensed and WSIB-covered.
@@ -218,17 +218,27 @@ export default function BasementRenovationPage() {
           For dry foundations, we insulate in a way that keeps warm indoor air away from cold concrete—typically rigid foam board against the foundation wall, then a framed wall with additional insulation.
         </p>
         <ul className="mt-6 space-y-3">
-          {[
-            "Backwater valve and sump pump checks with municipal flood protection subsidy options",
-            "Ceiling height and ductwork mapping before finalizing bulkhead positions",
-            "Electrical panel capacity evaluation (e.g., upgrading older 100-amp panels)",
-            "Window expansion for legal bedroom egress requirements",
-          ].map((item) => (
-            <li key={item} className="flex items-start gap-3 text-sm text-muted">
+           <li className="flex items-start gap-3 text-md text-muted">
               <span className="mt-0.5 text-brand" aria-hidden="true">✓</span>
-              <span>{item}</span>
+              <span>Backwater valve and sump pump: If your home doesn't have them, it's worth discussing. The <a href="https://www.toronto.ca/" className="underline" rel="nofollow noreferrer">City of Toronto</a> and some other GTA municipalities offer subsidies toward flood protection devices.
+</span>
             </li>
-          ))}
+             <li className="flex items-start gap-3 text-md text-muted">
+              <span className="mt-0.5 text-brand" aria-hidden="true">✓</span>
+              <span>Ceiling height and ductwork: We map where bulkheads will fall before the design is final, so you know exactly how the ceiling will look.
+</span>
+            </li>
+             <li className="flex items-start gap-3 text-md text-muted">
+              <span className="mt-0.5 text-brand" aria-hidden="true">✓</span>
+              <span>Electrical panel capacity: A suite with its own kitchen, or a basement with heated floors and a theatre, can push an older 100-amp panel too far.
+</span>
+            </li>
+       
+            <li className="flex items-start gap-3 text-md text-muted">
+              <span className="mt-0.5 text-brand" aria-hidden="true">✓</span>
+              <span>Windows: Small, high basement windows often need to be enlarged for light and, in any bedroom, for safe exit.
+</span>
+            </li>
         </ul>
       </div>
     </div>
@@ -336,7 +346,7 @@ export default function BasementRenovationPage() {
       Legal Basement Apartments in Ontario
     </h2>
     <p className="mt-4 leading-relaxed text-muted">
-      Ontario now allows up to three residential units on most urban lots, which has made basement suites a serious option for families and investors. A legal suite has to meet the Ontario Building Code and your municipality's rules, and the details matter.
+      Ontario now allows up to three residential units on most urban lots, which has made basement suites a serious option for families and investors. A legal suite has to meet the Ontario <a href="http://www.ontario.ca/page/ontarios-building-code" rel="nofollow" className="underline">Building Code</a>  and your municipality's rules, and the details matter.
     </p>
 
     <h3 className="mt-6 text-xl font-bold text-brand-dark">
@@ -389,6 +399,30 @@ export default function BasementRenovationPage() {
                 </div>
               ))}
             </div>
+<p className="mt-4 leading-relaxed text-muted">
+These figures are a planning guide, not a quote. A basic open family room with laminate flooring sits at the lower end. A legal suite with a kitchen, a full bathroom, a new entrance, and fire separation sits toward the top. What tends to move the number most:
+            </p>
+
+             <ul className="mt-4 space-y-3">
+      {[
+        "Adding a bathroom, especially if the plumbing rough-in isn't where you want the room",
+        "A kitchen or wet bar, with cabinetry, counters, and venting",
+        "Cutting a new side entrance or enlarging windows",
+        "Waterproofing, drainage repairs or replacing old insulation",
+        "Electrical panel upgrades",
+        "Premium finishes like engineered hardwood, custom millwork and built-in media walls",
+      ].map((req) => (
+        <li key={req} className="flex items-start gap-3 text-sm text-muted leading-relaxed">
+          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand" aria-hidden="true">
+            ✓
+          </span>
+          <span>{req}</span>
+        </li>
+      ))}
+    </ul>
+             <p className="mt-4 leading-relaxed text-muted">
+Our detailed <a href="https://y2designandbuild.com/blog/how-much-does-basement-renovation-cost-gta">GTA basement renovation cost guide</a> breaks these down further. Whatever you choose, the itemized quote shows each line, so you can see exactly where the money goes and decide what to keep.
+            </p>
           </div>
         </section>
 
@@ -426,7 +460,7 @@ export default function BasementRenovationPage() {
       How Long Does a Basement Renovation Take?
     </h2>
     <p className="mt-4 leading-relaxed text-muted">
-      The calendar has two parts. Design and permits come first, and their length depends on the scope and on your municipality&apos;s review time. Construction follows. Many finished basements need several weeks of on-site work once permits are in hand. One recent client&apos;s basement was completed in five weeks. Legal suites take longer because of inspections at each stage.
+      The calendar has two parts. Design and permits come first, and their length depends on the scope and on your municipality&apos;s review time. Construction follows. Many finished basements need several weeks of on-site work once <a href="http://www.ontario.ca/document/citizens-guide-land-use-planning/building-permits" rel="nofollow" className="underline">permits</a> are in hand. One recent client&apos;s basement was completed in five weeks. Legal suites take longer because of inspections at each stage.
     </p>
 
     <div className="mt-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">

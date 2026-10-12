@@ -252,7 +252,7 @@ export default function BathroomClient() {
                 Bathroom Remodel in Mississauga by Y2 Design & Build
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Mississauga isn't one housing market, but several. A 1950s bungalow in Mineola, a 1980s two-story in Erin Mills, and a 30th-floor suite near Celebration Square each present their own set of conditions, and a bathroom plan that works well in one can be entirely wrong for another.
+                <a href="https://www.mississauga.ca/" rel="nofollow" className="underline">Mississauga</a> isn't one housing market, but several. A 1950s bungalow in Mineola, a 1980s two-story in Erin Mills, and a 30th-floor suite near Celebration Square each present their own set of conditions, and a bathroom plan that works well in one can be entirely wrong for another.
               </p>
               <p className="mt-4 leading-relaxed text-muted">
                 Y2 Design & Build approaches each{" "}
@@ -312,19 +312,63 @@ export default function BathroomClient() {
                 The finishes you choose for your bathroom remodel in Mississauga will be cleaned daily and exposed to steam for years, so we recommend materials based on durability first and appearance second. A few of the decisions we walk clients through:
               </p>
               <ul className="mt-6 space-y-3">
-                {materials.map((m) => (
-                  <li key={m.title} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+               
+                  <li className="flex items-start gap-3 text-md leading-relaxed text-muted">
                     <span
                       className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
                       aria-hidden="true"
                     >
                       ✓
                     </span>
+                  
                     <span>
-                      <b className="text-brand-dark">{m.title}.</b> {m.text}
+                      <b className="text-brand-dark">Porcelain versus ceramic tile.</b> <a href="https://home.howstuffworks.com/home-decor/decorating-styles-techniques/porcelain.htm" className="underline" rel="nofollow">Porcelain</a> is denser and absorbs less water, which makes it the better choice for shower floors and walls. <a href="https://en.wikipedia.org/wiki/Ceramic" rel="nofollow" className="underline"></a>Ceramic remains a cost-effective option for backsplashes and dry areas.
+                    </span>
+                     </li>
+                  <li className="flex items-start gap-3 text-md leading-relaxed text-muted">
+                     <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                     <span>
+                      <b className="text-brand-dark">Grout.</b> Standard cement-based <a href="https://en.wikipedia.org/wiki/Grout" rel="nofollow" className="underline">grout</a> needs periodic sealing. Epoxy or high-performance grouts cost more to install but resist staining and rarely need maintenance, which many busy households appreciate.
+                    </span>
+                     </li>
+                    <li className="flex items-start gap-3 text-md leading-relaxed text-muted">
+                     <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                     <span>
+                      <b className="text-brand-dark">Vanity tops.</b> <a href="https://en.wikipedia.org/wiki/Quartz" rel="nofollow" className="underline">Quartz</a> is non-porous and does not require sealing. Natural stone offers unique patterning but needs more care. Cultured marble is economical but scratches and dulls more readily.
+                    </span>
+                     </li>
+                   <li className="flex items-start gap-3 text-md leading-relaxed text-muted">
+                     <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                     <span>
+                      <b className="text-brand-dark">Shower valves.</b> Current <a href="https://www.mississauga.ca/publication/building-by-law/" rel="nofollow" className="underline">building code</a> calls for valves that protect against sudden temperature swings. Older homes often have valves that predate this requirement, so we replace them as part of any shower rebuild.
+                    </span>
+                     </li>
+                   <li className="flex items-start gap-3 text-md leading-relaxed text-muted">
+                     <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                     <span>
+                      <b className="text-brand-dark">Ventilation.</b> A correctly sized exhaust fan, ducted to the exterior and ideally controlled by a humidity sensor or timer, protects the rest of the room.
                     </span>
                   </li>
-                ))}
               </ul>
             </div>
           </div>
@@ -452,7 +496,7 @@ export default function BathroomClient() {
         <div className="container-page max-w-3xl text-center">
           <h2 className="text-3xl font-bold text-brand-dark">Who We Work With</h2>
           <p className="mt-4 leading-relaxed text-muted">
-            Our Mississauga clients include growing families who need a more practical main bathroom, professionals upgrading a primary ensuite, empty nesters planning to age in place, condo owners modernizing a dated suite, and homeowners preparing a property for sale.
+            Our Mississauga clients include growing families who need a more practical main bathroom, professionals upgrading a primary <a href="https://www.housebeautiful.com/room-decorating/bathrooms/a60777296/ensuite-bathroom-guide-examples/" rel="nofollow" className="underline"></a>ensuite, empty nesters planning to age in place, condo owners modernizing a dated suite, and homeowners preparing a property for sale.
           </p>
           <p className="mt-4 leading-relaxed text-muted">
             For those planning ahead, features such as curbless entries and concealed blocking for future grab bars can be built in discreetly. Some accessibility improvements may be eligible for tax credits; see our overview of{" "}
