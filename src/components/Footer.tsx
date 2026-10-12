@@ -40,7 +40,6 @@ export default function Footer() {
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-sm text-white/60 hover:text-white">{link.label}</Link>
             ))}
-            <Link href="/blog" className="text-sm text-white/60 hover:text-white">Blog</Link>
             <Link href="/contact" className="text-sm text-white/60 hover:text-white">Contact</Link>
             <Link href="/privacy" className="text-sm text-white/60 hover:text-white">Privacy</Link>
           </nav>
