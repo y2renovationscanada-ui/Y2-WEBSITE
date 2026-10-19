@@ -17,12 +17,10 @@ const kitchenImages = {
   intro: "https://y2designandbuild.com/images/kitchen-2.webp",
   covers: "https://y2designandbuild.com/images/kitchen-3.webp",
   gallery: [
+    "https://y2designandbuild.com/images/kitchen.webp",
+    "https://y2designandbuild.com/images/kitchen-design.webp",
     "https://y2designandbuild.com/images/kitchen-gall-1.webp",
-    "https://y2designandbuild.com/images/kitchen-gall-2.webp",
-    "https://y2designandbuild.com/images/kitchen-gall-3.webp",
-    "https://y2designandbuild.com/images/kitchen-gall-4.webp",
     "https://y2designandbuild.com/images/kitchen-gall-5.webp",
-    "https://y2designandbuild.com/images/kitchen-gall-6.webp",
   ],
 };
 
