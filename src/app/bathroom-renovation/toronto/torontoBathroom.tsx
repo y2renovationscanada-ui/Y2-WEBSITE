@@ -557,7 +557,7 @@ export default function BathroomTorontoClient() {
           </p>
           <p className="mt-4 leading-relaxed text-muted">
             Want the new floor to carry into the hallway? Our{" "}
-            <a className="underline" href="https://y2designandbuild.com/flooring-stairs">
+            <a className="underline" href="https://y2designandbuild.com/flooring">
               flooring team
             </a>{" "}
             can match it.
