@@ -299,11 +299,11 @@ export default function BathroomRichmondHillClient() {
               </span>
               <span>
                 <b className="text-brand-dark">A basement bathroom for an in-law suite:</b> If a family member will live downstairs, a full bathroom is usually the first priority. If you’re thinking about turning that space into a separate, legal unit later, it’s worth reading about the{" "}
-                <Link className="underline" href="/blog/legal-basement-apartment-requirements-ontario">
+                <Link className="underline" href="https://y2designandbuild.com/blog/what-makes-a-basement-apartment-legal-in-ontario">
                   rules for legal basement apartments in Ontario
                 </Link>{" "}
                 before the design is finalized, and our{" "}
-                <Link className="underline" href="/blog/basement-renovation-cost-gta">
+                <Link className="underline" href="https://y2designandbuild.com/blog/how-much-does-basement-renovation-cost-gta">
                   GTA basement renovation cost breakdown
                 </Link>{" "}
                 can help with budgeting.

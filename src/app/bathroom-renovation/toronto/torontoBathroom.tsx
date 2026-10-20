@@ -147,7 +147,7 @@ const moreServices = [
   { label: "Basement Renovation in Toronto →", href: "https://y2designandbuild.com/basement-renovation/toronto" },
   { label: "Home Renovation in Toronto →", href: "https://y2designandbuild.com/home-renovation/toronto" },
   { label: "Condo Renovation →", href: "https://y2designandbuild.com/condo-renovation" },
-  { label: "Flooring & Stairs →", href: "https://y2designandbuild.com/flooring-stairs" },
+  { label: "Flooring & Stairs →", href: "https://y2designandbuild.com/flooring" },
   { label: "Home Extensions →", href: "https://y2designandbuild.com/home-extensions" },
   { label: "ADU Construction →", href: "https://y2designandbuild.com/adu-construction" },
 ];

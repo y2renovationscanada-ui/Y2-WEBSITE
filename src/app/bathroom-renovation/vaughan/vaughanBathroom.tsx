@@ -327,8 +327,7 @@ export default function BathroomClient() {
               </p>
               <p className="mt-4 leading-relaxed text-muted">
                 The key is phasing. We plan the work so at least one shower stays usable while the others are under construction, and we sequence the trades so the plumber and tiler move from one room to the next without long gaps. If every bathroom will be out of service at the same time, our{" "}
-                {/* TODO: replace href with the real guide URL */}
-                <Link className="underline" href="/blog/where-to-stay-during-a-major-renovation">
+                <Link className="underline" href="https://y2designandbuild.com/blog/what-to-expect-during-home-renovation-markham">
                   guide to arranging where to stay during a major renovation
                 </Link>{" "}
                 covers the practical options.
@@ -380,8 +379,7 @@ export default function BathroomClient() {
           <h2 className="text-center text-3xl font-bold text-brand-dark">Vaughan Bathroom Remodel Cost and Timeline</h2>
           <p className="mx-auto mt-4 max-w-3xl text-center leading-relaxed text-muted">
             Your price will reflect your room’s size, layout, and finishes, but the figures below from recent Y2 projects give a dependable starting point. Multi-bathroom projects are quoted together, and timelines overlap where phasing allows. For more on what drives the numbers, see our{" "}
-            {/* TODO: replace hrefs with real article URLs */}
-            <Link className="underline" href="/blog/bathroom-renovation-cost-gta">
+            <Link className="underline" href="https://y2designandbuild.com/blog/bathroom-renovation-cost-gta">
               complete bathroom cost guide for the GTA
             </Link>{" "}
             and our article explaining{" "}

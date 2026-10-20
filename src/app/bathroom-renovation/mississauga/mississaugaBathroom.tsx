@@ -644,9 +644,9 @@ export default function BathroomClient() {
           <h2 className="text-3xl font-bold text-brand-dark">Explore Our Other Renovation Services</h2>
           <p className="mt-4 leading-relaxed text-muted">
             Many Mississauga homeowners combine a bathroom remodel with related improvements. We also provide{" "}
-            <a className="underline" href="https://y2designandbuild.com/kitchen-renovation/mississauga">kitchen renovations</a>,{" "}
-            <a className="underline" href="https://y2designandbuild.com/basement-renovation/mississauga">basement renovations</a>,{" "}
-            <a className="underline" href="https://y2designandbuild.com/home-renovation/mississauga">whole-home renovations</a>,{" "}
+            <a className="underline" href="https://y2designandbuild.com/kitchen-renovation">kitchen renovations</a>,{" "}
+            <a className="underline" href="https://y2designandbuild.com/basement-renovation">basement renovations</a>,{" "}
+            <a className="underline" href="https://y2designandbuild.com/home-renovation">whole-home renovations</a>,{" "}
             <a className="underline" href="https://y2designandbuild.com/home-extensions">home additions</a>, and{" "}
             <a className="underline" href="https://y2designandbuild.com/flooring">flooring installation</a>. For a broader overview, visit our{" "}
             <a className="underline" href="https://y2designandbuild.com/bathroom-renovation">bathroom renovation services page</a> or learn more about{" "}
