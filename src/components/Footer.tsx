@@ -2,6 +2,29 @@ import Link from "next/link";
 import { site, navLinks } from "@/lib/content";
 import { QuoteButton } from "./QuoteModal";
 
+const socialLinks = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/y2designandbuild/",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61552924365145",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+        <path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z" />
+      </svg>
+    ),
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-brand-dark text-white">
@@ -44,6 +67,23 @@ export default function Footer() {
             <Link href="/privacy" className="text-sm text-white/60 hover:text-white">Privacy</Link>
           </nav>
         </div>
+
+        <ul aria-label="Social media" className="mt-6 flex items-center justify-center gap-5">
+          {socialLinks.map((social) => (
+            <li key={social.label}>
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Y2 Design & Build on ${social.label}`}
+                className="text-white/60 transition-colors hover:text-accent"
+              >
+                {social.icon}
+              </a>
+            </li>
+          ))}
+        </ul>
+
         <p className="mt-6 text-center text-xs text-white/40">
           © {new Date().getFullYear()} {site.name}. All rights reserved.
         </p>
