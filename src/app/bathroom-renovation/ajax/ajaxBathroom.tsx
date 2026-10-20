@@ -548,7 +548,7 @@ export default function BathroomAjaxClient() {
             <a className="underline" href="https://y2designandbuild.com/kitchen-renovation/ajax">kitchen renovations in Ajax</a>,{" "}
             <a className="underline" href="https://y2designandbuild.com/basement-renovation/ajax">basement renovations in Ajax</a> and{" "}
             <a className="underline" href="https://y2designandbuild.com/home-renovation/ajax">full home renovations in Ajax</a>, along with{" "}
-            <a className="underline" href="https://y2designandbuild.com/flooring-stairs">flooring</a> that can carry from the bathroom into the hallway. You can also read our{" "}
+            <a className="underline" href="https://y2designandbuild.com/flooring">flooring</a> that can carry from the bathroom into the hallway. You can also read our{" "}
             <a className="underline" href="https://y2designandbuild.com/bathroom-renovation">GTA bathroom renovation overview</a> or learn more about{" "}
             <a className="underline" href="https://y2designandbuild.com/about">our team</a>.
           </p>

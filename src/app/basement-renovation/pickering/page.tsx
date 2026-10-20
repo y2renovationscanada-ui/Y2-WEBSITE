@@ -1,9 +1,11 @@
 import React from "react";
 import BasementClient from "./pickeringBasement";
+import { site } from "@/lib/content";
 
 export const metadata = {
   title: "Basement Renovation Pickering | Get Free Consultation Today",
-  description: "Custom basement finishing for Pickering homes, including wet bars, home gyms and guest suites. Licensed, insured and permit-ready. Book your free quote."
+  description: "Custom basement finishing for Pickering homes, including wet bars, home gyms and guest suites. Licensed, insured and permit-ready. Book your free quote.",
+  canonical: `${site.url}/basement-renovation/pickering`,
 }
 
 export default function BasementRenovationGtaPage() {
