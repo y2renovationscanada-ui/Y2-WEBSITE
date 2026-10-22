@@ -16,12 +16,18 @@ const homeImages = {
   local: "https://y2designandbuild.com/images/kitchen.webp",
   includes: "https://y2designandbuild.com/images/kitchen-gall-5.webp",
   gallery: [
-    "https://y2designandbuild.com/images/kitchen-gall-1.webp",
-    "https://y2designandbuild.com/images/bathroom-gall-1.webp",
+    "https://y2designandbuild.com/images/residential.webp",
+    "https://y2designandbuild.com/images/hero-2.webp",
+    "https://y2designandbuild.com/images/hero-3.webp",
+    "https://y2designandbuild.com/images/basement-gallery-2.webp",
+    "https://y2designandbuild.com/images/bath-gallery-3.webp",
     "https://y2designandbuild.com/images/kitchen-gall-5.webp",
-    "https://y2designandbuild.com/images/bathroom-gall-10.webp",
-    "https://y2designandbuild.com/images/kitchen.webp",
-    "https://y2designandbuild.com/images/bathroom-palmer-1.webp",
+    "https://y2designandbuild.com/images/bath-gallery-4.webp",
+    "https://y2designandbuild.com/images/basement-gallery-9.webp",
+    "https://y2designandbuild.com/images/kitchen-gall-9.webp",
+    "https://y2designandbuild.com/images/bath-gallery-11.webp",
+    "https://y2designandbuild.com/images/kitchen-gall-2.webp",
+    "https://y2designandbuild.com/images/basement-gallery-4.webp",
   ],
 };
 

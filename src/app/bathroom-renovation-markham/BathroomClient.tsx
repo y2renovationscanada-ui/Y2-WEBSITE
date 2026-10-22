@@ -266,81 +266,43 @@ export default function BathroomClient({
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="section-pad bg-brand-dark text-white">
-        <div className="container-page">
-          <h2 className="text-center text-3xl font-bold">
-            Gallery Of Recent Projects
-          </h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src="https://y2designandbuild.com/images/bathroom-gall-1.webp"
-                alt="gallery photo — Y2 Design & Build GTA"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src="https://y2designandbuild.com/images/bathroom-gall-10.webp"
-                alt="gallery photo — Y2 Design & Build GTA"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src="https://y2designandbuild.com/images/bathroom-palmer-1.webp"
-                alt="gallery photo — Y2 Design & Build GTA"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src="https://y2designandbuild.com/images/bathroom-3.webp"
-                alt="gallery photo — Y2 Design & Build GTA"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src="https://y2designandbuild.com/images/bathroom.webp"
-                alt="gallery photo — Y2 Design & Build GTA"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src="https://y2designandbuild.com/images/bathroom-palmer-2.webp"
-                alt="gallery photo — Y2 Design & Build GTA"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </div>
-          </div>
-          <div className="mt-10 text-center">
-            <QuoteButton className="btn-primary cursor-pointer">
-              Start My Bathroom Renovation Quote
-            </QuoteButton>
-          </div>
-        </div>
-      </section>
+  {/* 12. Gallery */}
+       <section className="section-pad bg-brand-dark text-white">
+         <div className="container-page">
+           <h2 className="text-center text-3xl font-bold">Gallery Of Recent Projects</h2>
+           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+             {[
+               "bathroom-gall-1",
+               "bathroom-2",
+               "bath-gallery-3",
+               "bath-gallery-4",
+               "bath-gallery-5",
+               "bath-gallery-6",
+               "bath-gallery-7",
+               "bath-gallery-8",
+               "bath-gallery-9",
+               "bath-gallery-10",
+               "bath-gallery-11",
+               "bath-gallery-12",
+             ].map((name) => (
+               <div key={name} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                 <Image
+                   src={`https://y2designandbuild.com/images/${name}.webp`}
+                   alt="gallery photo — Y2 Design & Build GTA"
+                   fill
+                   loading="lazy"
+                   className="object-cover"
+                   sizes="(max-width: 768px) 100vw, 33vw"
+                 />
+               </div>
+             ))}
+           </div>
+           <div className="mt-10 text-center">
+             <QuoteButton className="btn-primary cursor-pointer">Start My Bathroom Renovation Quote</QuoteButton>
+           </div>
+         </div>
+       </section>
+ 
 
       {/* Our Commitment */}
       <section className="section-pad bg-white">

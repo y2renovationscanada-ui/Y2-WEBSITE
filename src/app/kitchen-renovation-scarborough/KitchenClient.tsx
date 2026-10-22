@@ -292,7 +292,7 @@ export default function KitchenClient({
           <h2 className="text-center text-3xl font-bold">
             Gallery Of Recent Projects
           </h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
                 src="https://y2designandbuild.com/images/kitchen-gall-1.webp"
@@ -305,7 +305,97 @@ export default function KitchenClient({
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
+                src="https://y2designandbuild.com/images/kitchen-gall-2.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="https://y2designandbuild.com/images/kitchen-gall-3.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="https://y2designandbuild.com/images/kitchen-gall-4.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
                 src="https://y2designandbuild.com/images/kitchen-gall-5.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="https://y2designandbuild.com/images/kitchen-gall-6.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="https://y2designandbuild.com/images/kitchen-gall-7.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="https://y2designandbuild.com/images/kitchen-gall-8.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="https://y2designandbuild.com/images/kitchen-gall-9.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="https://y2designandbuild.com/images/kitchen-gall-10.webp"
+                alt="gallery photo — Y2 Design & Build GTA"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src="https://y2designandbuild.com/images/kitchen-gall-11.webp"
                 alt="gallery photo — Y2 Design & Build GTA"
                 fill
                 loading="lazy"

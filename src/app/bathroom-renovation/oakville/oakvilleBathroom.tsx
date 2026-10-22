@@ -620,19 +620,24 @@ export default function BathroomOakvilleClient() {
           </div>
         </div>
       </section>
-
-      {/* 15. Gallery */}
+ {/* 12. Gallery */}
       <section className="section-pad bg-brand-dark text-white">
         <div className="container-page">
           <h2 className="text-center text-3xl font-bold">Gallery Of Recent Projects</h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               "bathroom-gall-1",
-              "bathroom-gall-10",
-              "bathroom-palmer-1",
-              "bathroom-3",
-              "bathroom",
-              "bathroom-palmer-2",
+              "bathroom-2",
+              "bath-gallery-3",
+              "bath-gallery-4",
+              "bath-gallery-5",
+              "bath-gallery-6",
+              "bath-gallery-7",
+              "bath-gallery-8",
+              "bath-gallery-9",
+              "bath-gallery-10",
+              "bath-gallery-11",
+              "bath-gallery-12",
             ].map((name) => (
               <div key={name} className="relative aspect-[4/3] overflow-hidden rounded-xl">
                 <Image
@@ -651,6 +656,7 @@ export default function BathroomOakvilleClient() {
           </div>
         </div>
       </section>
+
 
       {/* 16. FAQ */}
       <section className="section-pad bg-surface">

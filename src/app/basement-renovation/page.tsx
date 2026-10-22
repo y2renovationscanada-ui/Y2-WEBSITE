@@ -20,6 +20,27 @@ const path = `/${data.slug}`;
 const telEnglish = `tel:${site.phone.replace(/\D/g, "")}`;
 const telMandarin = "tel:6472942888";
 
+
+const basementImages = {
+  hero: "https://y2designandbuild.com/images/kitchen.webp",
+  intro: "https://y2designandbuild.com/images/kitchen-2.webp",
+  covers: "https://y2designandbuild.com/images/kitchen-3.webp",
+  gallery: [
+    "https://y2designandbuild.com/images/basement-gallery-1.webp",
+    "https://y2designandbuild.com/images/basement-gallery-2.webp",
+    "https://y2designandbuild.com/images/basement-gallery-3.webp",
+    "https://y2designandbuild.com/images/basement-gallery-4.webp",
+    "https://y2designandbuild.com/images/basement-gallery-5.webp",
+    "https://y2designandbuild.com/images/basement-gallery-6.webp",
+    "https://y2designandbuild.com/images/basement-gallery-7.webp",
+    "https://y2designandbuild.com/images/basement-gallery-8.webp",
+    "https://y2designandbuild.com/images/basement-gallery-9.webp",
+    "https://y2designandbuild.com/images/basement-gallery-10.webp",
+    "https://y2designandbuild.com/images/basement-gallery-11.webp",
+    "https://y2designandbuild.com/images/basement-gallery-12.webp",
+  ],
+};
+
 // lib/content.ts
 export const basementCustomData = {
   heroTitle: "Basement Renovation in the GTA",
@@ -538,6 +559,31 @@ Our detailed <a href="https://y2designandbuild.com/blog/how-much-does-basement-r
     </div>
   </div>
 </section>
+
+{/* 15. Gallery */}
+      <section className="section-pad bg-brand-dark text-white">
+        <div className="container-page">
+          <h2 className="text-center text-3xl font-bold">Gallery Of Recent Projects</h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {basementImages.gallery.map((src, index) => (
+              <div key={`${src}-${index}`} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image
+                  src={src}
+                  alt="Kitchen renovation gallery photo — Y2 Design & Build GTA"
+                  fill
+                  loading="lazy"
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <QuoteButton className="btn-primary cursor-pointer">Start My Kitchen Renovation Quote</QuoteButton>
+          </div>
+        </div>
+      </section>
+
 
         {/* FAQs */}
         <FAQ

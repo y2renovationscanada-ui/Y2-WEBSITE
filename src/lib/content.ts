@@ -55,11 +55,11 @@ export const images = {
   extension: "/images/home-extension-ai.webp",
   closet: "/images/closet.webp",
   gallery: {
-    kitchen: ["/images/kitchen-gall-1.webp", "/images/kitchen-gall-5.webp", "/images/kitchen.webp", "/images/kitchen-design.webp"],
-    bathroom: ["/images/bathroom-palmer-1.webp", "/images/bathroom-palmer-2.webp", "/images/bathroom-gall-1.webp", "/images/bathroom-gall-10.webp", "/images/bathroom-2.webp", "/images/bathroom-3.webp"],
+    kitchen: ["/images/kitchen-gall-1.webp", "/images/kitchen-gall-2.webp", "/images/kitchen-gall-3.webp", "/images/kitchen-gall-4.webp", "/images/kitchen-gall-5.webp", "/images/kitchen-gall-6.webp", "/images/kitchen-gall-7.webp", "/images/kitchen-gall-8.webp", "/images/kitchen-gall-9.webp", "/images/kitchen-gall-10.webp", "/images/kitchen.webp", "/images/kitchen-design.webp"],
+    bathroom: [ "/images/bathroom-gall-1.webp", "/images/bathroom-2.webp", "/images/bath-gallery-3.webp", "/images/bath-gallery-4.webp", "/images/bath-gallery-5.webp", "/images/bath-gallery-6.webp", "/images/bath-gallery-7.webp", "/images/bath-gallery-8.webp", "/images/bath-gallery-9.webp", "/images/bath-gallery-10.webp", "/images/bath-gallery-11.webp", "/images/bath-gallery-12.webp"],
     commercial: ["/images/commercial-warehouse.webp", "/images/hero-2.webp", "/images/residential.webp"],
-    basement: ["/images/basement-gall-1.webp", "/images/basement.webp"],
-    home: ["/images/residential.webp", "/images/hero-2.webp", "/images/hero-3.webp"],
+    basement: ["/images/basement-gallery-1", "/images/basement-gallery-2","/images/basement-gallery-3","/images/basement-gallery-4","/images/basement-gallery-5","/images/basement-gallery-6","/images/basement-gallery-7","/images/basement-gallery-8","/images/basement-gallery-9","/images/basement-gallery-10","/images/basement-gallery-11","/images/basement-gallery-12"],
+    home: ["/images/residential.webp", "/images/hero-2.webp", "/images/hero-3.webp", "/images/basement-gallery-2.webp", "/images/bath-gallery-3.webp", "/images/kitchen-gall-5.webp", "/images/bath-gallery-4.webp", "/images/basement-gallery-9.webp", "/images/kitchen-gall-9.webp", "/images/bath-gallery-11.webp", "/images/bath-gallery-4.webp", "/images/kitchen-gall-2.webp"],
     flooring: ["/images/flooring-stairs-ai.webp", "/images/stairs.webp"],
   },
 };

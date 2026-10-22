@@ -162,7 +162,7 @@ export default function ServicePageLayout({
           <h2 className="text-center text-3xl font-bold">Gallery Of Recent Projects</h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {data.gallery.map((img, i) => (
-              <div key={img} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <div key={`${img}-${i}`} className="relative aspect-[4/3] overflow-hidden rounded-xl">
                 <Image src={img} alt={`${data.title} gallery photo ${i + 1} — Y2 Design & Build GTA`} fill loading="lazy" className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
               </div>
             ))}
