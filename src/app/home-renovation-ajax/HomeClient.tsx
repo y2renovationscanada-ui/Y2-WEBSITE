@@ -311,7 +311,7 @@ Ajax has a lot of solid, well-built houses on good lots that simply have not bee
                  ))}
                </div>
                <div className="mt-10 text-center">
-                 <QuoteButton className="btn-primary cursor-pointer">Start My Bathroom Renovation Quote</QuoteButton>
+                 <QuoteButton className="btn-primary cursor-pointer">Start My Home Renovation Quote</QuoteButton>
                </div>
              </div>
            </section>

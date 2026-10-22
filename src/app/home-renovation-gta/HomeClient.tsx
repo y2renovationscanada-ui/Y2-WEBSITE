@@ -337,7 +337,7 @@ We also build location-specific pages for Markham, Scarborough, Ajax and Pickeri
                  ))}
                </div>
                <div className="mt-10 text-center">
-                 <QuoteButton className="btn-primary cursor-pointer">Start My Bathroom Renovation Quote</QuoteButton>
+                 <QuoteButton className="btn-primary cursor-pointer">Start My Home Renovation Quote</QuoteButton>
                </div>
              </div>
            </section>
