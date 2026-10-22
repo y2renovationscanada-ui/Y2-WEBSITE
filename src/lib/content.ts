@@ -60,7 +60,7 @@ export const images = {
     commercial: ["/images/commercial-warehouse.webp", "/images/hero-2.webp", "/images/residential.webp"],
     basement: ["/images/basement-gallery-1", "/images/basement-gallery-2","/images/basement-gallery-3","/images/basement-gallery-4","/images/basement-gallery-5","/images/basement-gallery-6","/images/basement-gallery-7","/images/basement-gallery-8","/images/basement-gallery-9","/images/basement-gallery-10","/images/basement-gallery-11","/images/basement-gallery-12"],
     home: ["/images/residential.webp", "/images/hero-2.webp", "/images/hero-3.webp", "/images/basement-gallery-2.webp", "/images/bath-gallery-3.webp", "/images/kitchen-gall-5.webp", "/images/bath-gallery-4.webp", "/images/basement-gallery-9.webp", "/images/kitchen-gall-9.webp", "/images/bath-gallery-11.webp", "/images/bath-gallery-4.webp", "/images/kitchen-gall-2.webp"],
-    flooring: ["/images/flooring-stairs-ai.webp", "/images/stairs.webp"],
+    flooring: ["/images/floors-gall-1.webp", "/images/floors-gall-2.webp", "/images/floors-gall-3.webp", "/images/floors-gall-4.webp", "/images/floors-gall-5.webp", "/images/floors-gall-6.webp", "/images/floors-gall-7.webp", "/images/floors-gall-8.webp", "/images/floors-gall-9.webp", "/images/floors-gall-10.webp", "/images/floors-gall-11.webp", "/images/floors-gall-12.webp"],
   },
 };
 
