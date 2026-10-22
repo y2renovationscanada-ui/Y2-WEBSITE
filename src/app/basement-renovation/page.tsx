@@ -579,7 +579,7 @@ Our detailed <a href="https://y2designandbuild.com/blog/how-much-does-basement-r
             ))}
           </div>
           <div className="mt-10 text-center">
-            <QuoteButton className="btn-primary cursor-pointer">Start My Kitchen Renovation Quote</QuoteButton>
+            <QuoteButton className="btn-primary cursor-pointer">Start My Basement Renovation Quote</QuoteButton>
           </div>
         </div>
       </section>

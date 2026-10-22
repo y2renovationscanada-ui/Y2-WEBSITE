@@ -304,42 +304,42 @@ Our office and design studio are at 3400 14th Ave, Unit 16 , so in Ajax we are n
           </ul>
         </div>
       </section>
-
-      {/* Gallery */}
-      <section className="section-pad bg-brand-dark text-white">
-        <div className="container-page">
-          <h2 className="text-center text-3xl font-bold">
-            Gallery Of Recent Projects
-          </h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src="https://y2designandbuild.com/images/basement-gall-1.webp"
-                alt="gallery photo — Y2 Design & Build GTA"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image
-                src="https://y2designandbuild.com/images/basement.webp"
-                alt="gallery photo — Y2 Design & Build GTA"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-            </div>
-            </div>
-          <div className="mt-10 text-center">
-            <QuoteButton className="btn-primary cursor-pointer">
-              Start My Basement Renovation Quote
-            </QuoteButton>
-          </div>
-        </div>
-      </section>
+ {/* 12. Gallery */}
+                 <section className="section-pad bg-brand-dark text-white">
+                   <div className="container-page">
+                     <h2 className="text-center text-3xl font-bold">Gallery Of Recent Projects</h2>
+                     <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                       {[
+                         "basement-gallery-1",
+                         "basement-gallery-2",
+                         "basement-gallery-3",
+                         "basement-gallery-4",
+                         "basement-gallery-5",
+                         "basement-gallery-6",
+                         "basement-gallery-7",
+                         "basement-gallery-8",
+                         "basement-gallery-9",
+                         "basement-gallery-10",
+                         "basement-gallery-11",
+                         "basement-gallery-12",
+                       ].map((name) => (
+                         <div key={name} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                           <Image
+                             src={`https://y2designandbuild.com/images/${name}.webp`}
+                             alt="gallery photo — Y2 Design & Build GTA"
+                             fill
+                             loading="lazy"
+                             className="object-cover"
+                             sizes="(max-width: 768px) 100vw, 33vw"
+                           />
+                         </div>
+                       ))}
+                     </div>
+                     <div className="mt-10 text-center">
+                       <QuoteButton className="btn-primary cursor-pointer">Start My Basement Renovation Quote</QuoteButton>
+                     </div>
+                   </div>
+                 </section>
 
       {/* Our Commitment */}
       <section className="section-pad bg-white">
