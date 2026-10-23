@@ -417,8 +417,12 @@ export default function BathroomClient() {
               </div>
             </div>
 
-            <div>
-              <img src={images.bathroom2} alt="Bathroom remodel in Markham" />
+            <div className={`card relative aspect-[4/3] overflow-hidden bg-black`}>
+              <iframe
+                src={`https://www.tiktok.com/player/v1/7649493628196277512`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full border-0"
+              />
             </div>
           </div>
         </div>

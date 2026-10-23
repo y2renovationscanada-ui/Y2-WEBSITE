@@ -260,8 +260,12 @@ export default function KitchenMarkhamClient() {
               </div>
             </div>
 
-            <div>
-              <img src="https://y2designandbuild.com/images/kitchen.webp" alt="Kitchen renovation in Markham" />
+            <div className={`card relative aspect-[4/3] overflow-hidden bg-black`}>
+              <iframe
+                src={`https://www.tiktok.com/player/v1/7621315885210406151`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full border-0"
+              />
             </div>
           </div>
         </div>

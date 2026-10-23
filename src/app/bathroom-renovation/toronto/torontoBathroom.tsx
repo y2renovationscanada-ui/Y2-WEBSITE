@@ -305,8 +305,12 @@ export default function BathroomTorontoClient() {
                 <a href="https://y2designandbuild.com/" className="underline">Y2 Design &amp; Build</a> has dealt with both for more than 15 years. Homeowners who choose us for a bathroom renovation in Toronto work with one team that draws the plan, prices it line by line, and builds it with licensed, <a href="https://www.wsib.ca/en/operational-policy-manual/coverage-status" rel="nofollow" className="underline">WSIB</a>-covered trades. You get a single project manager you can call, text, or reach in English or Mandarin, plus an itemized fixed-price quote you can actually plan around.
               </p>
             </div>
-            <div>
-              <img src={images.bathroom2} alt="Bathroom renovation in Toronto" />
+            <div className={`card relative aspect-[4/3] overflow-hidden bg-black`}>
+              <iframe
+                src={`https://www.tiktok.com/player/v1/7649493628196277512`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full border-0"
+              />
             </div>
           </div>
         </div>

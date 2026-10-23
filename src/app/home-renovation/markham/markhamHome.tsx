@@ -230,9 +230,14 @@ export default function HomeRenovationMarkhamClient() {
               </div>
             </div>
 
-            <div>
-              <img src="https://y2designandbuild.com/images/hero-3.webp" alt="Home renovation in Markham" />
-            </div>
+           
+    <div className={`card relative aspect-[4/3] overflow-hidden bg-black`}>
+      <iframe
+        src={`https://www.tiktok.com/player/v1/7686213367027010834`}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full border-0"
+      />
+    </div>
           </div>
         </div>
       </section>

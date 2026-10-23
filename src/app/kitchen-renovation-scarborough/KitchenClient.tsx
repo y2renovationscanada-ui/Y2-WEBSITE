@@ -157,8 +157,12 @@ export default function KitchenClient({
               </div>
             </div>
 
-            <div>
-              <img src={images.kitchenDesign} alt="Kitchen Design" />
+            <div className={`card relative aspect-[4/3] overflow-hidden bg-black`}>
+              <iframe
+                src={`https://www.tiktok.com/player/v1/7621315885210406151`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full border-0"
+              />
             </div>
           </div>
         </div>

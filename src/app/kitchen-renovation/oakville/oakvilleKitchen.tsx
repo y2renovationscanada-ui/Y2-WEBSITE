@@ -416,8 +416,12 @@ export default function KitchenOakvilleClient() {
       <section className="section-pad bg-surface">
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div>
-              <img src="https://y2designandbuild.com/images/kitchen-gall-5.webp" alt="Kitchen island in a renovated Oakville kitchen" />
+             <div className={`card relative aspect-[3/4] overflow-hidden bg-black`}>
+              <iframe
+                src={`https://www.tiktok.com/player/v1/7621315885210406151`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full border-0"
+              />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-brand-dark">Getting the Island Right</h2>

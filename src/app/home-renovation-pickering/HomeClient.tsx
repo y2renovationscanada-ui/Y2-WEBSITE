@@ -63,16 +63,16 @@ export default function HomeClient({
                 Licensed & Insured · Serving the GTA
               </p>
               <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-Keep The Neighbourhood. Change The House.
+                Keep The Neighbourhood. Change The House.
               </h1>
               <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
-The hardest part of a whole-home renovation is rarely the building. It is managing five contractors who have never met each other.
+                The hardest part of a whole-home renovation is rarely the building. It is managing five contractors who have never met each other.
               </p>
               <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
-At Y2 Design & Build, concept, design, construction and the final walkthrough are handled by one in-house team. Kitchens, bathrooms, basements, flooring, additions and ADUs sit under a single contract with a single group of people accountable for it.
+                At Y2 Design & Build, concept, design, construction and the final walkthrough are handled by one in-house team. Kitchens, bathrooms, basements, flooring, additions and ADUs sit under a single contract with a single group of people accountable for it.
               </p>
               <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
-From the first conversation to the last walkthrough, the aim is simple: make the process as good as the finished house.
+                From the first conversation to the last walkthrough, the aim is simple: make the process as good as the finished house.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <QuoteButton className="btn-primary cursor-pointer text-center">
@@ -97,10 +97,10 @@ From the first conversation to the last walkthrough, the aim is simple: make the
         aria-label="Current offer"
       >
         <p className="text-lg font-bold">
-Save $2,500 On Your Home Renovation.
+          Save $2,500 On Your Home Renovation.
         </p>
         <p className="text-sm opacity-90">
-Get Free Consultation with No cost, no obligation, and no expectation that you go ahead. If the numbers don't work for you, that's a perfectly good outcome.
+          Get Free Consultation with No cost, no obligation, and no expectation that you go ahead. If the numbers don't work for you, that's a perfectly good outcome.
         </p>
       </section>
 
@@ -113,10 +113,10 @@ Get Free Consultation with No cost, no obligation, and no expectation that you g
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
               <h2 className="text-3xl font-bold text-brand-dark">
-Same Street, Same Schools, Completely Different Home
+                Same Street, Same Schools, Completely Different Home
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-Renovated room by room over a decade, a house ends up as a collection of separate decisions , three different floor finishes, four different trim profiles, a kitchen that does not talk to the dining room. Planning the whole thing at once avoids all of that. Expect:
+                Renovated room by room over a decade, a house ends up as a collection of separate decisions , three different floor finishes, four different trim profiles, a kitchen that does not talk to the dining room. Planning the whole thing at once avoids all of that. Expect:
               </p>
               <ul className="mt-6 space-y-3">
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
@@ -126,7 +126,7 @@ Renovated room by room over a decade, a house ends up as a collection of separat
                   >
                     ✓
                   </span>
-A plan for the whole house, even if the work happens in phases
+                  A plan for the whole house, even if the work happens in phases
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -135,7 +135,7 @@ A plan for the whole house, even if the work happens in phases
                   >
                     ✓
                   </span>
-Consistent finishes, materials and detailing throughout
+                  Consistent finishes, materials and detailing throughout
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -144,7 +144,7 @@ Consistent finishes, materials and detailing throughout
                   >
                     ✓
                   </span>
-Quality materials and tools, with meticulous attention to detail
+                  Quality materials and tools, with meticulous attention to detail
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -153,12 +153,12 @@ Quality materials and tools, with meticulous attention to detail
                   >
                     ✓
                   </span>
-Layouts that fix how the house actually flows, not just how it looks
+                  Layouts that fix how the house actually flows, not just how it looks
                 </li>
               </ul>
 
               <p className="mt-4 leading-relaxed text-muted">
-Because the goal is a house that feels considered, not a house that feels renovated.
+                Because the goal is a house that feels considered, not a house that feels renovated.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <QuoteButton className="btn-primary cursor-pointer">
@@ -173,8 +173,12 @@ Because the goal is a house that feels considered, not a house that feels renova
               </div>
             </div>
 
-            <div>
-              <img src={images.residential} alt="basement renovation" />
+            <div className={`card relative aspect-[4/3] overflow-hidden bg-black`}>
+              <iframe
+                src={`https://www.tiktok.com/player/v1/7686213367027010834`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full border-0"
+              />
             </div>
           </div>
         </div>
@@ -194,32 +198,32 @@ Because the goal is a house that feels considered, not a house that feels renova
             </div>
             <div>
               <h2 className="text-3xl font-bold text-brand-dark">
-A Premium Experience: From Start to Finish
+                A Premium Experience: From Start to Finish
               </h2>
               <h3 className="mt-4 text-xl font-bold text-brand-dark">
                 One Team, Start to Finish
               </h3>
               <p className="mt-2 leading-relaxed text-muted">
-Concept, design, construction and final walkthrough handled in-house. On a whole-home project this is the single biggest difference , you have one number to call about every part of it.
+                Concept, design, construction and final walkthrough handled in-house. On a whole-home project this is the single biggest difference , you have one number to call about every part of it.
               </p>
 
               <h3 className="mt-4 text-xl font-bold text-brand-dark">
                 A Free Consultation, With No Strings
               </h3>
               <p className="mt-2 leading-relaxed text-muted">
-Free, no-obligation consultation and quote. On a project this size, the planning conversation is worth having even if you are still a year away from starting.</p>
+                Free, no-obligation consultation and quote. On a project this size, the planning conversation is worth having even if you are still a year away from starting.</p>
               <h3 className="mt-4 text-xl font-bold text-brand-dark">
                 Communication You Do Not Have To Chase
               </h3>
               <p className="mt-2 leading-relaxed text-muted">
-Clear communication from first consultation through to final walkthrough , which matters most on the long projects, where silence is what makes people anxious.
-</p>
+                Clear communication from first consultation through to final walkthrough , which matters most on the long projects, where silence is what makes people anxious.
+              </p>
               <h3 className="mt-4 text-xl font-bold text-brand-dark">
                 Craftsmanship That Holds Up
               </h3>
               <p className="mt-2 leading-relaxed text-muted">
-Craftsmanship and attention to detail are the two things clients raise most often in our reviews. Across a whole house, consistency is the harder version of that.
-</p>
+                Craftsmanship and attention to detail are the two things clients raise most often in our reviews. Across a whole house, consistency is the harder version of that.
+              </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <QuoteButton className="btn-primary cursor-pointer">
                   Book My Free Consultation
@@ -240,10 +244,10 @@ Craftsmanship and attention to detail are the two things clients raise most ofte
       <section className="section-pad bg-white">
         <div className="container-page">
           <h2 className="text-3xl font-bold text-brand-dark">
-Home Renovations in Pickering
+            Home Renovations in Pickering
           </h2>
           <p className="mt-4 max-w-3xl text-muted">
-Pickering has a lot of solid, well-built houses on good lots that simply have not been touched since they were finished. Renovating is very often the better return compared to buying up in the same neighbourhood.
+            Pickering has a lot of solid, well-built houses on good lots that simply have not been touched since they were finished. Renovating is very often the better return compared to buying up in the same neighbourhood.
           </p>
         </div>
       </section>
@@ -299,29 +303,29 @@ Pickering has a lot of solid, well-built houses on good lots that simply have no
         </div>
       </section>
 
-        {/* 11. Gallery */}
-         <section className="section-pad bg-brand-dark text-white">
-           <div className="container-page">
-             <h2 className="text-center text-3xl font-bold">Gallery Of Recent Projects</h2>
-             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-               {homeImages.gallery.map((src) => (
-                 <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                   <Image
-                     src={src}
-                     alt="Home renovation gallery photo — Y2 Design & Build GTA"
-                     fill
-                     loading="lazy"
-                     className="object-cover"
-                     sizes="(max-width: 768px) 100vw, 33vw"
-                   />
-                 </div>
-               ))}
-             </div>
-             <div className="mt-10 text-center">
-               <QuoteButton className="btn-primary cursor-pointer">Start My Home Renovation Quote</QuoteButton>
-             </div>
-           </div>
-         </section>
+      {/* 11. Gallery */}
+      <section className="section-pad bg-brand-dark text-white">
+        <div className="container-page">
+          <h2 className="text-center text-3xl font-bold">Gallery Of Recent Projects</h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {homeImages.gallery.map((src) => (
+              <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image
+                  src={src}
+                  alt="Home renovation gallery photo — Y2 Design & Build GTA"
+                  fill
+                  loading="lazy"
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <QuoteButton className="btn-primary cursor-pointer">Start My Home Renovation Quote</QuoteButton>
+          </div>
+        </div>
+      </section>
 
       {/* Our Commitment */}
       <section className="section-pad bg-white">
@@ -332,7 +336,7 @@ Pickering has a lot of solid, well-built houses on good lots that simply have no
                 Our Commitment
               </h2>
               <p className="mt-4 leading-relaxed text-muted">
-It is not really about price. It is about whether the people in your house know what they are doing and tell you the truth. You can expect:
+                It is not really about price. It is about whether the people in your house know what they are doing and tell you the truth. You can expect:
               </p>
               <ul className="mt-6 space-y-3">
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
@@ -342,7 +346,7 @@ It is not really about price. It is about whether the people in your house know 
                   >
                     ✓
                   </span>
-One accountable team for the whole house, not one per room
+                  One accountable team for the whole house, not one per room
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -351,7 +355,7 @@ One accountable team for the whole house, not one per room
                   >
                     ✓
                   </span>
-A plan for the full scope, even when the work is phased
+                  A plan for the full scope, even when the work is phased
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -360,7 +364,7 @@ A plan for the full scope, even when the work is phased
                   >
                     ✓
                   </span>
-Quality materials and meticulous attention to detail
+                  Quality materials and meticulous attention to detail
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -369,7 +373,7 @@ Quality materials and meticulous attention to detail
                   >
                     ✓
                   </span>
-A team that listens, communicates and follows through
+                  A team that listens, communicates and follows through
                 </li>
                 <li className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                   <span
@@ -378,12 +382,12 @@ A team that listens, communicates and follows through
                   >
                     ✓
                   </span>
-Clear communication from the first call to the final walkthrough
+                  Clear communication from the first call to the final walkthrough
                 </li>
               </ul>
 
               <p className="mt-4 leading-relaxed text-muted">
-A house done as one project feels different from a house done in pieces. That is what we are after.
+                A house done as one project feels different from a house done in pieces. That is what we are after.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <QuoteButton className="btn-primary cursor-pointer">

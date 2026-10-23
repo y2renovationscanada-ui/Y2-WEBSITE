@@ -218,8 +218,12 @@ export default function BathroomAjaxClient() {
                 <a href="https://y2designandbuild.com/" className="underline">Y2 Design &amp; Build</a> has been remodeling bathrooms across Durham Region and the GTA for more than 14 years. When you choose us for a bathroom remodel in Ajax, one team handles the design, the itemized quote, and the construction. Your project manager coordinates the plumber, electrician, and tile setter, all WSIB-covered, so you never have to chase trades.
               </p>
             </div>
-            <div>
-              <img src={images.bathroom2} alt="Bathroom renovation in Ajax" />
+            <div className={`card relative aspect-[4/3] overflow-hidden bg-black`}>
+              <iframe
+                src={`https://www.tiktok.com/player/v1/7649493628196277512`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full border-0"
+              />
             </div>
           </div>
         </div>

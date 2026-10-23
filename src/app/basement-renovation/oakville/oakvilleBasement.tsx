@@ -297,9 +297,13 @@ export default function BasementRenovationOakvilleClient() {
               </div>
             </div>
 
-            <div>
-              <img src={basementImages.intro} alt="Basement renovation in Oakville" />
-            </div>
+            <div className={`card relative aspect-[4/3] overflow-hidden bg-black`}>
+                <iframe
+                  src={`https://www.tiktok.com/player/v1/7625752799006985480`}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full border-0"
+                />
+              </div>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2">
