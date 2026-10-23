@@ -493,7 +493,7 @@ export default function BasementRenovationPickeringClient() {
                ))}
              </div>
              <div className="mt-10 text-center">
-               <QuoteButton className="btn-primary cursor-pointer">Start My Home Renovation Quote</QuoteButton>
+               <QuoteButton className="btn-primary cursor-pointer">Start My Basement Renovation Quote</QuoteButton>
              </div>
            </div>
          </section>
