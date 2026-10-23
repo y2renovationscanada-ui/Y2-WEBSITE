@@ -114,8 +114,8 @@ export default function ServicePageLayout({
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3">
-              {data.gallery.slice(0, 4).map((img, i) => (
-                <div key={img} className={`relative overflow-hidden rounded-xl ${i === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"}`}>
+              {data.gallery.slice(0, 1).map((img, i) => (
+                <div key={img} className={`relative overflow-hidden rounded-xl ${i === 0 ? "col-span-2 aspect-[1/1]" : "aspect-square"}`}>
                   <Image src={img} alt={`${data.title} project photo ${i + 1} by Y2 Design & Build`} fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
                 </div>
               ))}
