@@ -11,11 +11,26 @@ import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import Link from "next/link";
 
-// TODO: replace these with real basement project images
 const basementImages = {
   hero: "https://y2designandbuild.com/images/basement.webp",
   intro: "https://y2designandbuild.com/images/basement-gall-1.webp",
+   gallery: [
+    "https://y2designandbuild.com/images/basement-gallery-1.webp",
+    "https://y2designandbuild.com/images/basement-gallery-2.webp",
+    "https://y2designandbuild.com/images/basement-gallery-3.webp",
+    "https://y2designandbuild.com/images/basement-gallery-4.webp",
+    "https://y2designandbuild.com/images/basement-gallery-5.webp",
+    "https://y2designandbuild.com/images/basement-gallery-6.webp",
+    "https://y2designandbuild.com/images/basement-gallery-7.webp",
+    "https://y2designandbuild.com/images/basement-gallery-8.webp",
+    "https://y2designandbuild.com/images/basement-gallery-9.webp",
+    "https://y2designandbuild.com/images/basement-gallery-10.webp",
+    "https://y2designandbuild.com/images/basement-gallery-11.webp",
+    "https://y2designandbuild.com/images/basement-gallery-12.webp",
+  ],
 };
+
+
 
 const heroBullets = [
   "An itemized fixed quote, with any requested change priced for your approval first",
@@ -495,42 +510,29 @@ export default function BasementRenovationAjaxClient() {
         </div>
       </section>
 
-       {/* 12. Gallery */}
-                       <section className="section-pad bg-brand-dark text-white">
-                         <div className="container-page">
-                           <h2 className="text-center text-3xl font-bold">Gallery Of Recent Projects</h2>
-                           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                             {[
-                               "basement-gallery-1",
-                               "basement-gallery-2",
-                               "basement-gallery-3",
-                               "basement-gallery-4",
-                               "basement-gallery-5",
-                               "basement-gallery-6",
-                               "basement-gallery-7",
-                               "basement-gallery-8",
-                               "basement-gallery-9",
-                               "basement-gallery-10",
-                               "basement-gallery-11",
-                               "basement-gallery-12",
-                             ].map((name) => (
-                               <div key={name} className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                                 <Image
-                                   src={`https://y2designandbuild.com/images/${name}.webp`}
-                                   alt="gallery photo — Y2 Design & Build GTA"
-                                   fill
-                                   loading="lazy"
-                                   className="object-cover"
-                                   sizes="(max-width: 768px) 100vw, 33vw"
-                                 />
-                               </div>
-                             ))}
-                           </div>
-                           <div className="mt-10 text-center">
-                             <QuoteButton className="btn-primary cursor-pointer">Start My Basement Renovation Quote</QuoteButton>
-                           </div>
-                         </div>
-                       </section>
+      {/* 13. Gallery */}
+        <section className="section-pad bg-brand-dark text-white">
+          <div className="container-page">
+            <h2 className="text-center text-3xl font-bold">Gallery Of Recent Projects</h2>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {basementImages.gallery.map((src) => (
+                <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                  <Image
+                    src={src}
+                    alt="Home renovation gallery photo — Y2 Design & Build GTA"
+                    fill
+                    loading="lazy"
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <QuoteButton className="btn-primary cursor-pointer">Start My Home Renovation Quote</QuoteButton>
+            </div>
+          </div>
+        </section>
 
       {/* 13. FAQ */}
       <section className="section-pad bg-surface">
