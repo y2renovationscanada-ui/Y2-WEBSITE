@@ -72,8 +72,6 @@ const layoutItems = [
         <a
           href="https://y2designandbuild.com/bathroom-renovation"
           className="underline"
-          rel="nofollow noopener noreferrer"
-          target="_blank"
         >
           bathroom
         </a>
