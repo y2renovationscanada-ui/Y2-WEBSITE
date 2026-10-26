@@ -30,8 +30,6 @@ const basementImages = {
   ],
 };
 
-
-
 const heroBullets = [
   "An itemized fixed quote, with any requested change priced for your approval first",
   "Permit applications, inspections, and trade scheduling coordinated on your behalf",
@@ -276,11 +274,7 @@ export default function BasementRenovationAjaxClient() {
         </div>
       </section>
 
-      {/* 2. Trust badges
-          NOTE: update the text inside components/TrustBadges to:
-          "Over 500 GTA projects completed · More than 14 years of design-build work ·
-           Licensed, insured and WSIB-covered · Consistently five-star feedback on Google, Yelp, HomeStars and Houzz ·
-           Complimentary in-home assessment" */}
+      {/* 2. Trust badges */}
       <TrustBadges />
 
       {/* 3. Durham Region experience */}
@@ -291,7 +285,6 @@ export default function BasementRenovationAjaxClient() {
               <h2 className="text-3xl font-bold text-brand-dark">Durham Region Experience You Can Rely On</h2>
               <p className="mt-4 leading-relaxed text-muted">
                 Ajax, <a href="https://y2designandbuild.com/basement-renovation/pickering" rel="nofollow noopener noreferrer" className="underline" target="_blank">Pickering</a>  and <a href="https://y2designandbuild.com/basement-renovation/markham" rel="nofollow noopener noreferrer" className="underline" target="_blank">Markham</a> are among the communities where our crews work most often, and Durham homeowners have trusted us with everything from flooring to complete lower-level transformations. That local familiarity matters underground. We know how the{" "}
-                {/* TODO: replace href with the exact Town of Ajax building permits page */}
                 <a href="https://ajax.ca/life-in-ajax/town-services/construction-permits-inspections/" rel="nofollow noopener noreferrer" className="underline" target="_blank">Town of Ajax</a>{" "}
                 handles basement permits, which construction details inspectors look for, and how homes built in different decades tend to behave once the old finishes come off.
               </p>
