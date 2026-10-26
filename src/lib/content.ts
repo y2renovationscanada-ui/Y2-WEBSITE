@@ -444,6 +444,7 @@ export type ServicePageData = {
   sections: { heading: string; body: string; bullets?: string[] }[];
   gallery: string[];
   faqs: { question: string; answer: string }[];
+  trustVideo?: { tiktokId: string; };
 };
 
 export const servicePages: Record<string, ServicePageData> = {
@@ -471,6 +472,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { question: "How long does a kitchen renovation take?", answer: "Most kitchen renovations take 3–6 weeks depending on scope, permits, and custom orders." },
       { question: "Do you handle permits?", answer: "Yes — we manage all required permits and inspections for electrical, plumbing, and structural work." },
     ],
+    trustVideo: { tiktokId: "7656088874388655368"},
   },
   bathroom: {
     slug: "bathroom-renovation",
@@ -496,6 +498,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { question: "How long does a bathroom reno take?", answer: "Most bathrooms are finished in 7–10 days. Four-piece bathrooms take 10–12 days, and luxury bathrooms run around 2–3 weeks." },
       { question: "Can you work in condos?", answer: "Yes — we handle condo board approvals, elevator booking, and building-specific requirements." },
     ],
+    trustVideo: { tiktokId: "7636890362727976200"},
   },
   basement: {
     slug: "basement-renovation",
@@ -521,6 +524,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { question: "Can you create a legal rental suite?", answer: "Yes — we handle the design, permits, and construction for legal secondary suites including separate entrances and kitchens." },
       { question: "How do you handle moisture?", answer: "We assess existing conditions and include proper waterproofing, insulation, and ventilation in every plan." },
     ],
+    trustVideo: { tiktokId: "7625752799006985480"},
   },
   home: {
     slug: "home-renovation",
@@ -546,6 +550,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { question: "Do you handle permits?", answer: "Yes — structural, electrical, plumbing, and all municipal permits are managed by our team." },
       { question: "Can you renovate while we live in the home?", answer: "In most cases yes. We use dust containment, floor protection, and phased scheduling to minimize disruption." },
     ],
+    trustVideo: { tiktokId: "7686213367027010834"},
   },
   flooring: {
     slug: "flooring",
@@ -571,6 +576,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { question: "Can you match existing flooring?", answer: "We source materials to blend with or complement your existing floors for a cohesive look." },
       { question: "How long does flooring installation take?", answer: "Most single-room installs take 1–3 days. Whole-home flooring projects typically take 1–2 weeks." },
     ],
+    trustVideo: { tiktokId: "7686213367027010834"},
   },
   commercial: {
     slug: "commercial-renovation",
@@ -596,6 +602,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { question: "Can you handle large commercial projects?", answer: "We handle projects from small office refreshes to full commercial build-outs. Contact us to discuss scope." },
       { question: "Are you insured for commercial work?", answer: "Yes — we carry comprehensive liability insurance and WSIB coverage for all commercial projects." },
     ],
+    trustVideo: { tiktokId: "7686213367027010834"},
   },
   condo: {
     slug: "condo-renovation",
@@ -622,6 +629,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { question: "How long does a condo renovation take?", answer: "Condo bathrooms are typically finished in 7–12 days and kitchens in 3–6 weeks. Full-suite renovations usually run 4–8 weeks depending on scope and building access rules." },
       { question: "Can you renovate while I live in the condo?", answer: "For kitchen or bathroom projects, usually yes — we contain dust and keep water and power interruptions short. For full-suite renovations, most owners choose to stay elsewhere during the noisiest phases." },
     ],
+    trustVideo: { tiktokId: "7686213367027010834"},
   },
   extension: {
     slug: "home-extensions",
@@ -648,6 +656,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { question: "Do you handle the permits and engineering?", answer: "Yes — architectural drawings, structural engineering, permit applications, and inspections are all managed by our team from start to finish." },
       { question: "Can we live in the house during an addition?", answer: "In most cases, yes. Rear and side extensions are sealed off from the main house until the connection is opened late in the project. Second-storey additions usually require moving out for part of the build." },
     ],
+    trustVideo: { tiktokId: "7686213367027010834"},
   },
   adu: {
     slug: "adu-construction",
@@ -674,6 +683,7 @@ export const servicePages: Record<string, ServicePageData> = {
       { question: "Is my property eligible for a garden or laneway suite?", answer: "It depends on your lot's zoning, setbacks, servicing, and emergency access. We check all of it as part of a free feasibility assessment before you commit to anything." },
       { question: "Do you handle the permits and inspections?", answer: "Yes — zoning review, architectural drawings, permit applications, and every inspection through to final sign-off are managed by our team." },
     ],
+    trustVideo: { tiktokId: "7686213367027010834"},
   },
 };
 

@@ -113,12 +113,36 @@ export default function ServicePageLayout({
                 </a>
               </div>
             </div>
+            
+            
             <div className="grid grid-cols-2 gap-3">
-              {data.gallery.slice(0, 1).map((img, i) => (
-                <div key={img} className={`relative overflow-hidden rounded-xl ${i === 0 ? "col-span-2 aspect-[1/1]" : "aspect-square"}`}>
-                  <Image src={img} alt={`${data.title} project photo ${i + 1} by Y2 Design & Build`} fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" />
-                </div>
-              ))}
+              {data.trustVideo ? (
+    <div className="relative col-span-2 aspect-[1/1] overflow-hidden rounded-xl bg-brand-dark">
+      <iframe
+        src={`https://www.tiktok.com/player/v1/${data.trustVideo.tiktokId}`}
+        title={`${data.title} project video by Y2 Design & Build`}
+        loading="lazy"
+        allow="fullscreen; autoplay; encrypted-media"
+        allowFullScreen
+        className="absolute inset-0 h-full w-full border-0"
+      />
+    </div>
+  ) :(
+    data.gallery.slice(0, 1).map((img, i) => (
+      <div
+        key={img}
+        className={`relative overflow-hidden rounded-xl ${i === 0 ? "col-span-2 aspect-[1/1]" : "aspect-square"}`}
+      >
+        <Image
+          src={img}
+          alt={`${data.title} project photo ${i + 1} by Y2 Design & Build`}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+      </div>
+    ))
+  )}
             </div>
           </div>
         </div>
