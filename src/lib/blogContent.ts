@@ -1389,7 +1389,7 @@ export const blogPosts: BlogPost[] = [
   ]
 },
 {
-  "slug": "5-Ways-to-transform-your-basement-bathroom",
+  "slug": "5-ways-to-transform-your-basement-bathroom",
   "title": "5 Ways to Transform Your Basement Bathroom",
   "metaTitle": "5 Ways to Transform Your Basement Bathroom | Y2 Design & Build",
   "description": "Turn a dark, damp basement bathroom into a space you actually enjoy. Five practical upgrades covering ventilation, plumbing, lighting, layout, and materials.",
