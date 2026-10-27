@@ -80,7 +80,7 @@
 
 [[redirects]]
   from = "/kitchen-renovations/"
-  to = "kitchen-renovation"
+  to = "/kitchen-renovation"
   status = 301
   force = true
 
