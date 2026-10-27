@@ -1,5 +1,5 @@
 import React from "react";
-import BasementClient from "./pickeringBasement";
+import BasementRenovationPickeringClient from "./pickeringBasement";
 import { site } from "@/lib/content";
 
 export const metadata = {
@@ -9,6 +9,6 @@ export const metadata = {
 
 }
 
-export default function BasementRenovationGtaPage() {
-  return <BasementClient />;
+export default function PickeringBasementPage() {
+  return <BasementRenovationPickeringClient />;
 }

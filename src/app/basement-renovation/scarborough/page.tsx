@@ -1,5 +1,5 @@
 import React from "react";
-import BasementClient from "./scarboroughBasement";
+import BasementRenovationScarboroughClient from "./scarboroughBasement";
 import { site } from "@/lib/content";
 
 export const metadata = {
@@ -8,6 +8,6 @@ export const metadata = {
   alternates: { canonical: `${site.url}/basement-renovation/scarborough` },
 }
 
-export default function BasementRenovationGtaPage() {
-  return <BasementClient />;
+export default function ScarboroughBasementPage() {
+  return <BasementRenovationScarboroughClient />;
 }

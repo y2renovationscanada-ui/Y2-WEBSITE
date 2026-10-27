@@ -1,5 +1,5 @@
 import React from "react";
-import BasementClient from "./ajaxBasement";
+import BasementRenovationAjaxClient from "./ajaxBasement";
 import { site } from "@/lib/content";
 
 export const metadata = {
@@ -9,6 +9,6 @@ export const metadata = {
 
 }
 
-export default function HomeRenovationGtaPage() {
-  return <BasementClient />;
+export default function AjaxBasementPage() {
+  return <BasementRenovationAjaxClient />;
 }
