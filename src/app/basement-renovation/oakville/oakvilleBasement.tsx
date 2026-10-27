@@ -469,7 +469,7 @@ export default function BasementRenovationOakvilleClient() {
                      <div key={src} className="relative aspect-[4/3] overflow-hidden rounded-xl">
                        <Image
                          src={src}
-                         alt="Home renovation gallery photo — Y2 Design & Build GTA"
+                         alt="Basement renovation gallery photo — Y2 Design & Build GTA"
                          fill
                          loading="lazy"
                          className="object-cover"
