@@ -15,6 +15,7 @@ const heroBullets = [
   "Proper waterproofing",
   "Finished in 2 to 3 weeks",
   "Licensed, insured and WSIB-covered",
+  "14+ Years of Experience",
 ];
 
 const craftsmanship = [
@@ -194,7 +195,7 @@ export default function BathroomClient({
         </div>
       </section>
 
-      {/* 2. Offer strip */}
+      {/* 2. Offer strip 
       <section className="bg-accent py-4 text-center text-white" aria-label="Current offer">
         <p className="text-lg font-bold">Save $2,500 On Your Bathroom Renovation Markham.</p>
         <p className="text-sm opacity-90">
@@ -202,8 +203,8 @@ export default function BathroomClient({
         </p>
       </section>
 
-      {/* 3. Trust badges */}
-      <TrustBadges />
+      {/* 3. Trust badges 
+      <TrustBadges />*/}
 
       {/* 4. Craftsmanship */}
       <section className="section-pad bg-white">
