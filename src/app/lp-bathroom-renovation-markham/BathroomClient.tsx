@@ -213,11 +213,11 @@ export default function BathroomClient({
       {/* 4. Craftsmanship */}
       <section className="section-pad bg-surface">
         <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div className="grid items-center gap-10 lg:grid-cols-[2fr_3fr]">
             <div>
               <h2 className="text-3xl font-bold text-brand-dark">Where Craftsmanship Actually Matters</h2>
               <p className="mt-4 leading-relaxed text-muted">
-                Anyone can put tile on a wall. The difference shows up three years later, at the grout line and the shower base. We build the parts you never see as carefully as the parts you do.
+                Anyone can put tile on a wall. The difference shows up three years later, at the grout line and the shower base.
               </p>
               <p className="mt-4 font-bold text-brand-dark">Expect:</p>
               <ul className="mt-4 space-y-3">
@@ -233,11 +233,9 @@ export default function BathroomClient({
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="mt-8">
                 <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
-                <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
-                  or call {site.phone}
-                </a>
+
               </div>
             </div>
 
@@ -260,14 +258,7 @@ export default function BathroomClient({
         </div>
       </section>
 
-
-      {/* 7. Social proof
-          NOTE: in components/ReviewStrip set the heading to "Markham Homeowners Rate Us 5 Stars",
-          the featured quote to "Finished exactly on schedule and within budget." (Marc, Markham),
-          and show bathroom reviews only, each once: Marc (Markham), Shararah S. (Markham),
-          Karthi (Pickering), Smriti (Markham). Remove the kitchen and flooring reviews and the duplicated set. */}
       <ReviewStrip />
-
 
       {/* 4. Craftsmanship */}
       <section className="section-pad bg-surface">
