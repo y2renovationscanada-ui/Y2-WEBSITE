@@ -135,8 +135,8 @@ const galleryImages = [
   "bath-gallery-23",
   "bath-gallery-10",
   "bath-gallery-11",
-  "bath-gallery-8",
   "bath-gallery-9",
+  "bath-gallery-8",
 ];
 
 export default function BathroomClient({
