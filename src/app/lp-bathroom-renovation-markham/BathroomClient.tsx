@@ -4,14 +4,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { site, images } from "@/lib/content";
 import { QuoteButton } from "../../components/QuoteModal";
-import TrustBadges from "../../components/TrustBadges";
 import ReviewStrip from "../../components/ReviewStrip";
 import LpHeader from "../../components/LpHeader";
 import LpFooter from "../../components/LpFooter";
+import GalleryLightbox from "@/components/GalleryLightbox";
 
 const heroBullets = [
   "Fixed-price, itemized quote",
-  "One in-house team",
+  "5 Stars rating from 100+ reviews",
   "Proper waterproofing",
   "Finished in 2 to 3 weeks",
   "Licensed, insured and WSIB-covered",
@@ -25,18 +25,26 @@ const craftsmanship = [
   "Finishes that still look clean after years of daily use",
 ];
 
-const steps = [
+const working = [
   {
-    title: "Book Your Free Consultation",
-    text: "Call or request a quote online. We visit your home, take measurements, and listen to what you want. No pressure, no charge.",
+    title: "15+ Years:",
+    text: "Homes renovated across Markham, Scarborough, Durham and the GTA",
   },
   {
-    title: "Approve Your Fixed-Price Quote",
-    text: "You get a written, itemized quote covering scope, materials and labour. The price you approve is the price you pay.",
+    title: "Fixed-Price Quotes:",
+    text: "Itemized and in writing. What we quote is what you pay.",
   },
   {
-    title: "We Build. You Move In.",
-    text: "One dedicated project manager runs your renovation on a locked schedule, with permits, trades and cleanup all handled for you.",
+    title: "One Project Manager:",
+    text: "One person to call, from first visit to final walkthrough.",
+  },
+  {
+    title: "Licensed & Insured:",
+    text: "WSIB-covered trades on every job. Clean site, every day.",
+  },
+  {
+    title: "5 Stars Rating on Google:",
+    text: "5 stars rating from 100+ homeowner reviews. Service in English and Mandarin.",
   },
 ];
 
@@ -115,7 +123,7 @@ const faqs = [
 
 const tiktokVideos = [
   "7678373302141717778",
-  "7649493628196277512",
+  "7696534717817965832",
   "7636890362727976200",
 ];
 
@@ -133,7 +141,6 @@ const galleryImages = [
   "bath-gallery-21",
   "bath-gallery-22",
   "bath-gallery-23",
-  "bath-gallery-10",
   "bath-gallery-11",
   "bath-gallery-9",
   "bath-gallery-8",
@@ -154,7 +161,7 @@ export default function BathroomClient({
       {/* 1. Value-driven hero */}
       <section className="relative min-h-[480px] overflow-hidden bg-brand-dark text-white">
         <Image
-          src={images.bathroom}
+          src={"/images/bath-gallery-10.webp"}
           alt="Bathroom Renovation project by Y2 Design & Build in the GTA"
           fill
           priority
@@ -173,9 +180,6 @@ export default function BathroomClient({
               <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
                 Bathroom Renovations Starting From $9,800
               </h1>
-              <p className="mt-5 text-base leading-relaxed text-white/85 sm:text-lg">
-                Designed, built and finished by one in-house team.
-              </p>
               <ul className="mt-6 space-y-3">
                 {heroBullets.map((b) => (
                   <li key={b} className="flex items-start gap-2 text-sm text-white/90 sm:text-base">
@@ -191,7 +195,7 @@ export default function BathroomClient({
               </ul>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <QuoteButton className="btn-primary cursor-pointer text-center">
-                  GET MY FREE BATHROOM QUOTE
+                  Get Bathroom Renovation Quote
                 </QuoteButton>
                 <a href={tel} className="btn-outline-light text-center">
                   Call {site.phone}
@@ -207,7 +211,7 @@ export default function BathroomClient({
       </section>
 
       {/* 4. Craftsmanship */}
-      <section className="section-pad bg-white">
+      <section className="section-pad bg-surface">
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
@@ -229,10 +233,6 @@ export default function BathroomClient({
                   </li>
                 ))}
               </ul>
-
-              <p className="mt-4 leading-relaxed text-muted">
-                Because the best compliment a bathroom can get is that nothing has gone wrong with it.
-              </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
                 <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
@@ -242,8 +242,41 @@ export default function BathroomClient({
             </div>
 
             <div className="card relative aspect-[4/3] overflow-hidden">
+
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                poster="/images/bath-gallery-3.webp"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Y2 Design & Build bathroom renovation in Markham"
+              >
+                <source src="/videos/bathroom-renovation.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* 7. Social proof
+          NOTE: in components/ReviewStrip set the heading to "Markham Homeowners Rate Us 5 Stars",
+          the featured quote to "Finished exactly on schedule and within budget." (Marc, Markham),
+          and show bathroom reviews only, each once: Marc (Markham), Shararah S. (Markham),
+          Karthi (Pickering), Smriti (Markham). Remove the kitchen and flooring reviews and the duplicated set. */}
+      <ReviewStrip />
+
+
+      {/* 4. Craftsmanship */}
+      <section className="section-pad bg-surface">
+        <div className="container-page">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+
+            <div className="card relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/images/bath-gallery-10.webp"
+                src="/images/bath-gallery-6.webp"
                 alt="Finished bathroom with tiled shower by Y2 Design & Build in Markham"
                 fill
                 loading="lazy"
@@ -251,33 +284,32 @@ export default function BathroomClient({
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Three simple steps */}
-      <section className="section-pad bg-surface">
-        <div className="container-page">
-          <h2 className="text-center text-3xl font-bold text-brand-dark">Get Started in 3 Simple Steps</h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center leading-relaxed text-muted">
-            From first call to final walkthrough, here's exactly how it works.
-          </p>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {steps.map((step, i) => (
-              <div key={step.title} className="card bg-white p-6 text-center">
-                <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-brand text-base font-bold text-white">
-                  {i + 1}
-                </span>
-                <h3 className="mt-4 text-lg font-bold text-brand-dark">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{step.text}</p>
+            <div>
+              <h2 className="text-3xl font-bold text-brand-dark">What Working With Us Feels Like</h2>
+              <ul className="mt-4 space-y-3">
+                {working.map((item) => (
+                  <li key={item.title} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    <span>
+                    <strong>{item.title}</strong>{" "}{item.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
+                <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
+                  or call {site.phone}
+                </a>
               </div>
-            ))}
-          </div>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <QuoteButton className="btn-primary cursor-pointer">BOOK MY FREE CONSULTATION</QuoteButton>
-            <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
-              or call {site.phone}
-            </a>
+            </div>
+
+
           </div>
         </div>
       </section>
@@ -286,12 +318,7 @@ export default function BathroomClient({
       <section className="section-pad bg-white">
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div>
-              <img
-                src="https://y2designandbuild.com/images/bathroom-palmer-1.webp"
-                alt="Bathroom project by Y2 Design & Build"
-              />
-            </div>
+
             <div>
               <h2 className="text-3xl font-bold text-brand-dark">A Premium Experience: From Start to Finish</h2>
               {experience.map((item) => (
@@ -308,16 +335,22 @@ export default function BathroomClient({
                 </a>
               </div>
             </div>
+
+            <div className="card relative aspect-[3/4] overflow-hidden">
+              <Image
+                src="/images/bathroom-palmer-1.webp"
+                alt="Finished bathroom with tiled shower by Y2 Design & Build in Markham"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 7. Social proof
-          NOTE: in components/ReviewStrip set the heading to "Markham Homeowners Rate Us 5 Stars",
-          the featured quote to "Finished exactly on schedule and within budget." (Marc, Markham),
-          and show bathroom reviews only, each once: Marc (Markham), Shararah S. (Markham),
-          Karthi (Pickering), Smriti (Markham). Remove the kitchen and flooring reviews and the duplicated set. */}
-      <ReviewStrip />
+
 
       {/* 8. Local Markham team */}
       <section className="section-pad bg-surface">
@@ -347,11 +380,25 @@ export default function BathroomClient({
       </section>
 
       {/* 9. Who we work with */}
-      <section className="bg-white section-pad">
-        <div className="container-page max-w-3xl">
-          <h2 className="text-2xl font-bold text-brand-dark">Who We Work With</h2>
-          <ul className="mt-6 space-y-3">
-            {whoWeWorkWith.map((item) => (
+     
+           <section className="section-pad bg-white">
+        <div className="container-page">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+
+            <div className="card relative aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/bath-gallery-5.webp"
+                alt="Finished bathroom with tiled shower by Y2 Design & Build in Markham"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-brand-dark">Who We Work With</h2>
+              <ul className="mt-4 space-y-3">
+                {whoWeWorkWith.map((item) => (
               <li key={item.label} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
                 <span
                   className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
@@ -360,11 +407,19 @@ export default function BathroomClient({
                   ✓
                 </span>
                 <span>
-                  <b>{item.label}</b> {item.text}
+                  <b>{item.label}</b> <span>{item.text}</span>
                 </span>
               </li>
             ))}
-          </ul>
+              </ul>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
+                <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
+                  or call {site.phone}
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -396,8 +451,8 @@ export default function BathroomClient({
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <QuoteButton className="btn-primary cursor-pointer">GET MY FREE BATHROOM QUOTE</QuoteButton>
             <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
-                  or call {site.phone}
-                </a>
+              or call {site.phone}
+            </a>
           </div>
         </div>
       </section>
@@ -406,20 +461,14 @@ export default function BathroomClient({
       <section className="section-pad bg-brand-dark text-white">
         <div className="container-page">
           <h2 className="text-center text-3xl font-bold">Recent Bathroom Projects</h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {galleryImages.map((name, i) => (
-              <div key={`${name}-${i}`} className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                <Image
-                  src={`https://y2designandbuild.com/images/${name}.webp`}
-                  alt="gallery photo — Y2 Design & Build GTA"
-                  fill
-                  loading="lazy"
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-            ))}
-          </div>
+
+          <GalleryLightbox
+            images={galleryImages.map((name) => ({
+              src: `https://y2designandbuild.com/images/${name}.webp`,
+              alt: "Home renovation project by Y2 Design & Build in the GTA",
+            }))}
+          />
+
           <div className="mt-10 text-center">
             <QuoteButton className="btn-primary cursor-pointer">START MY BATHROOM RENOVATION QUOTE</QuoteButton>
           </div>
@@ -460,10 +509,14 @@ export default function BathroomClient({
               </div>
             </div>
 
-            <div>
-              <img
+            <div className="card relative aspect-[4/3] overflow-hidden">
+              <Image
                 src="https://y2designandbuild.com/images/bathroom-2.webp"
                 alt="Completed bathroom renovation by Y2 Design & Build"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
