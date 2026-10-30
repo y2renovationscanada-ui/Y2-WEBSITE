@@ -294,7 +294,7 @@ export default function BathroomClient({
               </ul>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
-                <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
+                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
                   or call {site.phone}
                 </a>
               </div>
@@ -321,7 +321,7 @@ export default function BathroomClient({
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <QuoteButton className="btn-primary cursor-pointer">Book My Free Consultation</QuoteButton>
-                <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
+                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
                   or call {site.phone}
                 </a>
               </div>
@@ -405,7 +405,7 @@ export default function BathroomClient({
               </ul>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
-                <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
+                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
                   or call {site.phone}
                 </a>
               </div>
@@ -441,7 +441,7 @@ export default function BathroomClient({
           </div>
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <QuoteButton className="btn-primary cursor-pointer">GET MY FREE BATHROOM QUOTE</QuoteButton>
-            <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
+            <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
               or call {site.phone}
             </a>
           </div>
@@ -494,7 +494,7 @@ export default function BathroomClient({
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <QuoteButton className="btn-primary cursor-pointer">Book My Free Consultation</QuoteButton>
-                <a href={tel} className="text-sm font-bold text-brand-dark hover:text-brand">
+                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
                   or call {site.phone}
                 </a>
               </div>

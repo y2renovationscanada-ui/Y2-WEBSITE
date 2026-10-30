@@ -41,7 +41,7 @@ export default function GalleryLightbox({ images }: { images: GalleryImage[] }) 
 
   return (
     <>
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <div className="mt-10 grid gap-4 grid-cols-2">
         {images.map((img, i) => (
           <button
             key={`${img.src}-${i}`}
@@ -56,7 +56,7 @@ export default function GalleryLightbox({ images }: { images: GalleryImage[] }) 
               fill
               loading="lazy"
               className="object-cover transition duration-300 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="(max-width: 768px) 50vw, 33vw"
             />
             <span className="absolute inset-0 bg-black/0 transition group-hover:bg-black/20" />
           </button>
