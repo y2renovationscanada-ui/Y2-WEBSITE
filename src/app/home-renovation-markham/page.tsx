@@ -2,8 +2,8 @@ import React from "react";
 import HomeClient from "./HomeClient";
 
 export const metadata = {
-  title: "Home Renovation Markham | Design-Build Team | Y2 Design & Build",
-  description: "Home Renovations across Markham handled by one licensed in-house design-build team. Free, no-obligation consultation and quote.",
+  title: "Home Renovation Markham | Save 15% | Y2 Design & Build",
+  description: "Save 15% on full home renovations in Markham. One in-house design-build team, fixed quotes broken down room by room, rated 5.0 on Google. Book a free consultation.",
   robots: {
     index: false,
     follow: false,

@@ -9,9 +9,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="container-page flex items-center gap-3 py-3">
-        <Link href="/" className="flex shrink-0 items-center gap-3" aria-label={`${site.name} — home`}>
+        
           <Image src={images.logo} alt={site.name} width={120} height={40} className="h-10 w-auto object-contain" priority />
-        </Link>
+       
 
         <nav aria-label="Main navigation" className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex">
         </nav>
