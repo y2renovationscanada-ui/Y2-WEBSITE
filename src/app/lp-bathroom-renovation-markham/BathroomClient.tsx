@@ -241,9 +241,9 @@ export default function BathroomClient({
       <LpHeader />
 
       {/* 1. Value-driven hero */}
-      <section className="relative min-h-[480px] overflow-hidden bg-brand-dark text-white">
+      <section className="relative min-h-[620px] overflow-hidden bg-brand-dark text-white align-center">
         <Image
-          src={"/images/bath-gallery-10.webp"}
+          src={"/images/bath-gallery-22.webp"}
           alt="Bathroom Renovation project by Y2 Design & Build in the GTA"
           fill
           priority
@@ -254,11 +254,8 @@ export default function BathroomClient({
         <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/80 to-brand-dark/50" />
 
         <div className="grid items-center gap-3">
-          <div className="container-page relative flex min-h-[480px] items-center py-16">
+          <div className="container-page relative flex min-h-[620px] items-center py-16">
             <div className="max-w-2xl">
-              {/* <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-accent">
-                Searching for bathroom renovation Markham?
-              </p> */}
               <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
                 Markham Bathroom Renovations From $9,800
               </h1>
@@ -283,10 +280,6 @@ export default function BathroomClient({
                   Call {site.phone}
                 </a>
               </div>
-              <p className="mt-5 text-sm text-white/80">
-                <span className="font-bold text-accent">★★★★★ 5.0</span> from
-                100+ Google reviews · Free itemized quotes
-              </p>
             </div>
           </div>
         </div>
@@ -295,7 +288,7 @@ export default function BathroomClient({
       {/* 2. Working With Us  */}
       <section className="section-pad bg-surface">
         <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-[2fr_3fr]">
+          <div className="grid items-center gap-10 lg:grid-cols-[2fr_5fr]">
             <div>
               
               <h2 className="text-3xl font-bold text-brand-dark">What Working With Us Feels Like</h2>
@@ -317,8 +310,7 @@ export default function BathroomClient({
               </ul>
               
               <div className="mt-8">
-                <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
-
+                <QuoteButton className="btn-primary cursor-pointer text-sm">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
               </div>
             </div>
 <ClickToPlayVideo
@@ -403,6 +395,8 @@ export default function BathroomClient({
 
       <ReviewStrip />
 
+      
+      {/*
       
       <section className="section-pad bg-surface">
         <div className="container-page">
@@ -489,10 +483,6 @@ export default function BathroomClient({
         </div>
       </section>
 
-
-
-
-      {/* 8. Local Markham team */}
       <section className="section-pad bg-surface">
         <div className="container-page max-w-7xl">
           <h2 className="text-center text-3xl font-bold text-brand-dark">Your Local Markham Bathroom Team</h2>
@@ -519,7 +509,6 @@ export default function BathroomClient({
         </div>
       </section>
 
-      {/* 9. Who we work with */}
      
            <section className="section-pad bg-white">
         <div className="container-page">
@@ -564,7 +553,6 @@ export default function BathroomClient({
       </section>
 
 
-      {/* 12. Our commitment */}
       <section className="section-pad bg-white">
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-2">
@@ -610,7 +598,7 @@ export default function BathroomClient({
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 13. FAQ */}
       <section className="section-pad bg-surface">
