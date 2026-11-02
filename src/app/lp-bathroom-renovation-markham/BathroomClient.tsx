@@ -104,14 +104,6 @@ const commitments = [
 
 const faqs = [
   {
-    question: "How much does a bathroom renovation cost in Markham?",
-    answer: "Our bathroom renovations start from $9,800. The final price depends on size, layout changes and finishes. You get a fixed, itemized quote after the free consultation.",
-  },
-  {
-    question: "How long does it take?",
-    answer: "Most bathrooms are finished in 2 to 3 weeks once work starts. Layout changes or custom glass can add time, and we confirm the schedule before you sign.",
-  },
-  {
     question: "Will the price change once you start?",
     answer: "No. The price you approve is the price you pay, unless you choose to change the scope.",
   },
@@ -120,8 +112,36 @@ const faqs = [
     answer: "Yes. Plumbing, electrical, tile, carpentry and any permits are handled by our team under one contract.",
   },
   {
+    question: "What’s the deposit, and when do I pay the rest?",
+    answer: "Please book a consultation and we will happy to share the details.",
+  },
+  {
+    question: "How soon can you start?",
+    answer: "On average, we can start about 2 weeks after you approve your quote.",
+  },
+  {
+    question: "It’s our only bathroom. What do we do during the work?",
+    answer: "Most bathrooms are finished in 5–7 days. If it’s your only bathroom, we recommend arranging alternative accommodations during the work. We can also look at options for installing the toilet in advance.",
+  },
+  {
+    question: "How long is your warranty, and what does it cover?",
+    answer: "We provide a 1-year warranty on our workmanship."
+  },
+  {
+    question: "Can I buy my own tiles, vanity or fixtures?",
+    answer: "Yes, you can supply your own. Materials you buy are covered by the manufacturer’s warranty, and our 1-year warranty still applies to our workmanship."
+  },
+  {
     question: "Is the consultation really free?",
-    answer: "Yes. The in-home consultation and quote are free, with no obligation to go ahead.",
+    answer: "Yes. We come to your home, measure, and give you a written estimate, with no charge and no obligation."
+  },
+  {
+    question: "Can you make the bathroom safer for aging parents?",
+    answer: "Yes. Grab bars with solid backing, walk-in or curbless showers, and non-slip tile are all options."
+  },
+  {
+    question: "Do I need to be home while you work?",
+    answer: "No, you don’t need to be home. Hundreds of homeowners have trusted Y2 with their homes, and we deliver a high-quality finish on every project."
   },
 ];
 
