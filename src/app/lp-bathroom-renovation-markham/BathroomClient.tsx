@@ -8,6 +8,7 @@ import ReviewStrip from "../../components/ReviewStrip";
 import LpHeader from "../../components/LpHeader";
 import LpFooter from "../../components/LpFooter";
 import GalleryLightbox from "@/components/GalleryLightbox";
+import BeforeAfterCarousel from "../../components/BeforeAfterCarousel";
 
 
 const heroBullets = [
@@ -16,13 +17,6 @@ const heroBullets = [
   "No disappearing contractors",
   "Finish exactly what we say",
   "Licensed, insured and WSIB-covered.",
-];
-
-const craftsmanship = [
-  "Waterproofing membranes behind every wet wall, the part you can't redo later",
-  "Quality materials and tools, with meticulous attention to detail",
-  "Layouts that make a small Markham bathroom feel bigger",
-  "Finishes that still look clean after years of daily use",
 ];
 
 const working = [
@@ -46,61 +40,12 @@ const working = [
     title: "No mess left behind:",
     text: "Your home remains clean, and safe while we work.",
   },
-   {
+  {
     title: "No guessing how it’ll look:",
     text: "You will see your bathroom in 3D before anything starts.",
   },
 ];
 
-const experience = [
-  {
-    title: "One Team, Start to Finish",
-    text: "Concept, design, construction and final walkthrough are handled in-house. Plumbing, tiling, electrical and carpentry are coordinated by the same people who drew the room, so nothing falls between trades.",
-  },
-  {
-    title: "A Free Consultation, With No Strings",
-    text: "The consultation and quote are free and carry no obligation. We would rather tell you honestly what a job involves and lose it than win it on a number that was never realistic.",
-  },
-  {
-    title: "Communication You Do Not Have To Chase",
-    text: "One project manager is your point of contact from consultation to walkthrough. Clients name John, Andy and Jeff in their reviews, because they picked up the phone.",
-  },
-  {
-    title: "Craftsmanship That Holds Up",
-    text: "Across our Google, HomeStars, Houzz and Yelp reviews, craftsmanship and attention to detail come up more than anything else. In a bathroom, that is not a nice-to-have.",
-  },
-];
-
-const localJobs = [
-  "Small, closed-off main baths in Markham Village and Milliken Mills homes",
-  "Original tubs and dated tile in pre-1990s builds",
-  "Builder-grade ensuites in Cornell, Wismer and Cathedraltown",
-  "Ensuite and powder room upgrades in Unionville and Angus Glen",
-];
-
-const whoWeWorkWith = [
-  { label: "Homeowners:", text: "Main baths, ensuites and powder rooms." },
-  {
-    label: "Growing and multigenerational households:",
-    text: "Second bathrooms, walk-in showers and grab-bar-ready layouts for parents moving in.",
-  },
-  {
-    label: "Landlords and property investors:",
-    text: "Durable bathrooms built to last between tenancies.",
-  },
-  {
-    label: "Commercial and retail spaces:",
-    text: "Washroom fit-outs alongside our residential work.",
-  },
-];
-
-const commitments = [
-  "Waterproofing and rough-in done properly, not covered up",
-  "Layouts designed around the room you actually have",
-  "Quality materials and meticulous attention to detail",
-  "A team that listens, communicates and follows through",
-  "One accountable group of people from first call to final walkthrough",
-];
 
 const faqs = [
   {
@@ -151,13 +96,37 @@ const tiktokVideos = [
   "7636890362727976200",
 ];
 
-const beforeafter = [
-  "before-after1",
-  "before-after2",
-  "before-after3",
-  "before-after4",
-  "before-after5",
-  "before-after6",
+const beforeAfterPairs = [
+  {
+    before: "bathroom-1-before",
+    after: "bathroom-1-after",
+    description: "bathroom renovation",
+  },
+  {
+    before: "bathroom-2-before",
+    after: "bathroom-2-after",
+    description: "walk-in shower renovation",
+  },
+  {
+    before: "bathroom-3-before",
+    after: "bathroom-3-after",
+    description: "walk-in shower renovation",
+  },
+  {
+    before: "bathroom-4-before",
+    after: "bathroom-4-after",
+    description: "walk-in shower renovation",
+  },
+  {
+    before: "bathroom-5-before",
+    after: "bathroom-5-after",
+    description: "walk-in shower renovation",
+  },
+  {
+    before: "bathroom-6-before",
+    after: "bathroom-6-after",
+    description: "walk-in shower renovation",
+  },
 ];
 
 const galleryImages = [
@@ -288,57 +257,56 @@ export default function BathroomClient({
       {/* 2. Working With Us  */}
       <section className="section-pad bg-surface">
         <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-[2fr_5fr]">
-            <div>
-              
-              <h2 className="text-3xl font-bold text-brand-dark">What Working With Us Feels Like</h2>
-              <p className="mt-3">No horror stories, no surprises, & no endless delays.</p>
-              <ul className="mt-4 space-y-3">
-                {working.map((item) => (
-                  <li key={item.title} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                    <span
-                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-                    <span>
-                    <strong>{item.title}</strong>{" "}{item.text}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="mt-8">
-                <QuoteButton className="btn-primary cursor-pointer text-sm">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
-              </div>
-            </div>
-<ClickToPlayVideo
-  src="/videos/bathroom-renovation.mp4"
-  poster="/images/bath-gallery-8.webp"
-  label="Y2 Design & Build bathroom renovation in Markham"
-/>
-          </div>
+<div className="grid gap-y-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:grid-rows-[auto_1fr] lg:gap-x-8 lg:gap-y-3">
+    <h2 className="text-3xl font-bold text-brand-dark lg:col-start-1 lg:row-start-1">
+    What Working With Us Feels Like
+  </h2>
+
+  <div className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
+    <ClickToPlayVideo
+      src="/videos/bathroom-renovation.mp4"
+      poster="/images/bath-gallery-8.webp"
+      label="Y2 Design & Build bathroom renovation in Markham"
+    />
+  </div>
+
+  <div className="lg:col-start-1 lg:row-start-2">
+    <p>No horror stories, no surprises, & no endless delays.</p>
+
+    <ul className="mt-4 space-y-3">
+      {working.map((item) => (
+        <li key={item.title} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+          <span
+            className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+            aria-hidden="true"
+          >
+            ✓
+          </span>
+          <span>
+            <strong>{item.title}</strong>{" "}{item.text}
+          </span>
+        </li>
+      ))}
+    </ul>
+
+    <div className="mt-8">
+      <QuoteButton className="btn-primary cursor-pointer">Book Free Consultation</QuoteButton>
+    </div>
+  </div>
+</div>
         </div>
       </section>
 
 {/* 11. Gallery */}
-      <section className="section-pad bg-white">
-        <div className="container-page">
-          <h2 className="text-center text-3xl font-bold">Same Bathroom, Two Weeks Apart</h2>
+<section className="section-pad bg-white">
+  <div className="container-page">
+    <h2 className="text-center text-3xl font-bold">
+      The Difference a Professional Renovation Makes
+    </h2>
 
-          <GalleryLightbox
-            images={beforeafter.map((name) => ({
-              src: `/images/${name}.webp`,
-              alt: "Before/after images by Y2 Design & Build in the GTA",
-            }))}
-          />
-
-          {/* <div className="mt-10 text-center">
-            <QuoteButton className="btn-primary cursor-pointer">START MY BATHROOM RENOVATION QUOTE</QuoteButton>
-          </div> */}
-        </div>
-      </section>
+    <BeforeAfterCarousel pairs={beforeAfterPairs} className="mt-10" />
+  </div>
+</section>
 
 
       {/* 10. Watch us work (TikTok) */}
@@ -379,226 +347,23 @@ export default function BathroomClient({
       <section className="section-pad bg-brand-dark text-white">
         <div className="container-page">
           <h2 className="text-center text-3xl font-bold">Recent Bathroom Projects</h2>
+<GalleryLightbox
+  singleColumn
+  initialVisible={3}
+  images={galleryImages.map((name) => ({
+    src: `https://y2designandbuild.com/images/${name}.webp`,
+    alt: "Home renovation project by Y2 Design & Build in the GTA",
+  }))}
+/>
 
-          <GalleryLightbox
-            images={galleryImages.map((name) => ({
-              src: `https://y2designandbuild.com/images/${name}.webp`,
-              alt: "Home renovation project by Y2 Design & Build in the GTA",
-            }))}
-          />
-
-          <div className="mt-10 text-center">
+          {/* <div className="mt-10 text-center">
             <QuoteButton className="btn-primary cursor-pointer">START MY BATHROOM RENOVATION QUOTE</QuoteButton>
-          </div>
+          </div> */}
         </div>
       </section>
 
       <ReviewStrip />
 
-      
-      {/*
-      
-      <section className="section-pad bg-surface">
-        <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-
-            <div className="card relative aspect-[4/3] overflow-hidden">
-              <Image
-                src="/images/bath-gallery-6.webp"
-                alt="Finished bathroom with tiled shower by Y2 Design & Build in Markham"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-            <div>
-              
-
-       <h2 className="text-3xl font-bold text-brand-dark">Where Craftsmanship Actually Matters</h2>
-              <p className="mt-4 leading-relaxed text-muted">
-                Anyone can put tile on a wall. The difference shows up three years later, at the grout line and the shower base.
-              </p>
-              <p className="mt-4 font-bold text-brand-dark">Expect:</p>
-              <ul className="mt-4 space-y-3">
-                {craftsmanship.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                    <span
-                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
-                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
-                  or call {site.phone}
-                </a>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </section>
-
-      
-      <section className="section-pad bg-white">
-        <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-
-            <div>
-              <h2 className="text-3xl font-bold text-brand-dark">A Premium Experience: From Start to Finish</h2>
-              {experience.map((item) => (
-                <React.Fragment key={item.title}>
-                  <h3 className="mt-4 text-xl font-bold text-brand-dark">{item.title}</h3>
-                  <p className="mt-2 leading-relaxed text-muted">{item.text}</p>
-                </React.Fragment>
-              ))}
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <QuoteButton className="btn-primary cursor-pointer">Book My Free Consultation</QuoteButton>
-                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
-                  or call {site.phone}
-                </a>
-              </div>
-            </div>
-
-            <div className="card relative aspect-[3/4] overflow-hidden">
-              <Image
-                src="/images/bathroom-palmer-1.webp"
-                alt="Finished bathroom with tiled shower by Y2 Design & Build in Markham"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-pad bg-surface">
-        <div className="container-page max-w-7xl">
-          <h2 className="text-center text-3xl font-bold text-brand-dark">Your Local Markham Bathroom Team</h2>
-          <p className="mx-auto mt-4 max-w-4xl text-center leading-relaxed text-muted">
-            Our showroom is at 3400 14th Ave, Unit 16, so in Markham we are working in our own neighbourhood. Drop in, see materials in person, and meet the people who will build your bathroom.
-          </p>
-          <p className="mt-8 text-center font-bold text-brand-dark">What we most often work on in Markham:</p>
-          <ul className="mt-4 grid gap-3 md:grid-cols-2">
-            {localJobs.map((item) => (
-              <li key={item} className="card flex items-start gap-3 p-4 text-sm leading-relaxed text-muted">
-                <span
-                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                  aria-hidden="true"
-                >
-                  ✓
-                </span>
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="mx-auto mt-6 max-w-6xl text-center leading-relaxed text-muted">
-            We cover Unionville, Cornell, Berczy Village, Wismer, Greensborough, Cathedraltown, Angus Glen, Markham Village and Milliken Mills.
-          </p>
-        </div>
-      </section>
-
-     
-           <section className="section-pad bg-white">
-        <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-
-            <div className="card relative aspect-[4/3] overflow-hidden">
-              <Image
-                src="/images/bath-gallery-5.webp"
-                alt="Finished bathroom with tiled shower by Y2 Design & Build in Markham"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-brand-dark">Who We Work With</h2>
-              <ul className="mt-4 space-y-3">
-                {whoWeWorkWith.map((item) => (
-              <li key={item.label} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                <span
-                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                  aria-hidden="true"
-                >
-                  ✓
-                </span>
-                <span>
-                  <b>{item.label}</b> <span>{item.text}</span>
-                </span>
-              </li>
-            ))}
-              </ul>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
-                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
-                  or call {site.phone}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <section className="section-pad bg-white">
-        <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div>
-              <h2 className="text-3xl font-bold text-brand-dark">Our Commitment</h2>
-              <p className="mt-4 leading-relaxed text-muted">
-                It is not really about price. It is about whether the people in your house know what they are doing and tell you the truth. You can expect:
-              </p>
-              <ul className="mt-6 space-y-3">
-                {commitments.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                    <span
-                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <p className="mt-4 leading-relaxed text-muted">
-                A bathroom done right is one you stop thinking about. That is the goal.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <QuoteButton className="btn-primary cursor-pointer">Book My Free Consultation</QuoteButton>
-                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
-                  or call {site.phone}
-                </a>
-              </div>
-            </div>
-
-            <div className="card relative aspect-[4/3] overflow-hidden">
-              <Image
-                src="https://y2designandbuild.com/images/bathroom-2.webp"
-                alt="Completed bathroom renovation by Y2 Design & Build"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {/* 13. FAQ */}
       <section className="section-pad bg-surface">
@@ -636,43 +401,43 @@ export default function BathroomClient({
         </div>
       </section>
 
-      
-              <section className="section-pad bg-white">
-                <div className="container-page">
-                  <div className="grid items-center gap-10 lg:grid-cols-2">
-                    <div className="order-2 lg:order-1">
-                      <p className="text-sm font-bold uppercase tracking-wider text-brand">See It In Person</p>
-                      <h2 className="mt-2 text-3xl font-bold text-brand-dark">Visit Our Showroom</h2>
-                      <p className="mt-4 leading-relaxed text-muted">
-                        Prefer to see materials and finishes in person? We have a beautiful showroom at our Markham
-                        location where you can browse cabinetry, countertops, tile, and flooring samples, and talk
-                        through your project face-to-face with our design team.
-                      </p>
-                      <p className="mt-4 font-semibold text-brand-dark">
-                        {site.address.street}, {site.address.city}, {site.address.province} {site.address.postal}
-                      </p>
-                      <p className="mt-1 text-sm text-muted">Mon–Fri: 8 a.m. – 6 p.m. — walk-ins welcome, or call ahead to book a time.</p>
-                      <a
-                        href={`tel:${site.phone.replace(/\D/g, "")}`}
-                        className="btn-primary mt-6 inline-flex"
-                      >
-                        Call to Book a Showroom Visit
-                      </a>
-                    </div>
-                    <div className="order-1 lg:order-2">
-                      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-md">
-                        <Image
-                          src={images.heroShowroom}
-                          alt="Y2 Design & Build showroom in Markham, Ontario"
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 1024px) 100vw, 50vw"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <div className="order-2 lg:order-1">
+              <p className="text-sm font-bold uppercase tracking-wider text-brand">See It In Person</p>
+              <h2 className="mt-2 text-3xl font-bold text-brand-dark">Visit Our Showroom</h2>
+              <p className="mt-4 leading-relaxed text-muted">
+                Prefer to see materials and finishes in person? We have a beautiful showroom at our Markham
+                location where you can browse cabinetry, countertops, tile, and flooring samples, and talk
+                through your project face-to-face with our design team.
+              </p>
+              <p className="mt-4 font-semibold text-brand-dark">
+                {site.address.street}, {site.address.city}, {site.address.province} {site.address.postal}
+              </p>
+              <p className="mt-1 text-sm text-muted">Mon–Fri: 8 a.m. – 6 p.m. — walk-ins welcome, or call ahead to book a time.</p>
+              <a
+                href={`tel:${site.phone.replace(/\D/g, "")}`}
+                className="btn-primary mt-6 inline-flex"
+              >
+                Call to Book a Showroom Visit
+              </a>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-md">
+                <Image
+                  src={images.heroShowroom}
+                  alt="Y2 Design & Build showroom in Markham, Ontario"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <LpFooter />
     </>

@@ -325,7 +325,7 @@ export default function BathroomClient({
 {/* 11. Gallery */}
       <section className="section-pad bg-white">
         <div className="container-page">
-          <h2 className="text-center text-3xl font-bold">Same Bathroom, Two Weeks Apart</h2>
+          <h2 className="text-center text-3xl font-bold">The Difference a Professional Renovation Makes</h2>
 
           <GalleryLightbox
             images={beforeafter.map((name) => ({

@@ -5,10 +5,38 @@ import Image from "next/image";
 
 type GalleryImage = { src: string; alt: string };
 
-export default function GalleryLightbox({ images }: { images: GalleryImage[] }) {
+type GalleryLightboxProps = {
+  images: GalleryImage[];
+  /** Shows one image per row instead of the default two. */
+  singleColumn?: boolean;
+  /** Number of images to show at first and add per click. Omit to show all images. */
+  initialVisible?: number;
+};
+
+export default function GalleryLightbox({
+  images,
+  singleColumn = false,
+  initialVisible,
+}: GalleryLightboxProps) {
   const [index, setIndex] = useState<number | null>(null);
+  const [visibleCount, setVisibleCount] = useState(initialVisible ?? 0);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
   const touchX = useRef<number | null>(null);
+
+  const usesLoadMore = initialVisible !== undefined && images.length > initialVisible;
+  const visibleImages = usesLoadMore ? images.slice(0, visibleCount) : images;
+  const hasMore = usesLoadMore && visibleCount < images.length;
+
+  const loadMore = () => {
+    setVisibleCount((count) => Math.min(count + (initialVisible ?? 0), images.length));
+  };
+
+  const loadLess = () => {
+    setVisibleCount(initialVisible ?? 0);
+    // Return to the top of the gallery so the page doesn't jump past it.
+    galleryRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   const isOpen = index !== null;
   const close = useCallback(() => setIndex(null), []);
@@ -41,13 +69,20 @@ export default function GalleryLightbox({ images }: { images: GalleryImage[] }) 
 
   return (
     <>
-      <div className="mt-10 grid gap-4 grid-cols-2">
-        {images.map((img, i) => (
+      <div
+        ref={galleryRef}
+        className={`mt-10 grid scroll-mt-24 gap-4 ${
+          singleColumn ? "mx-auto max-w-5xl grid-cols-1" : "grid-cols-2"
+        }`}
+      >
+        {visibleImages.map((img, i) => (
           <button
             key={`${img.src}-${i}`}
             type="button"
             onClick={() => setIndex(i)}
-            className="group relative aspect-[4/4] overflow-hidden rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className={`group relative overflow-hidden rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+              singleColumn ? "aspect-[4/3]" : "aspect-[4/4]"
+            }`}
             aria-label={`Open photo ${i + 1} of ${images.length}`}
           >
             <Image
@@ -56,12 +91,28 @@ export default function GalleryLightbox({ images }: { images: GalleryImage[] }) 
               fill
               loading="lazy"
               className="object-cover transition duration-300 group-hover:scale-105"
-              sizes="(max-width: 768px) 50vw, 33vw"
+              sizes={
+                singleColumn
+                  ? "(max-width: 768px) 100vw, 768px"
+                  : "(max-width: 768px) 50vw, 33vw"
+              }
             />
             <span className="absolute inset-0 bg-black/0 transition group-hover:bg-black/20" />
           </button>
         ))}
       </div>
+
+      {usesLoadMore && (
+        <div className="mt-6 text-center">
+          <button
+            type="button"
+            onClick={hasMore ? loadMore : loadLess}
+            className="cursor-pointer rounded-full border border-current px-6 py-2.5 text-sm font-semibold transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            {hasMore ? "Load More" : "Load Less"}
+          </button>
+        </div>
+      )}
 
       {isOpen && (
         <div
