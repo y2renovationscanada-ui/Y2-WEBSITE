@@ -13,9 +13,6 @@ export default function Header() {
           <Image src={images.logo} alt={site.name} width={120} height={40} className="h-10 w-auto object-contain" priority />
        
 
-        <nav aria-label="Main navigation" className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex">
-        </nav>
-
         <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3 lg:ml-0">
           <a
             href={tel}
@@ -33,19 +30,6 @@ export default function Header() {
         </div>
       </div>
 
-      <nav aria-label="Mobile navigation" className="border-t border-stone-200 bg-white lg:hidden">
-        <div className="no-scrollbar container-page flex items-center gap-1 overflow-x-auto py-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="shrink-0 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-stone-700 transition-colors duration-200 hover:bg-surface hover:text-brand"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-      </nav>
     </header>
   );
 }
