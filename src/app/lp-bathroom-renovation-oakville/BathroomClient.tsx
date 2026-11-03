@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { site, images } from "@/lib/content";
 import { QuoteButton } from "../../components/QuoteModal";
@@ -9,13 +9,13 @@ import LpHeader from "../../components/LpHeader";
 import LpFooter from "../../components/LpFooter";
 import GalleryLightbox from "@/components/GalleryLightbox";
 
+
 const heroBullets = [
-  "Fixed-price, itemized quote",
-  "5 Stars rating from 100+ reviews",
-  "Proper waterproofing",
-  "Finished in 2 to 3 weeks",
-  "Licensed, insured and WSIB-covered",
-  "14+ Years of Experience",
+  "Rated 5.0 on Google from 130+ reviews",
+  "Done in 6 days",
+  "No disappearing contractors",
+  "Finish exactly what we say",
+  "Licensed, insured and WSIB-covered.",
 ];
 
 const craftsmanship = [
@@ -27,24 +27,28 @@ const craftsmanship = [
 
 const working = [
   {
-    title: "15+ Years:",
-    text: "Homes renovated across Oakville, Scarborough, Durham and the GTA",
+    title: "No disappearing contractors:",
+    text: "With 14 years of expertise and 130+ 5-star Google reviews we deliver.",
   },
   {
-    title: "Fixed-Price Quotes:",
-    text: "Itemized and in writing. What we quote is what you pay.",
+    title: "No problems later:",
+    text: "Highest quality of work, done with care, & backed by our warranty.",
   },
   {
-    title: "One Project Manager:",
-    text: "One person to call, from first visit to final walkthrough.",
+    title: "No ghosting:",
+    text: "Your project manager picks up every time you call.",
   },
   {
-    title: "Licensed & Insured:",
-    text: "WSIB-covered trades on every job. Clean site, every day.",
+    title: "No weeks without a bathroom:",
+    text: "Most jobs are finished in a week.",
   },
   {
-    title: "5 Stars Rating on Google:",
-    text: "5 stars rating from 100+ homeowner reviews. Service in English and Mandarin.",
+    title: "No mess left behind:",
+    text: "Your home remains clean, and safe while we work.",
+  },
+   {
+    title: "No guessing how it’ll look:",
+    text: "You will see your bathroom in 3D before anything starts.",
   },
 ];
 
@@ -100,14 +104,6 @@ const commitments = [
 
 const faqs = [
   {
-    question: "How much does a bathroom renovation cost in Oakville?",
-    answer: "Our bathroom renovations start from $9,800. The final price depends on size, layout changes and finishes. You get a fixed, itemized quote after the free consultation.",
-  },
-  {
-    question: "How long does it take?",
-    answer: "Most bathrooms are finished in 2 to 3 weeks once work starts. Layout changes or custom glass can add time, and we confirm the schedule before you sign.",
-  },
-  {
     question: "Will the price change once you start?",
     answer: "No. The price you approve is the price you pay, unless you choose to change the scope.",
   },
@@ -116,8 +112,36 @@ const faqs = [
     answer: "Yes. Plumbing, electrical, tile, carpentry and any permits are handled by our team under one contract.",
   },
   {
+    question: "What’s the deposit, and when do I pay the rest?",
+    answer: "Please book a consultation and we will happy to share the details.",
+  },
+  {
+    question: "How soon can you start?",
+    answer: "On average, we can start about 2 weeks after you approve your quote.",
+  },
+  {
+    question: "It’s our only bathroom. What do we do during the work?",
+    answer: "Most bathrooms are finished in 5–7 days. If it’s your only bathroom, we recommend arranging alternative accommodations during the work. We can also look at options for installing the toilet in advance.",
+  },
+  {
+    question: "How long is your warranty, and what does it cover?",
+    answer: "We provide a 1-year warranty on our workmanship."
+  },
+  {
+    question: "Can I buy my own tiles, vanity or fixtures?",
+    answer: "Yes, you can supply your own. Materials you buy are covered by the manufacturer’s warranty, and our 1-year warranty still applies to our workmanship."
+  },
+  {
     question: "Is the consultation really free?",
-    answer: "Yes. The in-home consultation and quote are free, with no obligation to go ahead.",
+    answer: "Yes. We come to your home, measure, and give you a written estimate, with no charge and no obligation."
+  },
+  {
+    question: "Can you make the bathroom safer for aging parents?",
+    answer: "Yes. Grab bars with solid backing, walk-in or curbless showers, and non-slip tile are all options."
+  },
+  {
+    question: "Do I need to be home while you work?",
+    answer: "No, you don’t need to be home. Hundreds of homeowners have trusted Y2 with their homes, and we deliver a high-quality finish on every project."
   },
 ];
 
@@ -127,7 +151,14 @@ const tiktokVideos = [
   "7636890362727976200",
 ];
 
-const tiktokProfile = "https://www.tiktok.com/@y2.designbuild";
+const beforeafter = [
+  "before-after1",
+  "before-after2",
+  "before-after3",
+  "before-after4",
+  "before-after5",
+  "before-after6",
+];
 
 const galleryImages = [
   "bath-gallery-13",
@@ -146,6 +177,57 @@ const galleryImages = [
   "bath-gallery-8",
 ];
 
+function ClickToPlayVideo({
+  src,
+  poster,
+  label,
+}: {
+  src: string;
+  poster: string;
+  label: string;
+}) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const play = () => {
+    ref.current?.play();
+    setPlaying(true);
+  };
+
+  return (
+    <div className="card relative aspect-[4/3] overflow-hidden bg-black">
+      <video
+        ref={ref}
+        className="absolute inset-0 h-full w-full object-cover"
+        poster={poster}
+        playsInline
+        preload="none"
+        controls={playing}
+        aria-label={label}
+        onPause={() => ref.current?.ended && setPlaying(false)}
+        onEnded={() => setPlaying(false)}
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+
+      {!playing && (
+        <button
+          type="button"
+          onClick={play}
+          className="group absolute inset-0 flex items-center justify-center bg-black/20 transition hover:bg-black/30"
+          aria-label={`Play video: ${label}`}
+        >
+          <span className="flex h-20 w-20 items-center justify-center rounded-full bg-accent text-white shadow-xl transition group-hover:scale-110">
+            <svg viewBox="0 0 24 24" className="ml-1 h-8 w-8" fill="currentColor" aria-hidden="true">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        </button>
+      )}
+    </div>
+  );
+}
+
 export default function BathroomClient({
   items = faqs,
 }: {
@@ -159,9 +241,9 @@ export default function BathroomClient({
       <LpHeader />
 
       {/* 1. Value-driven hero */}
-      <section className="relative min-h-[480px] overflow-hidden bg-brand-dark text-white">
+      <section className="relative min-h-[620px] overflow-hidden bg-brand-dark text-white align-center">
         <Image
-          src={"/images/bath-gallery-10.webp"}
+          src={"/images/bath-gallery-22.webp"}
           alt="Bathroom Renovation project by Y2 Design & Build in the GTA"
           fill
           priority
@@ -172,13 +254,10 @@ export default function BathroomClient({
         <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/80 to-brand-dark/50" />
 
         <div className="grid items-center gap-3">
-          <div className="container-page relative flex min-h-[480px] items-center py-16">
+          <div className="container-page relative flex min-h-[620px] items-center py-16">
             <div className="max-w-2xl">
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-accent">
-                Searching for bathroom renovation Oakville?
-              </p>
               <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-                Bathroom Renovations Starting From $9,800
+                Oakville Bathroom Renovations From $9,800
               </h1>
               <ul className="mt-6 space-y-3">
                 {heroBullets.map((b) => (
@@ -201,82 +280,19 @@ export default function BathroomClient({
                   Call {site.phone}
                 </a>
               </div>
-              <p className="mt-5 text-sm text-white/80">
-                <span className="font-bold text-accent">★★★★★ 5.0</span> from
-                100+ Google reviews · Free itemized quotes
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. Craftsmanship */}
+      {/* 2. Working With Us  */}
       <section className="section-pad bg-surface">
         <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-[2fr_3fr]">
+          <div className="grid items-center gap-10 lg:grid-cols-[2fr_5fr]">
             <div>
-              <h2 className="text-3xl font-bold text-brand-dark">Where Craftsmanship Actually Matters</h2>
-              <p className="mt-4 leading-relaxed text-muted">
-                Anyone can put tile on a wall. The difference shows up three years later, at the grout line and the shower base.
-              </p>
-              <p className="mt-4 font-bold text-brand-dark">Expect:</p>
-              <ul className="mt-4 space-y-3">
-                {craftsmanship.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                    <span
-                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8">
-                <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
-
-              </div>
-            </div>
-
-            <div className="card relative aspect-[4/3] overflow-hidden">
-
-              <video
-                className="absolute inset-0 h-full w-full object-cover"
-                poster="/images/bath-gallery-3.webp"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label="Y2 Design & Build bathroom renovation in Oakville"
-              >
-                <source src="/videos/bathroom-renovation.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ReviewStrip />
-
-      {/* 4. Craftsmanship */}
-      <section className="section-pad bg-surface">
-        <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-
-            <div className="card relative aspect-[4/3] overflow-hidden">
-              <Image
-                src="/images/bath-gallery-6.webp"
-                alt="Finished bathroom with tiled shower by Y2 Design & Build in Oakville"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-            <div>
+              
               <h2 className="text-3xl font-bold text-brand-dark">What Working With Us Feels Like</h2>
+              <p className="mt-3">No horror stories, no surprises, & no endless delays.</p>
               <ul className="mt-4 space-y-3">
                 {working.map((item) => (
                   <li key={item.title} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
@@ -292,127 +308,38 @@ export default function BathroomClient({
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
-                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
-                  or call {site.phone}
-                </a>
+              
+              <div className="mt-8">
+                <QuoteButton className="btn-primary cursor-pointer text-sm">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
               </div>
             </div>
-
-
+<ClickToPlayVideo
+  src="/videos/bathroom-renovation.mp4"
+  poster="/images/bath-gallery-8.webp"
+  label="Y2 Design & Build bathroom renovation in Oakville"
+/>
           </div>
         </div>
       </section>
 
-      {/* 6. Premium experience */}
+{/* 11. Gallery */}
       <section className="section-pad bg-white">
         <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
+          <h2 className="text-center text-3xl font-bold">Same Bathroom, Two Weeks Apart</h2>
 
-            <div>
-              <h2 className="text-3xl font-bold text-brand-dark">A Premium Experience: From Start to Finish</h2>
-              {experience.map((item) => (
-                <React.Fragment key={item.title}>
-                  <h3 className="mt-4 text-xl font-bold text-brand-dark">{item.title}</h3>
-                  <p className="mt-2 leading-relaxed text-muted">{item.text}</p>
-                </React.Fragment>
-              ))}
+          <GalleryLightbox
+            images={beforeafter.map((name) => ({
+              src: `/images/${name}.webp`,
+              alt: "Before/after images by Y2 Design & Build in the GTA",
+            }))}
+          />
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <QuoteButton className="btn-primary cursor-pointer">Book My Free Consultation</QuoteButton>
-                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
-                  or call {site.phone}
-                </a>
-              </div>
-            </div>
-
-            <div className="card relative aspect-[3/4] overflow-hidden">
-              <Image
-                src="/images/bathroom-palmer-1.webp"
-                alt="Finished bathroom with tiled shower by Y2 Design & Build in Oakville"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-          </div>
+          {/* <div className="mt-10 text-center">
+            <QuoteButton className="btn-primary cursor-pointer">START MY BATHROOM RENOVATION QUOTE</QuoteButton>
+          </div> */}
         </div>
       </section>
 
-
-
-      {/* 8. Local Oakville team */}
-      <section className="section-pad bg-surface">
-        <div className="container-page max-w-7xl">
-          <h2 className="text-center text-3xl font-bold text-brand-dark">Your Local Oakville Bathroom Team</h2>
-          <p className="mx-auto mt-4 max-w-4xl text-center leading-relaxed text-muted">
-            Our showroom is at 3400 14th Ave, Unit 16, so in Oakville we are working in our own neighbourhood. Drop in, see materials in person, and meet the people who will build your bathroom.
-          </p>
-          <p className="mt-8 text-center font-bold text-brand-dark">What we most often work on in Oakville:</p>
-          <ul className="mt-4 grid gap-3 md:grid-cols-2">
-            {localJobs.map((item) => (
-              <li key={item} className="card flex items-start gap-3 p-4 text-sm leading-relaxed text-muted">
-                <span
-                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                  aria-hidden="true"
-                >
-                  ✓
-                </span>
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="mx-auto mt-6 max-w-6xl text-center leading-relaxed text-muted">
-            We cover Unionville, Cornell, Berczy Village, Wismer, Greensborough, Cathedraltown, Angus Glen, Oakville Village and Milliken Mills.
-          </p>
-        </div>
-      </section>
-
-      {/* 9. Who we work with */}
-     
-           <section className="section-pad bg-white">
-        <div className="container-page">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-
-            <div className="card relative aspect-[4/3] overflow-hidden">
-              <Image
-                src="/images/bath-gallery-5.webp"
-                alt="Finished bathroom with tiled shower by Y2 Design & Build in Oakville"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-brand-dark">Who We Work With</h2>
-              <ul className="mt-4 space-y-3">
-                {whoWeWorkWith.map((item) => (
-              <li key={item.label} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
-                <span
-                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
-                  aria-hidden="true"
-                >
-                  ✓
-                </span>
-                <span>
-                  <b>{item.label}</b> <span>{item.text}</span>
-                </span>
-              </li>
-            ))}
-              </ul>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
-                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
-                  or call {site.phone}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 10. Watch us work (TikTok) */}
       <section className="section-pad bg-surface">
@@ -466,7 +393,166 @@ export default function BathroomClient({
         </div>
       </section>
 
-      {/* 12. Our commitment */}
+      <ReviewStrip />
+
+      
+      {/*
+      
+      <section className="section-pad bg-surface">
+        <div className="container-page">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+
+            <div className="card relative aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/bath-gallery-6.webp"
+                alt="Finished bathroom with tiled shower by Y2 Design & Build in Oakville"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              
+
+       <h2 className="text-3xl font-bold text-brand-dark">Where Craftsmanship Actually Matters</h2>
+              <p className="mt-4 leading-relaxed text-muted">
+                Anyone can put tile on a wall. The difference shows up three years later, at the grout line and the shower base.
+              </p>
+              <p className="mt-4 font-bold text-brand-dark">Expect:</p>
+              <ul className="mt-4 space-y-3">
+                {craftsmanship.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
+                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
+                  or call {site.phone}
+                </a>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      
+      <section className="section-pad bg-white">
+        <div className="container-page">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+
+            <div>
+              <h2 className="text-3xl font-bold text-brand-dark">A Premium Experience: From Start to Finish</h2>
+              {experience.map((item) => (
+                <React.Fragment key={item.title}>
+                  <h3 className="mt-4 text-xl font-bold text-brand-dark">{item.title}</h3>
+                  <p className="mt-2 leading-relaxed text-muted">{item.text}</p>
+                </React.Fragment>
+              ))}
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <QuoteButton className="btn-primary cursor-pointer">Book My Free Consultation</QuoteButton>
+                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
+                  or call {site.phone}
+                </a>
+              </div>
+            </div>
+
+            <div className="card relative aspect-[3/4] overflow-hidden">
+              <Image
+                src="/images/bathroom-palmer-1.webp"
+                alt="Finished bathroom with tiled shower by Y2 Design & Build in Oakville"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-surface">
+        <div className="container-page max-w-7xl">
+          <h2 className="text-center text-3xl font-bold text-brand-dark">Your Local Oakville Bathroom Team</h2>
+          <p className="mx-auto mt-4 max-w-4xl text-center leading-relaxed text-muted">
+            Our showroom is at 3400 14th Ave, Unit 16, so in Oakville we are working in our own neighbourhood. Drop in, see materials in person, and meet the people who will build your bathroom.
+          </p>
+          <p className="mt-8 text-center font-bold text-brand-dark">What we most often work on in Oakville:</p>
+          <ul className="mt-4 grid gap-3 md:grid-cols-2">
+            {localJobs.map((item) => (
+              <li key={item} className="card flex items-start gap-3 p-4 text-sm leading-relaxed text-muted">
+                <span
+                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mx-auto mt-6 max-w-6xl text-center leading-relaxed text-muted">
+            We cover Unionville, Cornell, Berczy Village, Wismer, Greensborough, Cathedraltown, Angus Glen, Oakville Village and Milliken Mills.
+          </p>
+        </div>
+      </section>
+
+     
+           <section className="section-pad bg-white">
+        <div className="container-page">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+
+            <div className="card relative aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/bath-gallery-5.webp"
+                alt="Finished bathroom with tiled shower by Y2 Design & Build in Oakville"
+                fill
+                loading="lazy"
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-brand-dark">Who We Work With</h2>
+              <ul className="mt-4 space-y-3">
+                {whoWeWorkWith.map((item) => (
+              <li key={item.label} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
+                <span
+                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+                <span>
+                  <b>{item.label}</b> <span>{item.text}</span>
+                </span>
+              </li>
+            ))}
+              </ul>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <QuoteButton className="btn-primary cursor-pointer">SEE WHAT MY BATHROOM WOULD COST</QuoteButton>
+                <a href={tel} className="text-center text-sm font-bold text-brand-dark hover:text-brand">
+                  or call {site.phone}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section className="section-pad bg-white">
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-2">
@@ -512,7 +598,7 @@ export default function BathroomClient({
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 13. FAQ */}
       <section className="section-pad bg-surface">
@@ -549,6 +635,44 @@ export default function BathroomClient({
           </div>
         </div>
       </section>
+
+      
+              <section className="section-pad bg-white">
+                <div className="container-page">
+                  <div className="grid items-center gap-10 lg:grid-cols-2">
+                    <div className="order-2 lg:order-1">
+                      <p className="text-sm font-bold uppercase tracking-wider text-brand">See It In Person</p>
+                      <h2 className="mt-2 text-3xl font-bold text-brand-dark">Visit Our Showroom</h2>
+                      <p className="mt-4 leading-relaxed text-muted">
+                        Prefer to see materials and finishes in person? We have a beautiful showroom at our Oakville
+                        location where you can browse cabinetry, countertops, tile, and flooring samples, and talk
+                        through your project face-to-face with our design team.
+                      </p>
+                      <p className="mt-4 font-semibold text-brand-dark">
+                        {site.address.street}, {site.address.city}, {site.address.province} {site.address.postal}
+                      </p>
+                      <p className="mt-1 text-sm text-muted">Mon–Fri: 8 a.m. – 6 p.m. — walk-ins welcome, or call ahead to book a time.</p>
+                      <a
+                        href={`tel:${site.phone.replace(/\D/g, "")}`}
+                        className="btn-primary mt-6 inline-flex"
+                      >
+                        Call to Book a Showroom Visit
+                      </a>
+                    </div>
+                    <div className="order-1 lg:order-2">
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-md">
+                        <Image
+                          src={images.heroShowroom}
+                          alt="Y2 Design & Build showroom in Oakville, Ontario"
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
       <LpFooter />
     </>
