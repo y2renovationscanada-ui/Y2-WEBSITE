@@ -90,7 +90,7 @@ export const hero = {
 export const googleReviews = {
   rating: "5.0",
   count: 138,
-  countLabel: "100+",
+  countLabel: "138",
 };
 
 export const trustBadges = [
