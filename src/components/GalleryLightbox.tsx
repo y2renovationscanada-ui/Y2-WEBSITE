@@ -47,7 +47,7 @@ export default function GalleryLightbox({ images }: { images: GalleryImage[] }) 
             key={`${img.src}-${i}`}
             type="button"
             onClick={() => setIndex(i)}
-            className="group relative aspect-[4/3] cursor-zoom-in overflow-hidden rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="group relative aspect-[4/4] overflow-hidden rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             aria-label={`Open photo ${i + 1} of ${images.length}`}
           >
             <Image

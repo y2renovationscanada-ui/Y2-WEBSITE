@@ -152,12 +152,12 @@ const tiktokVideos = [
 ];
 
 const beforeafter = [
-  "before-after-1",
-  "before-after-2",
-  "before-after-3",
-  "before-after-4",
-  "before-after-5",
-  "before-after-6",  
+  "before-after1",
+  "before-after2",
+  "before-after3",
+  "before-after4",
+  "before-after5",
+  "before-after6",
 ];
 
 const galleryImages = [
@@ -329,7 +329,7 @@ export default function BathroomClient({
 
           <GalleryLightbox
             images={beforeafter.map((name) => ({
-              src: `https://y2designandbuild.com/images/${name}.webp`,
+              src: `/images/${name}.webp`,
               alt: "Before/after images by Y2 Design & Build in the GTA",
             }))}
           />
