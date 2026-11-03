@@ -89,7 +89,7 @@ export const hero = {
 
 export const googleReviews = {
   rating: "5.0",
-  count: 100,
+  count: 138,
   countLabel: "100+",
 };
 

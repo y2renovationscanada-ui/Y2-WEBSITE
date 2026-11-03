@@ -33,13 +33,13 @@ export default function ReviewStrip({ service, city }: { service?: ReviewService
     <section className="section-pad overflow-hidden bg-white">
       <div className="container-page">
         <div className="flex flex-col items-center gap-2 text-center">
-          <h2 className="text-3xl font-bold text-brand-dark">Rated 5 Stars by GTA Homeowners</h2>
+          <h2 className="text-3xl font-bold text-brand-dark">Rated 5 Stars</h2>
           <div className="flex items-center gap-2">
             <Stars />
             <span className="text-xl font-bold text-brand-dark">{googleReviews.rating}</span>
             <span className="text-sm text-muted">from {googleReviews.countLabel} Google reviews</span>
           </div>
-          <p className="max-w-xl text-muted">Real reviews from real renovation clients across the Greater Toronto Area.</p>
+          {/* <p className="max-w-xl text-muted">Real reviews from real renovation clients across the Greater Toronto Area.</p> */}
         </div>
       </div>
 
