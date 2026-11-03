@@ -98,6 +98,21 @@ const tiktokVideos = [
 
 const beforeAfterPairs = [
   {
+    before: "bathroom-6-before",
+    after: "bathroom-6-after",
+    description: "bathroom renovation",
+  },
+  {
+    before: "bathroom-3-before",
+    after: "bathroom-3-after",
+    description: "bathroom renovation",
+  },
+  {
+    before: "bathroom-4-before",
+    after: "bathroom-4-after",
+    description: "bathroom renovation",
+  },
+  {
     before: "bathroom-1-before",
     after: "bathroom-1-after",
     description: "bathroom renovation",
@@ -105,27 +120,12 @@ const beforeAfterPairs = [
   {
     before: "bathroom-2-before",
     after: "bathroom-2-after",
-    description: "walk-in shower renovation",
-  },
-  {
-    before: "bathroom-3-before",
-    after: "bathroom-3-after",
-    description: "walk-in shower renovation",
-  },
-  {
-    before: "bathroom-4-before",
-    after: "bathroom-4-after",
-    description: "walk-in shower renovation",
+    description: "bathroom renovation",
   },
   {
     before: "bathroom-5-before",
     after: "bathroom-5-after",
-    description: "walk-in shower renovation",
-  },
-  {
-    before: "bathroom-6-before",
-    after: "bathroom-6-after",
-    description: "walk-in shower renovation",
+    description: "bathroom renovation",
   },
 ];
 
@@ -271,7 +271,6 @@ export default function BathroomClient({
   </div>
 
   <div className="lg:col-start-1 lg:row-start-2">
-    <p>No horror stories, no surprises, & no endless delays.</p>
 
     <ul className="mt-4 space-y-3">
       {working.map((item) => (
@@ -301,7 +300,7 @@ export default function BathroomClient({
 <section className="section-pad bg-white">
   <div className="container-page">
     <h2 className="text-center text-3xl font-bold">
-      The Difference a Professional Renovation Makes
+See The Difference
     </h2>
 
     <BeforeAfterCarousel pairs={beforeAfterPairs} className="mt-10" />
@@ -349,7 +348,7 @@ export default function BathroomClient({
           <h2 className="text-center text-3xl font-bold">Recent Bathroom Projects</h2>
 <GalleryLightbox
   singleColumn
-  initialVisible={3}
+  initialVisible={14}
   images={galleryImages.map((name) => ({
     src: `https://y2designandbuild.com/images/${name}.webp`,
     alt: "Home renovation project by Y2 Design & Build in the GTA",

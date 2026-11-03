@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { site, navLinks } from "@/lib/content";
+import { site } from "@/lib/content";
 import { QuoteButton } from "./QuoteModal";
 import QuoteForm from "./QuoteForm";
-import Script from "next/script";
 
 export default function Footer() {
   return (
