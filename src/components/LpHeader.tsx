@@ -13,6 +13,9 @@ export default function Header() {
           <Image src={images.logo} alt={site.name} width={120} height={40} className="h-10 w-auto object-contain" priority />
        
 
+        <nav aria-label="Main navigation" className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex">
+        </nav>
+
         <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3 lg:ml-0">
           <a
             href={tel}
