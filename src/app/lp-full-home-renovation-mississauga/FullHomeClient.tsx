@@ -206,7 +206,7 @@ export default function FullHomeClient({
       {/* 1. Value-driven hero */}
       <section className="relative min-h-[620px] overflow-hidden bg-brand-dark text-white align-center">
         <Image
-          src={"/images/home-gall-1.webp"}
+          src={"/images/home-renovation-hero3.webp"}
           alt="Bathroom Renovation project by Y2 Design & Build in the GTA"
           fill
           priority
