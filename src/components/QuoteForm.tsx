@@ -3,13 +3,14 @@
 import { useState, type FormEvent } from "react";
 import { quoteForm, site } from "@/lib/content";
 import { attributionFields } from "@/lib/attribution";
+import { useRouter } from "next/navigation";
 
 const inputClass =
   "w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm text-stone-900 placeholder:text-stone-500 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-type SubmittedPayload = {
+export type SubmittedPayload = {
   name: string;
   phone: string;
   email: string;
@@ -18,7 +19,9 @@ type SubmittedPayload = {
   details: string;
 };
 
-function buildBookingHref(payload: SubmittedPayload | null) {
+export const LAST_LEAD_KEY = "y2-last-lead";
+
+export function buildBookingHref(payload: SubmittedPayload | null) {
   const base = (site.bookingUrl || "/book").replace(/\/$/, "");
   if (!payload) return base;
   const q = new URLSearchParams();
@@ -37,6 +40,7 @@ export default function QuoteForm({
   webhookUrl,
   source = "y2designandbuild.com",
   formId = "default",
+  redirectTo = "/thank-you",
 }: {
   compact?: boolean;
   /** Override Make.com webhook (landing pages use a dedicated URL). */
@@ -44,7 +48,9 @@ export default function QuoteForm({
   source?: string;
   /** Unique id suffix so multiple forms on one page don't clash. */
   formId?: string;
+  redirectTo?: string;
 }) {
+  const router = useRouter(); 
   const [status, setStatus] = useState<Status>("idle");
   const [submitted, setSubmitted] = useState<SubmittedPayload | null>(null);
   const endpoint = webhookUrl || quoteForm.webhookUrl;
@@ -96,6 +102,16 @@ export default function QuoteForm({
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
       }).catch(() => {});
+
+      if (redirectTo) {
+        // Hand the lead to the thank-you page without putting personal info in the URL.
+        try {
+          sessionStorage.setItem(LAST_LEAD_KEY, JSON.stringify(payload));
+        } catch {}
+        form.reset();
+        router.push(redirectTo);
+        return;
+      }
 
       setSubmitted(payload);
       setStatus("success");
