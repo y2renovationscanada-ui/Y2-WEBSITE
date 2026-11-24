@@ -2,7 +2,7 @@ import React from "react";
 import BathroomClient from "./BathroomClient";
 
 export const metadata = {
-  title: "Bathroom Renovation Ajax | Save $2,500 | Y2 Design & Build",
+  title: "Bathroom Renovation Ajax | From $9,800 | Y2 Design & Build",
   description: "Complete bathroom renovations across Ajax by a licensed design-build team. Free, no-obligation consultation and quote. 15+ years in the GTA.",
   robots: {
     index: false,
